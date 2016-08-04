@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "DefineUserRoles";
+         Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DefineUserRoles</h2>
+
+  <!--Select the Role Type for the User-->
+<div class="form-group">
+    @Html.Label("Select Your User Type", new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.DropDownList("Name")
+    </div>
+</div>
+<!--Ends Here-->

@@ -1,0 +1,63 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout1</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @*<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+          rel="stylesheet" type='text/css'>*@
+
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+
+
+
+    <link href="~/Content/customSocialIcons.css" rel="stylesheet" />
+</head>
+<body>
+      
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- add header -->
+        
+            <!-- menu items -->
+          
+            
+            
+              <div class="collapse navbar-collapse" id="navbar1">
+                
+                             
+                <ul class="nav navbar-nav navbar-right social">
+                    <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-lg fa-linkedin"></i></a></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+    <script src="/path/to/jquery-1.10.2.js"></script>
+    <script src="/path/to/bootstrap.min.js"></script>
+    
+    <div> 
+    
+        @RenderBody()
+    
+    </div>
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/inputmask")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
