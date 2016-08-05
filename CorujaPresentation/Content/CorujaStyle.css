@@ -1,0 +1,30 @@
+﻿body {
+}
+
+/*
+Base - core element styles, covering the general defaults
+
+         – normalize.css
+         – layout.css
+         – typography.css
+
+Layout - identifies the sizing and grid styles of different elements, determining their layout
+
+# Components
+  – alerts.css
+  – buttons.css
+  – forms.css
+  – list.css
+  – nav.css
+  – tables.css
+
+Module - styles are more specific styles targeting individual parts of the page, such as navigation or feature styles
+    – aside.css
+    – footer.css
+    – header.css
+
+State styles are then used to augment or override other styles in the event that a module includes an alternate state, an active tab for example
+
+Theme - category may be added which could include styles based around the skin, or look and feel, of different modules.
+
+    */

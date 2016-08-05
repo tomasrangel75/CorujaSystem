@@ -273,6 +273,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CorujaImages\online.png" />
     <Content Include="Content\CorujaImages\Website-ombygning.png" />
+    <Content Include="Content\CorujaStyle.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\CorujaImages\abd.jpg" />
