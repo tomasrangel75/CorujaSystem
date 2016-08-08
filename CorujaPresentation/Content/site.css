@@ -1,6 +1,10 @@
-﻿/** GENERAL STYLES */
+﻿
 
-/* BASE ========================================*/
+/* ==========================================================================
+   1. General
+========================================================================== */
+/* 1.1 Main Styles
+---------------------------------------------------------------------------*/
 html {
     height: 100% !important;
 }
@@ -17,14 +21,8 @@ body {
 }
 
 
-/*COMPONENTS ========================================*/
-
-/*#region COMPONENTS */
-
-address {
-    font-size: inherit;
-    line-height: inherit;
-}
+/* 1.2 Anchor
+---------------------------------------------------------------------------*/
 
 a {
     -webkit-transition: all ease 0.25s;
@@ -38,15 +36,21 @@ a {
         color: #f0ad4e;
     }
 
-a.login-links {
+    a.login-links {
     color: black !important;
 }
 
     a.login-links:hover {
         color: orange !important;
     }
+
    
-    /*#region Hs */
+
+/* ==========================================================================
+   2. Typography
+========================================================================== */
+/* 2.1 Headings
+---------------------------------------------------------------------------*/
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -78,7 +82,45 @@ h2, .h2 {
 }
 
 
-/*#endregion */
+/* 2.2 Selection Color
+---------------------------------------------------------------------------*/
+
+/*::selection {
+    color: #ffffff;
+    text-shadow: none;
+    background-color: #ce0c21;
+}
+::-webkit-selection {
+    color: #ffffff;
+    text-shadow: none;
+    background-color: #ce0c21;
+}
+::-moz-selection {
+    color: #ffffff;
+    text-shadow: none;
+    background-color: #ce0c21;
+}*/
+
+/* 2.3 Colors
+---------------------------------------------------------------------------*/
+.base-color { color: #ce0c21; }
+.black-color { color: #333333; }
+.gray-color { color: #444444; }
+
+
+/* ==========================================================================
+   3. COMMON
+========================================================================== */
+
+/*COMPONENTS ========================================*/
+
+/*#region COMPONENTS */
+
+address {
+    font-size: inherit;
+    line-height: inherit;
+}
+
      
 hr {
     margin-top: 10px !important;
@@ -368,7 +410,7 @@ header .btn {
         border-color: antiquewhite !important;
     }
 
-header .social-icons {
+    header .social-icons {
     margin-top: 0;
 }
 
@@ -377,24 +419,83 @@ header .social-icons {
     margin-top: 15px;
 }
 
+
+.navbar-nav {
+        margin-left: 2px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 11px;
+        line-height: 1.819;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+}
+
+ .navbar-nav > li {
+        padding: 2em 0.6em;
+        -webkit-transition: all ease 0.25s;
+        transition: all ease 0.25s;
+    }
+
+    .navbar-nav a {
+        position: relative;
+        font-weight: normal;
+    }
+
+    .navbar-nav > li > a {
+        padding: 0;
+        position: relative;
+        color: inherit;
+        line-height: inherit;
+        display: inline-block;
+    }
+
+    .navbar-nav > li > a:focus, .navbar-nav > li > a:hover {
+    background-color: inherit;
+}
+
+    .navbar-nav > li > a:focus, .navbar-nav > li > a:hover,
+    
+    .navbar-nav > li > a.active { color: #fff;}
+
+    .navbar-nav > li > a.active:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        height: 2px;
+    }
+
+    .navbar-nav > li > a.active:after {
+        background-color: #fff;
+    }
+
+    .navbar-nav .open > a {
+    background-color: inherit !important;
+}
+        
 .navbar-logo {
     width: 240px;
+    line-height: 60px;
+    margin-left: 0 !important;
+    margin-bottom: 25px;
 }
 
     .navbar-logo:hover, .navbar-logo:focus {
         transform: scale(0.90);
     }
 
-    .navbar-nav {
-    margin-left: 2px;
-}
+    .navbar-logo img {
+        display: inline-block;
+        vertical-align: middle;
+        min-height: 100%;
+    }
 
-    .navbar-container {
+.navbar-container {
     width: 75% !important;
     float: right;
     padding-right: 3%;
     margin: 0;
 }
+
+  
 
 
 @media (max-width:991px) {
@@ -411,7 +512,6 @@ header .social-icons {
 }
 
 /*#endregion */
-
 
 /** FOOTER ========================================*/
 
@@ -670,8 +770,7 @@ a .social-icons {
 
 /*#endregion */
 
-
-/*#region HEADER */
+/*#region .HEADER - NAV */
 
 .header-section {
     position: fixed;
@@ -693,81 +792,18 @@ a .social-icons {
     background-color: #ED4F37;
 }
 
-.navbar-nav {
-    font-family: "Montserrat", sans-serif;
-    font-size: 11px;
-    line-height: 1.819;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-    .navbar-nav > li {
-        padding: 2em 0.6em;
-        -webkit-transition: all ease 0.25s;
-        transition: all ease 0.25s;
-    }
-
-    .navbar-nav a {
-        position: relative;
-        font-weight: normal;
-    }
-
-    .navbar-nav > li > a {
-        padding: 0;
-        position: relative;
-        color: inherit;
-        line-height: inherit;
-        display: inline-block;
-    }
-
-.header-section .navbar-nav > li > a {
+    .header-section .navbar-nav > li > a {
     color: #fff;
 }
-
-.navbar-nav > li > a:focus, .navbar-nav > li > a:hover {
-    background-color: inherit;
-}
-
-.navbar-nav > li > a:focus, .navbar-nav > li > a:hover,
-.navbar-nav > li > a.active {
-    color: #fff;
-}
-
-    .navbar-nav > li > a.active:after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        height: 2px;
-    }
-
-    .navbar-nav > li > a.active:after {
-        background-color: #fff;
-    }
-
-.navbar-nav .open > a {
-    background-color: inherit !important;
-}
-
-.navbar-logo {
-    line-height: 60px;
-    margin-left: 0 !important;
-    margin-bottom: 25px;
-    height:;
-}
-
-    .navbar-logo img {
-        display: inline-block;
-        vertical-align: middle;
-        min-height: 100%;
-    }
-
 
 /*#endregion */
 
 
-/** SECTIONS CUSTOM ========================================*/
+/* ==========================================================================
+   4. SECTIONS CUSTOM
+========================================================================== */
 
-/*#region SECTION APRESENTACAO */
+/*#region    4.1 ======== SECTION APRESENTACAO */
 
 a.play_btn:hover, a.play_btn:focus {
     color: white;
@@ -833,7 +869,7 @@ a.play_btn:hover, a.play_btn:focus {
 
 /*#endregion */
 
-/*#region SECTION Equipe */
+/*#region    4.2 ======== SECTION EQUIPE */
 
 .team-photo {
     margin-top: 30px;
@@ -880,7 +916,7 @@ a.play_btn:hover, a.play_btn:focus {
 
 /*#endregion */
 
-/*#region SECTION BLOG */
+/*#region     4.3 ======== SECTION BLOG */
 
 .blog-section {
     padding: 80px 0;
@@ -1120,7 +1156,7 @@ button.btn-search {
 
 /*#endregion */
 
-/*#region SECTION PARCEIROS */
+/*#region     4.1 ======== SECTION PARCEIROS */
 
 .parceiros_profile {
     text-align: center;
@@ -1184,7 +1220,7 @@ button.btn-search {
 
 /*#endregion */
 
-/*#region SECTION AVALIACAO */
+/*#region     4.1 ======== SECTION AVALIACAO */
 
 .about-row {
     margin-top: 50px;
@@ -1280,6 +1316,9 @@ a.bg-primary:hover {
 
 /** =======================================================*/
 
+/* ==========================================================================
+   5. RESPONSIVE
+========================================================================== */
 
 /*#region Responsive */
 
