@@ -48,7 +48,7 @@ namespace CorujaPresentation
                       "~/Content/bootstrap.css",
                        "~/Content/site.css",
                        "~/Content/font-awesome.css",
-                      
+                       "~/Content/font-coruja.css",
                        "~/Content/bootstrap-social.css",
                         "~/Content/bootstraptheme.css",
                          "~/Content/animate.css"
