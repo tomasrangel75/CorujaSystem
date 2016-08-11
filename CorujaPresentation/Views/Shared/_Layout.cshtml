@@ -21,14 +21,17 @@
 
     <title>@ViewBag.Title - Canal Coruja Educação</title>
 
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+   
 
-
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Bariol">
 </head>
 
 <body class="enable-animations">
@@ -71,9 +74,9 @@
 
                     </ul>
 
-                    <ul class="nav navbar-nav  navbar-right social">
-                        <li class="active">@Html.ActionLink(" Cadastre-se", "Cadastro", "Conta", null, new { @class = "glyphicon glyphicon-user header" })</li>
-                        <li class="active">@Html.ActionLink(" Login", "Login", "Conta", null, new { @class = "glyphicon glyphicon-log-in header" })</li>
+                    <ul class="nav navbar-nav  navbar-right">
+                        <li class="active">@Html.ActionLink(" Cadastre-se", "Cadastro", "Conta", null, new { @class = "glyphicon glyphicon-user" })</li>
+                        <li class="active">@Html.ActionLink(" Login", "Login", "Conta", null, new { @class = "glyphicon glyphicon-log-in" })</li>
 
                     </ul>
 
@@ -86,8 +89,9 @@
         @RenderBody()
 
         <footer id="footer" class="section">
-            <div class="container">
+            <div class="container center">
                 <div class="row">
+
                     <div class="col-md-4 text-center">
                         <h4 class="letter-spacing-1">ENDEREÇO</h4>
                         <!-- Contact Address -->
@@ -104,34 +108,38 @@
                             </ul>
                         </address><!-- /Contact Address -->
                     </div>
+                    
                     <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-md-1 col-sm-4 btnSocialSpace">
-                               
-                                    <a class="btn btn-x btn-social-icon btn-facebook btnSpace" href="http://facebook.com/corujaedu" target="_blank">
-                                        <span class="fa fa-facebook"></span>
-                                    </a>
 
-                                
-                            </div>
-                            <div class="col-md-1 col-sm-4 btnSocialSpace">
-                               
-                                    <a class="btn btn-xl btn-social-icon btn-tumblr btnSpace" href="http://blog.corujaedu.com.br/" target="_blank">
-                                        <span class="fa fa-tumblr"></span>
-                                    </a>
+                        <div class="row text-center">
+                            <div class="col-md-1 col-sm-4 btnSocialSpace socialAlign">
 
-                                
+                                <a class="btn btn-x btn-social-icon btn-facebook btnSpace" href="http://facebook.com/corujaedu" target="_blank">
+                                    <span class="fa fa-facebook"></span>
+                                </a>
+
+
                             </div>
-                            <div class="col-md-1 col-sm-4 btnSocialSpace">
-                                
-                                    <a class="btn btn-xl btn-social-icon btn-facebook btnSpace" href="https://www.youtube.com/channel/UCHyUf7MmvkSVWwJBMwSy5jg" style="background-color:#E62117;" target="_blank">
-                                        <span class="fa fa-youtube"></span>
-                                    </a>
-                                
+                            <div class="col-md-1 col-sm-4 btnSocialSpace socialAlign">
+
+                                <a class="btn btn-xl btn-social-icon btn-tumblr btnSpace" href="http://blog.corujaedu.com.br/" target="_blank">
+                                    <span class="fa fa-tumblr"></span>
+                                </a>
+
+
+                            </div>
+                            <div class="col-md-1 col-sm-4 btnSocialSpace socialAlign">
+
+                                <a class="btn btn-xl btn-social-icon btn-facebook btnSpace" href="https://www.youtube.com/channel/UCHyUf7MmvkSVWwJBMwSy5jg" style="background-color:#E62117;" target="_blank">
+                                    <span class="fa fa-youtube"></span>
+                                </a>
+
                             </div>
 
                         </div>
+
                     </div>
+
                     <div class="col-md-4 text-center">
                         <h4 class="letter-spacing-1">CONTATOS</h4>
                         <ul class="footer-posts list-unstyled">
@@ -144,10 +152,14 @@
                             </li>
                         </ul>
                     </div>
+
+
                 </div>
+
                 <div class="social-or-login center">
                     <span>LICENÇAS</span>
                 </div>
+
                 <div class="row">
                     <div class="col-md-6 col-sm-6 copyright">
                         <p> © 2016 Coruja Educação - Desenvolvido por <a target="_blank" href="https://codely.com.br/" class="footer">Codely Tecnologia</a>.</p>
