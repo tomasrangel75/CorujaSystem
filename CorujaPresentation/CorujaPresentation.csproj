@@ -272,7 +272,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CorujaImages\online.png" />
+    <Content Include="Content\CorujaImages\Rodolfo.png" />
+    <Content Include="Content\CorujaImages\Tomas.png" />
     <Content Include="Content\CorujaImages\Website-ombygning.png" />
+    <Content Include="Content\CorujaStyle.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\CorujaImages\abd.jpg" />
@@ -280,11 +283,9 @@
     <Content Include="Content\CorujaImages\Alfredo.png" />
     <Content Include="Content\CorujaImages\Ana Carolina.png" />
     <Content Include="Content\CorujaImages\avatar_92a6fd7367cc_96.png" />
-    <Content Include="Content\CorujaImages\Camila.png" />
     <Content Include="Content\CorujaImages\Chris.png" />
     <Content Include="Content\CorujaImages\favicon.ico" />
     <Content Include="Content\CorujaImages\Flavia.png" />
-    <Content Include="Content\CorujaImages\Leandro.png" />
     <Content Include="Content\CorujaImages\logo-coruja.png" />
     <Content Include="Content\CorujaImages\logo.png" />
     <Content Include="Content\CorujaImages\Marcela.png" />
@@ -305,6 +306,7 @@
     <Content Include="Content\CorujaImages\write12.svg" />
     <Content Include="Content\font-coruja.css" />
     <Content Include="Content\site.css" />
+    <Content Include="Content\Teste.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -384,11 +386,11 @@
     <Content Include="Views\Conteudo\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\Home\Equipe.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\Parceiros.cshtml" />
     <Content Include="Views\Home\Produtos.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">
