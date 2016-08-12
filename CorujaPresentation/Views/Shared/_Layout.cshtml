@@ -30,7 +30,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-   
+
+    <link href="~/Content/Teste.css" rel="stylesheet" />
 
 </head>
 
@@ -69,6 +70,8 @@
                         <li class="active">@Html.ActionLink("Equipe", "Equipe", "Home", null, new { @class = "header" })</li>
                         <li class="active">@Html.ActionLink("Blog", "Blog", "Home", null, new { @class = "header" })</li>
                         <li class="active">@Html.ActionLink("Parceiros", "Parceiros", "Home", null, new { @class = "header" })</li>
+                        <li class="active">@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "header" })</li>
+
                         <li class="active">@Html.ActionLink("Admin", "Index", "Admin", null, new { @class = "header" })</li>
                         <li class="active">@Html.ActionLink("Conteúdo", "Index", "Conteudo", null, new { @class = "header" })</li>
 

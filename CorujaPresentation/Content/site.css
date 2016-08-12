@@ -1128,7 +1128,7 @@ button.btn-search {
 
 /*#endregion */
 
-/*#region     4.1 ======== SECTION PARCEIROS */
+/*#region     4.4 ======== SECTION PARCEIROS */
 
 .parceiros_profile {
     text-align: center;
@@ -1192,7 +1192,7 @@ button.btn-search {
 
 /*#endregion */
 
-/*#region     4.1 ======== SECTION AVALIACAO */
+/*#region     4.5 ======== SECTION AVALIACAO */
 
 .about-row {
     margin-top: 50px;
@@ -1282,6 +1282,21 @@ a.bg-primary:hover {
 
 
 /*#endregion */
+
+
+/*#endregion */
+
+/*#region     4.6 ======== SECTION FAQ */
+
+.panel-default > .panel-heading {
+  background-image: -webkit-linear-gradient(top, #2E3436 0%, #2E3436 100%);
+  background-image:      -o-linear-gradient(top, #2E3436 0%, #2E3436 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2E3436), to(#2E3436));
+  background-image:         linear-gradient(to bottom,#2E3436 0%, #2E3436 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2E3436', endColorstr='#2E3436', GradientType=0);
+  background-repeat: repeat-x;
+  color:whitesmoke;
+}
 
 
 /*#endregion */
