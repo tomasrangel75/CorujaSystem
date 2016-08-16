@@ -85,39 +85,62 @@ h2, .h2 {
 /* ==========================================================================
    3. COMMON
 ========================================================================== */
+typography tables images buttons labels panels forms inputs toolTip
 
-/*COMPONENTS ========================================*/
+/*#region COMMON */
 
-/*#region COMPONENTS */
 
-     
-hr {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+a.text-primary:hover {
+    color: #EC0B07;
 }
 
-iframe {
-    max-width: 100%;
-    border: none;
+.bg-primary {
+    background-color: #da955a;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+a.bg-primary:hover {
+    background-color: #da955a;
 }
 
-*:last-child {
-    margin-bottom: 0;
+/*#region CIRCLE */
+
+.img-circle {
+    border-radius: 50%;
 }
 
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
 
+    .btn-circle.btn-lg {
+        width: 50px;
+        height: 50px;
+        padding: 10px 16px;
+        border-radius: 25px;
+        font-size: 18px;
+        line-height: 1.33;
+    }
+
+    .btn-circle.btn-xl {
+        width: 70px;
+        height: 70px;
+        padding: 10px 16px;
+        border-radius: 35px;
+        font-size: 24px;
+        line-height: 1.33;
+    }
+
+        .btn-circle.btn-xl:hover {
+            color: inherit;
+        }
 
 /*#endregion */
-
-
-/*COMMON CLASSES ========================================*/
-
-/*#region Common Classes */
 
 /*#region BUTTON */
 
@@ -170,51 +193,49 @@ img {
 }
 
 
-/*#endregion */
-
-/*#region CIRCLE */
-
-.img-circle {
-    border-radius: 50%;
+.btn-primary {
+    background-color: rgb(236, 12, 8);
+    border-color: #EC0B07 !important;
 }
 
-.btn-circle {
-    width: 30px;
-    height: 30px;
-    padding: 6px 0;
-    border-radius: 15px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.428571429;
-}
-
-    .btn-circle.btn-lg {
-        width: 50px;
-        height: 50px;
-        padding: 10px 16px;
-        border-radius: 25px;
-        font-size: 18px;
-        line-height: 1.33;
+    .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+        background-color: #EC0B07 /*#f0ad4e*/;
+        border-color: /*#f0ad4e*/ #EC0B07 !important;
+        transform: scale(0.95);
     }
 
-    .btn-circle.btn-xl {
-        width: 70px;
-        height: 70px;
-        padding: 10px 16px;
-        border-radius: 35px;
-        font-size: 24px;
-        line-height: 1.33;
-    }
+    .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus, .btn-primary.disabled:active, .btn-primary[disabled]:active,
+    fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-
 
-        .btn-circle.btn-xl:hover {
-            color: inherit;
-        }
+    .btn-primary .badge {
+        color: #f3ae73;
+    }
 
 /*#endregion */
+     
+hr {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+iframe {
+    max-width: 100%;
+    border: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+*:last-child {
+    margin-bottom: 0;
+}
+
 
 /* centered columns styles */
 .row-centered {
-    text-align: center;
+        text-align: center;
 }
 
 .col-centered {
@@ -356,6 +377,7 @@ img {
 
 
 /*#endregion */
+
 
 /*#endregion */
 
@@ -758,11 +780,6 @@ a .social-icons {
 /*#endregion */
 
 
-
-/*#region .HEADER - NAV */
-
-
-/*#endregion */
 
 
 /* ==========================================================================
@@ -1231,7 +1248,6 @@ button.btn-search {
 }
 
 
-/*#region CLOSING */
 .closing-shout, .closing-buttons {
     text-align: center;
 }
@@ -1240,49 +1256,6 @@ button.btn-search {
     font-size: 24px;
     margin-bottom: 40px;
 }
-
-/** Bootstrap modificações* ========================================*/
-.text-primary {
-    color: #da955a;
-}
-
-a.text-primary:hover {
-    color: #EC0B07;
-}
-
-.bg-primary {
-    background-color: #da955a;
-}
-
-a.bg-primary:hover {
-    background-color: #da955a;
-}
-
-.btn-primary {
-    background-color: rgb(236, 12, 8);
-    border-color: #EC0B07 !important;
-}
-
-    .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-        background-color: #EC0B07 /*#f0ad4e*/;
-        border-color: /*#f0ad4e*/ #EC0B07 !important;
-        transform: scale(0.95);
-    }
-
-    .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus, .btn-primary.disabled:active, .btn-primary[disabled]:active,
-    fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
-        background-color: #f3ae73;
-        border-color: #f3ae73 !important;
-    }
-
-    .btn-primary .badge {
-        color: #f3ae73;
-    }
-
-
-
-/*#endregion */
-
 
 /*#endregion */
 
@@ -1300,6 +1273,31 @@ a.bg-primary:hover {
 
 
 /*#endregion */
+
+/*#region     4.7 ======== SECTION LOGIN */
+
+.help-block a:hover {
+	color: #666;
+    font-weight:800;
+ 	text-decoration:underline;
+}
+.wrapperLogin
+{
+   
+
+
+}
+/*#endregion */
+
+
+/*#region     4.8 ======== SECTION CADASTRO */
+
+
+
+
+/*#endregion */
+
+
 
 /** =======================================================*/
 
@@ -1366,6 +1364,5 @@ a.bg-primary:hover {
 }
 
 /*#endregion */
-
 
 

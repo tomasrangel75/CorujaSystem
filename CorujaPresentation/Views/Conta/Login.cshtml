@@ -4,69 +4,95 @@
     ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        
-      
+<section id="Cadastro" class="section section-gray">
 
-            <div class="wrapper">
 
-                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                    @Html.AntiForgeryToken()
-                    <h4>Entre na sua conta Coruja</h4>
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label", placeholder = "Senha" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <div class="checkbox">
-                                @Html.CheckBoxFor(m => m.RememberMe)
-                                @Html.LabelFor(m => m.RememberMe)
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Log in" class="btn btn-default" />
-                        </div>
-                    </div>
-                    <p>
-                        @Html.ActionLink("Cadastrar-se", "Cadastro")
-                    </p>
-                    <p>
-                        @Html.ActionLink("Esqueceu sua senha?", "LembrarSenha")
-                    </p>
+    <div class="container">
 
-                }
+        <div class="wrapperLogin">
+
+            <h2 class="section-heading text-center">Conta Coruja</h2>
+
+            <div class="row">
+
+
+                <div class="col-lg-6 col-md-7 col-sm-9">
+
+                    <h4 style="border-bottom: 1px solid #c5c5c5;">
+                        <i class="glyphicon glyphicon-user">
+                        </i>
+                        Acesso à Conta Coruja
+                    </h4>
+
+                    <div style="padding: 20px">
+
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                            <fieldset>
+
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-envelope">
+                                        </i>
+                                    </span>
+                                    @Html.PasswordFor(m => m.Email, new { @class = "form-control" , @placeholder = "Email" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock">
+                                        </i>
+                                    </span>
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Senha" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <div class="pull-left">
+                                        @Html.CheckBoxFor(m => m.RememberMe)
+                                        @Html.LabelFor(m => m.RememberMe)
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        LOG IN
+                                    </button>
+
+                                    <p class="help-block">
+
+                                        @Html.ActionLink("Esqueceu sua senha?", "LembrarSenha", null, new { @class = "pull-right text-muted" })
+
+                                        @Html.ActionLink("Cadastrar-se", "LembrarSenha", null, new { @class = "pull-left text-muted" })
+                                    </p>
+                                </div>
+
+                            </fieldset>
+
+                    }
+
+                    </div>
+
+                </div>
+
 
             </div>
 
-       
+        </div>
 
     </div>
-
-     
-
-   
-</div>
+      
 
 
+</section>
 
+
+    
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
