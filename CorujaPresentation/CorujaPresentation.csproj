@@ -280,7 +280,6 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\CorujaImages\abd.jpg" />
     <Content Include="Content\CorujaImages\Adriana.png" />
-    <Content Include="Content\CorujaImages\Alfredo.png" />
     <Content Include="Content\CorujaImages\Ana Carolina.png" />
     <Content Include="Content\CorujaImages\avatar_92a6fd7367cc_96.png" />
     <Content Include="Content\CorujaImages\Chris.png" />
@@ -304,7 +303,6 @@
     <Content Include="Content\CorujaImages\tumblr_inline_o72of0qmQS1u2r1xm_540.jpg" />
     <Content Include="Content\CorujaImages\tumblr_inline_o81w5fbKiM1u2r1xm_540.jpg" />
     <Content Include="Content\CorujaImages\write12.svg" />
-    <Content Include="Content\font-coruja.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\Teste.css" />
     <Content Include="favicon.ico" />
@@ -391,6 +389,7 @@
     <Content Include="Views\Home\Parceiros.cshtml" />
     <Content Include="Views\Home\Produtos.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Testes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">
