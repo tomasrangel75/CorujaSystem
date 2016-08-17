@@ -22,6 +22,12 @@ namespace CorujaPresentation.Controllers
             roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
         }
 
+
+        public ActionResult AdminCoruja()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             return View();
