@@ -6,7 +6,7 @@
 <!-- CADASTRO	================================= -->
 <section id="Cadastro" class="section section-gray">
 
-    
+
     <div class="container">
 
         <h2 class="section-heading text-center">Conta Coruja</h2>
@@ -31,10 +31,10 @@
 
                             <div class="col-xs-6">
 
-                          
+
 
                                 <div class="form-group">
-                                
+
                                     @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Nome" } })
                                     @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
 
@@ -142,7 +142,7 @@
 
                                     @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Email" } })
                                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                                   
+
                                 </div>
 
                                 <div class="form-group">
@@ -198,20 +198,20 @@
 
             </div>
 
-          </div>
+        </div>
 
 
-     </div>
+    </div>
 
 </section>
 
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-        @Scripts.Render("~/bundles/inputmask")
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/inputmask")
 
 
-        <script type="text/javascript">
+    <script type="text/javascript">
 
         $(document).ready(function() {
 
@@ -276,9 +276,9 @@
             });
         });
 
-        </script>
+    </script>
 
 
-    }
+}
 
 

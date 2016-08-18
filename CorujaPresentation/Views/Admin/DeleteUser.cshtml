@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "DeleteUser";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<section class="section section-gray">
+
+    <div class="container">
+        <h2 class="section-heading text-center">Excluir Usuário</h2>
+
+        <div class="row">
+
+        </div>
+
+        <div class="cleaner_h30"></div>
+
+    </div>
+
+
+    <p class="help-block">
+        @Html.ActionLink("Perfil", "RoleDetails", "Admin")
+    </p>
+    <p class="help-block">
+        @Html.ActionLink("Lista de Perfis", "RoleList", "Admin")
+    </p>
+
+
+
+</section>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

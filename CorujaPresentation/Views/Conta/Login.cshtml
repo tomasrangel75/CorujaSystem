@@ -27,7 +27,7 @@
                     <div style="padding: 20px">
 
                         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
+                        {
                             <fieldset>
 
                                 <div class="form-group input-group">
@@ -74,7 +74,7 @@
 
                             </fieldset>
 
-                    }
+                        }
 
                     </div>
 
@@ -86,13 +86,13 @@
         </div>
 
     </div>
-      
+
 
 
 </section>
 
 
-    
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
