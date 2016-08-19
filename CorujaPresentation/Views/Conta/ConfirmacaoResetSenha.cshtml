@@ -2,11 +2,37 @@
     ViewBag.Title = "Confirmação de Senha Redefinida";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
-<div>
-    <p>
-        Your password has been reset. Please @Html.ActionLink("Entrar", "Login", "Conta", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    </p>
-</div>
+
+<section id="ConfirmacaoReset" class="section section-gray">
+
+
+    <div class="container">
+
+        <h2 class="section-heading text-center">Conta Coruja</h2>
+
+        <div class="row centered-form">
+
+            <div class="panel-group">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">Verificar Senha</h3>
+                    </div>
+
+                    <p>
+                        Sua senha foi alterada. Click @Html.ActionLink("Entrar", "Login", "Conta", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                    </p>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>

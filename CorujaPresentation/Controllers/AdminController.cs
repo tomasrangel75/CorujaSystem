@@ -22,30 +22,18 @@ namespace CorujaPresentation.Controllers
             roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
         }
 
-        public ActionResult Index()
+
+        public ActionResult AdminCoruja()
         {
             return View();
         }
 
-        // Perfis ///////////////////////////////////////////
+              // Perfis ///////////////////////////////////////////
         public ActionResult RoleList()
         {
             var roles = roleManager.Roles.ToList();
             return View(roles);
-        }
-
-        public ActionResult RoleDetails(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            var role = roleManager.FindById(id);
-            if (role == null)
-            {
-                return HttpNotFound();
-            }
-            return View(role);
+            
         }
 
         public ActionResult CreateRole()
@@ -70,7 +58,7 @@ namespace CorujaPresentation.Controllers
             return RedirectToAction("RoleList");
         }
 
-        public ActionResult Delete(string id)
+        public ActionResult DeleteRole(string id)
         {
             if (id == null)
             {
@@ -84,7 +72,7 @@ namespace CorujaPresentation.Controllers
             return View(role);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeleteRole")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
@@ -94,26 +82,35 @@ namespace CorujaPresentation.Controllers
             return RedirectToAction("RoleList");
         }
 
-        //Usuários //////////////////////////////////////////
-        public ActionResult UserList()
+        public ActionResult RoleDetails(string id)
         {
-            var roles = roleManager.Roles.ToList();
-            return View(roles);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var role = roleManager.FindById(id);
+            if (role == null)
+            {
+                return HttpNotFound();
+            }
+            return View(role);
         }
 
-        public ActionResult UserDetails(string id)
-        {
-            var roles = roleManager.Roles.ToList();
-            return View(roles);
-        }
 
 
         //Usuários e Perfis ////////////////////////////////
-        public ActionResult DefineUserRoles(string id)
+
+        public ActionResult AddUserToRole(string id)
         {
             ViewBag.Name = new SelectList(roleManager.Roles.ToList(), "Name", "Name");
             var roles = roleManager.Roles.ToList();
             return View(roles);
+        }
+
+
+        public ActionResult DeleteUser(string id)
+        {
+            return View();
         }
 
 

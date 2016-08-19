@@ -264,6 +264,10 @@
       <DependentUpon>CorujaDb.mdf</DependentUpon>
     </Content>
     <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Content\AdminLTE.css" />
+    <Content Include="Content\AdminLTE.min.css" />
+    <Content Include="Content\AdminSkin-blue.css" />
+    <Content Include="Content\AdmSkin-blue.min.css" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-social.css" />
     <Content Include="Content\animate.min.css" />
@@ -278,7 +282,6 @@
     <Content Include="Content\CorujaStyle.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\CorujaImages\abd.jpg" />
     <Content Include="Content\CorujaImages\Adriana.png" />
     <Content Include="Content\CorujaImages\Ana Carolina.png" />
     <Content Include="Content\CorujaImages\avatar_92a6fd7367cc_96.png" />
@@ -312,6 +315,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Avaliacao\Views\web.config" />
+    <Content Include="Scripts\AdminApp.js" />
+    <Content Include="Scripts\AdminApp.min.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -376,11 +381,7 @@
     <Content Include="Views\Admin\RoleList.cshtml" />
     <Content Include="Views\Admin\RoleDetails.cshtml" />
     <Content Include="Views\Admin\CreateRole.cshtml" />
-    <Content Include="Views\Admin\Delete.cshtml" />
-    <Content Include="Views\Admin\UserList.cshtml" />
-    <Content Include="Views\Admin\UserDetails.cshtml" />
     <Content Include="Views\Admin\DefineUserRoles.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Conteudo\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -390,6 +391,11 @@
     <Content Include="Views\Home\Produtos.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\Testes.cshtml" />
+    <Content Include="Views\Admin\AdminCoruja.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\DeleteRole.cshtml" />
+    <Content Include="Views\Admin\DeleteUser.cshtml" />
+    <Content Include="Views\Admin\AddUserToRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">
