@@ -10,29 +10,20 @@
 
         <h2 class="section-heading text-center">Conta Coruja</h2>
 
-        <div class="row centered-form">
 
-            <div class="panel-group">
-
-                <div class="panel panel-default">
-
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">Confirmação</h3>
-                    </div>
-
-                    <p>
-                        Obrigado por confirmar seu Email. @Html.ActionLink("Entrar no espaço Coruja", "Login", "Conta", routeValues: null, htmlAttributes: new { id = "loginLink" })
-                    </p>
-
-
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <div class="alert-message alert-message-warning">
+                    <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
+                    <h4>
+                        Obrigado por confirmar seu Email. @Html.ActionLink("Entrar no espaço Coruja", "Login", "Conta", routeValues: null, htmlAttributes: new { @class = "a"})
+                    </h4>
 
                 </div>
-
             </div>
-
         </div>
-
 
     </div>
 
 </section>
+

@@ -44,6 +44,12 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
+        public ActionResult Basics()
+        {
+            return View();
+        }
+
+
     }
 
 }
