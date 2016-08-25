@@ -18,28 +18,28 @@
 
                     <div id="cadTitle">
 
-                        <h4>
+                        <h3>
                             <i class="glyphicon glyphicon-pencil">
                             </i>
                             Crie sua Conta Coruja
-                        </h4>
+                        </h3>
 
                     </div>
 
-                    <div id="cadBody" class="panel-body">
+                    <div class="panel-body">
 
                         @using (Html.BeginForm("Cadastro", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                         {
                             @Html.AntiForgeryToken()
 
 
-                            <div class="row">
+                            <div class="row cadSectionTitle">
                                 <div class="col-sm-12">
-                                    <span class="cadSubTitle">Dados Pessoais</span>
+                                    Dados Pessoais
                                 </div>
                             </div>
 
-                            <div id="rowPessoais" class="row">
+                            <div class="row cadSection">
 
                                 <div class="col-sm-12">
                                     
@@ -65,7 +65,7 @@
                                         @*DtNasc*@
                                         <div class="col-sm-6">
                                             @Html.LabelFor(m => m.BirthDate, new { htmlAttributes = new { @class = "" } })
-                                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Data de Nascimento" } })
+                                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-sm" } })
 
                                             @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
                                         </div>
@@ -83,7 +83,7 @@
                                         @*Celular*@
                                         <div class="col-sm-6">
                                             @Html.LabelFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "" } })
-                                            @Html.EditorFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Celular" } })
+                                            @Html.EditorFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm"} })
                                         </div>
 
                                         @*Tel Res.*@
@@ -120,13 +120,13 @@
 
                             @*=============================================================================*@
 
-                            <div class="row">
+                            <div class="row cadSectionTitle">
                                 <div class="col-sm-12">
-                                    <h3>Endereço</h3>
+                                    Endereço
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row cadSection">
 
                                 <div class="col-sm-12">
 
@@ -191,9 +191,9 @@
 
                             @*=============================================================================*@
 
-                            <div class="row">
+                            <div class="row cadSectionTitle">
                                 <div class="col-sm-12">
-                                    <h3>Dados da Conta</h3>
+                                    Dados da Conta
                                 </div>
                             </div>
 
@@ -204,55 +204,60 @@
                                     <div class="form-group">
 
                                         @*EMAIL*@
-                                        <div class="col-sm-8">
-
+                                        <div class="col-sm-6">
+                                         
                                             @Html.LabelFor(m => m.Email, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Email" } })
                                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                                            <small><label class="checkbox-inline">@Html.CheckBox("ReceiveNewsletter", false) Receber Newsletter?</label></small>
+                                            
                                         </div>
+
+                                        <div class="col-sm-6">
+                                            <small><label class="checkbox-inline" style="margin-top:35px">@Html.CheckBox("ReceiveNewsletter", false) Aceito receber Newsletter da Coruja</label></small>
+                                        </div>
+
                                     </div>
 
                                 </div>
 
                             </div>
 
-                            <div class="row">
+
+                            <div class="row cadSection">
 
                                 <div class="col-sm-12">
 
                                     <div class="form-group">
-                                        <div class="col-sm-8">
+                                        
+                                        <div class="col-sm-6" style="margin-top:12px">
                                             @Html.LabelFor(m => m.Password, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Senha" } })
                                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                         </div>
+                                                 
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="col-sm-8">
+
+                                        <div class="col-sm-6">
                                             @Html.LabelFor(m => m.ConfirmPassword, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.ConfirmPassword, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Confirmar Senha" } })
                                             @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                                         </div>
-                                   </div>
 
+                                        <div class="col-sm-6">
+                                                <button id="btnCad" type="submit" class="btn btn-primary">Criar conta</button>
+                                        </div>
+
+                                     </div>
+                     
                                 </div>
 
                             </div>
 
-                  
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <div class="col-sm-8">
-                                            <p>
-                                                <button type="submit" class="btn btn-primary pull-right">Criar conta</button>
-                                            </p>
-                                      </div>
-                                    </div>
-                                </div>
-                                </div>
+                
+                            
+
 
                         }
 
