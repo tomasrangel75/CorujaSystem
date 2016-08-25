@@ -30,13 +30,15 @@ namespace CorujaPresentation.Models
 
         public string AddressNumber { get; set; }
 
+        public string AddressDetail { get; set; }
+
         public string Nhood { get; set; }
 
         public string City { get; set; }
 
         public string State { get; set; }
 
-        public string Country { get; set; }
+        //public string Country { get; set; }
 
         public bool NewsLetter { get; set; } = true;
 

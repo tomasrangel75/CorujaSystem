@@ -35,8 +35,6 @@ a {
         outline: 0;
         color:#f0ad4e;
     }
-
-  
     
  .a {
     -webkit-transition: all ease 0.25s;
@@ -51,8 +49,6 @@ a {
         color:#f0ad4e;
         cursor:pointer;
     }
-   
-      
 
 /* ==========================================================================
    2. Typography
@@ -104,6 +100,23 @@ h2, .h2 {
 typography tables images buttons labels panels forms inputs toolTip
 
 /*#region COMMON */
+
+
+        .alert-message {
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 3px solid #eee;
+        }
+        
+        .alert-message h4 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        
+        .alert-message p:last-child {
+            margin-bottom: 0;
+        }
+        
 
 
 a.text-primary:hover {
@@ -806,8 +819,6 @@ a .social-icons {
 /*#endregion */
 
 
-
-
 /* ==========================================================================
    4. SECTIONS CUSTOM
 ========================================================================== */
@@ -1300,33 +1311,34 @@ button.btn-search {
 
 /*#endregion */
 
+
 /*#region     4.7 ======== SECTION LOGIN */
 
 #loginArea{
     
     -webkit-border-radius: 4px;
      border-radius: 4px;
+     border: solid 1px #DDDDDD !important;
      background-color:white;
      box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0px 1px 1px rgba(0,0,0,0.05)
 }
 
-
 #loginTitle {
 
-    padding: 30px; 
+    padding: 20px 8px 5px 8px; 
     text-align:center
 }
-
     #loginTitle h4{
-    
         border-bottom: 1px solid #c5c5c5;
-
 }
-    
+   
+#loginBody{
+    padding: 30px;
+}    
+     
 /*#endregion */
-
 
 /*#region     4.8 ======== SECTION CADASTRO */
 
@@ -1339,10 +1351,35 @@ button.btn-search {
     box-shadow: 0px 1px 1px rgba(0,0,0,0.05)
     }
 
-.hrCad {
-    margin-top: 20px;
-    margin-bottom: 20px;
+
+#cadTitle {
+
+    padding: 20px 8px 5px 8px; 
+    text-align:center
 }
+
+    #cadTitle h4{
+    
+        border-bottom: 1px solid #c5c5c5;
+
+}
+
+
+.cadSubTitle{
+    color:#B13919;
+    font-size:medium;
+}
+
+#cadBody{
+
+    padding:30px;
+}
+
+#rowPessoais{
+    margin-bottom:100px;
+
+}
+
 
 /*#endregion */
 
@@ -1414,21 +1451,4 @@ button.btn-search {
 
 /*#endregion */
 
-
-
-        .alert-message {
-            margin: 20px 0;
-            padding: 20px;
-            border-left: 3px solid #eee;
-        }
-        
-        .alert-message h4 {
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-        
-        .alert-message p:last-child {
-            margin-bottom: 0;
-        }
-        
     
