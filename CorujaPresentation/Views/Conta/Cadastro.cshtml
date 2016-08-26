@@ -4,7 +4,7 @@
 }
 
 <!-- CADASTRO	================================= -->
-<section id="Cadastro" class="section section-gray">
+<section id="CadastroSection" class="section section-gray">
 
     <div class="container">
 
@@ -12,7 +12,7 @@
 
         <div class="row centered-form">
 
-            <div class="col-sm-8 col-sm-offset-2">
+            <div class="col-sm-6 col-sm-offset-3">
 
                 <div class="panel panel-default">
 
@@ -42,20 +42,20 @@
                             <div class="row cadSection">
 
                                 <div class="col-sm-12">
-                                    
+
                                     <div class="form-group">
                                         @*Nome*@
                                         <div class="col-sm-6">
                                             @Html.LabelFor(m => m.FirstName, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Nome" } })
-                                        
+
                                             @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
                                         </div>
                                         @*Sobrenome*@
                                         <div class="col-sm-6">
                                             @Html.LabelFor(m => m.LastName, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Sobrenome" } })
-                                       
+
                                             @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
                                         </div>
 
@@ -63,59 +63,73 @@
 
                                     <div class="form-group">
                                         @*DtNasc*@
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             @Html.LabelFor(m => m.BirthDate, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-sm" } })
 
                                             @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
                                         </div>
-                                        @*Escolaridade*@
-                                        <div class="col-sm-6">
-                                            @Html.LabelFor(m => m.Graduation, new { htmlAttributes = new { @class = "" } })
-                                            @Html.EditorFor(m => m.Graduation, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Graduação" } })
 
-                                            @Html.ValidationMessageFor(m => m.Graduation, "", new { @class = "text-danger" })
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group">
-                                        @*Celular*@
-                                        <div class="col-sm-6">
-                                            @Html.LabelFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "" } })
-                                            @Html.EditorFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm"} })
-                                        </div>
-
-                                        @*Tel Res.*@
-                                        <div class="col-sm-6">
-                                            @Html.LabelFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "" } })
-                                            @Html.EditorFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Telefone" } })
-                                           
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group">
                                         @*Cpf*@
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-3">
                                             @Html.LabelFor(m => m.Cpf, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Cpf, new { htmlAttributes = new { Id = "Cpf", @class = "form-control input-sm", placeholder = "CPF" } })
-                                           
+
                                             @Html.ValidationMessageFor(m => m.Cpf, "", new { @class = "text-danger" })
                                         </div>
 
                                         @*RG*@
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-3">
                                             @Html.LabelFor(m => m.Rg, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Rg, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "RG" } })
 
                                             @Html.ValidationMessageFor(m => m.Rg, "", new { @class = "text-danger" })
                                         </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @*Celular*@
+                                        <div class="col-sm-3">
+                                            @Html.LabelFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Celular" } })
+                                        </div>
+
+                                        @*Tel Res.*@
+                                        <div class="col-sm-3">
+                                            @Html.LabelFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Telefone" } })
+
+                                        </div>
+                                        @*Escolaridade*@
+                                        <div class="col-sm-4">
+                                            @Html.LabelFor(m => m.Graduation, new { htmlAttributes = new { @class = "" } })
+                                            @*@Html.EditorFor(m => m.Graduation, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Graduação" } })*@
+
+                                            @Html.DropDownListFor(x => x.Graduation, new SelectListItem[]{
+                new SelectListItem() {Text = "Ensino Fundamental", Value="1"},
+                new SelectListItem() {Text = "Ensino Médio", Value="2"},
+                new SelectListItem() {Text = "Superior Incompleto", Value="3"},
+                new SelectListItem() {Text = "Superior Completo", Value="4"},
+                new SelectListItem() {Text = "Pós-Graduação", Value="5"},
+                new SelectListItem() {Text = "Mestrado", Value="6"},
+                new SelectListItem() {Text = "Doutorado", Value="7"},
+                new SelectListItem() {Text = "Superior em Andamento", Value="8"},
+                                       }, new { htmlAttributes = new { @class = "form-control" } })
+
+
+                                        </div>
+                                      
 
                                     </div>
 
-                                </div>
-                             
+
+                                    @*<div class="form-group">
+                                      
+
+                                    </div>*@
+
+                                    </div>
+
                             </div>
 
                             @*=============================================================================*@
@@ -133,47 +147,47 @@
                                     <div class="form-group">
 
                                         @*CEP*@
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-2">
                                             @Html.LabelFor(m => m.Cep, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Cep, new { htmlAttributes = new { Id = "Cep", @class = "form-control input-sm", placeholder = "CEP" } })
                                         </div>
 
-                                    </div>
-
-                                    <div class="form-group">
                                         @*ENDERECO*@
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-9">
                                             @Html.LabelFor(m => m.Address, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Address, new { htmlAttributes = new { Id = "Address", @class = "form-control input-sm", placeholder = "Endereço" } })
                                             @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
                                         </div>
 
-                                     </div>
-
+                                    </div>
+                               
                                     <div class="form-group">
                                         @*Numero*@
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-2">
                                             @Html.LabelFor(m => m.AddressNumber, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.AddressNumber, new { htmlAttributes = new { Id = "AddressNumber", @class = "form-control input-sm", placeholder = "Número" } })
                                         </div>
 
                                         @*Complemento*@
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-4">
                                             @Html.LabelFor(m => m.AddressDetail, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.AddressDetail, new { htmlAttributes = new { Id = "AddressDetail", @class = "form-control input-sm", placeholder = "Complemento" } })
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
                                         @*Bairro*@
                                         <div class="col-sm-5">
                                             @Html.LabelFor(m => m.Nhood, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Nhood, new { htmlAttributes = new { Id = "Nhood", @class = "form-control input-sm", placeholder = "Bairro" } })
                                         </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                    
                                         @*Cidade*@
                                         <div class="col-sm-5">
-                                           @Html.LabelFor(m => m.City, new { htmlAttributes = new { @class = "" } })
-                                           @Html.EditorFor(m => m.City, new { htmlAttributes = new { Id = "City", @class = "form-control input-sm", placeholder = "Cidade" } })
+                                            @Html.LabelFor(m => m.City, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.City, new { htmlAttributes = new { Id = "City", @class = "form-control input-sm", placeholder = "Cidade" } })
                                         </div>
 
                                         @*UF*@
@@ -200,19 +214,19 @@
                             <div class="row">
 
                                 <div class="col-sm-12">
-                        
+
                                     <div class="form-group">
 
                                         @*EMAIL*@
                                         <div class="col-sm-6">
-                                         
+
                                             @Html.LabelFor(m => m.Email, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Email" } })
                                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                                            
+
                                         </div>
 
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <small><label class="checkbox-inline" style="margin-top:35px">@Html.CheckBox("ReceiveNewsletter", false) Aceito receber Newsletter da Coruja</label></small>
                                         </div>
 
@@ -228,13 +242,13 @@
                                 <div class="col-sm-12">
 
                                     <div class="form-group">
-                                        
+
                                         <div class="col-sm-6" style="margin-top:12px">
                                             @Html.LabelFor(m => m.Password, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Senha" } })
                                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                         </div>
-                                                 
+
                                     </div>
 
                                     <div class="form-group">
@@ -245,18 +259,15 @@
                                             @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                                         </div>
 
-                                        <div class="col-sm-6">
-                                                <button id="btnCad" type="submit" class="btn btn-primary">Criar conta</button>
+                                        <div class="col-sm-5">
+                                            <button id="btnCad" type="submit" class="btn btn-primary">Criar conta</button>
                                         </div>
 
-                                     </div>
-                     
+                                    </div>
+
                                 </div>
 
                             </div>
-
-                
-                            
 
 
                         }

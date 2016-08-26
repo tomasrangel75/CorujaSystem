@@ -1336,7 +1336,16 @@ button.btn-search {
    
 #loginBody{
     padding: 30px;
-}    
+}  
+
+
+#LoginSection .form-control:hover  {
+    background-color: #FEFFEF;
+}
+
+#LoginSection .form-control:focus {
+    background-color: #FEFFEF;
+}  
      
 /*#endregion */
 
@@ -1349,6 +1358,14 @@ button.btn-search {
      box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
      box-shadow: 0px 1px 1px rgba(0,0,0,0.05)
+}
+
+#CadastroSection .form-control:hover  {
+    background-color: #FEFFEF;
+}
+
+#CadastroSection .form-control:focus {
+    background-color: #FEFFEF;
 }
 
 #cadTitle {

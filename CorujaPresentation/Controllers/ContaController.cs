@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CorujaPresentation.Models;
+using System.Collections.Generic;
 
 namespace CorujaPresentation.Controllers
 {
@@ -95,6 +96,9 @@ namespace CorujaPresentation.Controllers
         {
             return View();
         }
+
+        
+
 
         [HttpPost]
         [AllowAnonymous]

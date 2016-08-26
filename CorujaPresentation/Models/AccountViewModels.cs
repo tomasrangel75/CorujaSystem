@@ -110,7 +110,7 @@ namespace CorujaPresentation.Models
         public string Email { get; set; }
 
          [DataType(DataType.PhoneNumber)]
-        [Display(Name = "Telefone Residencial")]
+        [Display(Name = "Telefone")]
         public string PhoneNumber { get; set; }
 
         [DataType(DataType.PhoneNumber)]
