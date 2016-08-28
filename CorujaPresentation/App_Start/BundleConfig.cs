@@ -34,7 +34,8 @@ namespace CorujaPresentation
             "~/Scripts/jquery.inputmask/inputmask.extensions.js",
             "~/Scripts/jquery.inputmask/inputmask.date.extensions.js",
             //and other extensions you want to include
-            "~/Scripts/jquery.inputmask/inputmask.numeric.extensions.js"));
+            "~/Scripts/jquery.inputmask/inputmask.numeric.extensions.js",
+                      "~/Scripts/jquery.inputmask/inputmask.Coruja.js"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/coruja").Include(

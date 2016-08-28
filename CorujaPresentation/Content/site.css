@@ -35,8 +35,20 @@ a {
         outline: 0;
         color:#f0ad4e;
     }
-
-       
+    
+ .a {
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+    color: #D7451F;
+    text-decoration: underline;
+}   
+ 
+ .a:focus, a:hover {
+        text-decoration: none;
+        outline: 0;
+        color:#f0ad4e;
+        cursor:pointer;
+    }
 
 /* ==========================================================================
    2. Typography
@@ -85,9 +97,26 @@ h2, .h2 {
 /* ==========================================================================
    3. COMMON
 ========================================================================== */
-typography tables images buttons labels panels forms inputs toolTip
+/*typography tables images buttons labels panels forms inputs toolTip*/
 
 /*#region COMMON */
+
+
+        .alert-message {
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 3px solid #eee;
+        }
+        
+        .alert-message h4 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        
+        .alert-message p:last-child {
+            margin-bottom: 0;
+        }
+        
 
 
 a.text-primary:hover {
@@ -147,7 +176,7 @@ a.bg-primary:hover {
 
 /** BUTTON * ======================================== */
 .btn {
-    border-radius: 0;
+    border-radius: 4px;
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     line-height: 1.819;
@@ -378,6 +407,16 @@ img {
 
 /*#endregion */
 
+
+/*#region ERROR PAGES */
+#404{
+    font-size:xx-large;
+
+}
+
+
+
+/*#endregion */
 
 /*#endregion */
 
@@ -778,8 +817,6 @@ a .social-icons {
 
 
 /*#endregion */
-
-
 
 
 /* ==========================================================================
@@ -1274,26 +1311,88 @@ button.btn-search {
 
 /*#endregion */
 
+
 /*#region     4.7 ======== SECTION LOGIN */
 
-.help-block a:hover {
-	color: #666;
-    font-weight:800;
- 	text-decoration:underline;
+#loginArea{
+    
+    -webkit-border-radius: 4px;
+     border-radius: 4px;
+     border: solid 1px #DDDDDD;
+     background-color:white;
+     box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.05)
 }
-.wrapperLogin
-{
+
+#loginTitle {
+
+    padding: 20px 5px 5px 5px; 
+    text-align:center
+}
+    #loginTitle h4{
+        border-bottom: 1px solid #c5c5c5;
+}
    
+#loginBody{
+    padding: 30px;
+}  
 
 
+#LoginSection .form-control:hover  {
+    background-color: #FEFFEF;
 }
-/*#endregion */
 
+#LoginSection .form-control:focus {
+    background-color: #FEFFEF;
+}  
+     
+/*#endregion */
 
 /*#region     4.8 ======== SECTION CADASTRO */
 
+.cadArea{
+    -webkit-border-radius: 4px;
+     border-radius: 4px;
+     background-color:white;
+     box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+     box-shadow: 0px 1px 1px rgba(0,0,0,0.05)
+}
 
+#CadastroSection .form-control:hover  {
+    background-color: #FEFFEF;
+}
 
+#CadastroSection .form-control:focus {
+    background-color: #FEFFEF;
+}
+
+#cadTitle {
+    padding: 20px 20px 5px 20px; 
+    text-align:center
+}
+
+    #cadTitle h3{
+     border-bottom: 1px solid #c5c5c5;
+}
+    
+ .cadSectionTitle{
+    color:#ED4F37;
+    font-size:1.5em;
+    margin-bottom:12px;
+    }
+ 
+.cadSection{
+    margin-bottom:22px;
+}
+
+#btnCad{
+
+    margin-top:24px;
+    margin-left:95px;
+
+}
 
 /*#endregion */
 
@@ -1365,4 +1464,4 @@ button.btn-search {
 
 /*#endregion */
 
-
+    

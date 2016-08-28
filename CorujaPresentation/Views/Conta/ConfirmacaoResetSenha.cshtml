@@ -3,6 +3,7 @@
 }
 
 
+
 <section id="ConfirmacaoReset" class="section section-gray">
 
 
@@ -10,28 +11,18 @@
 
         <h2 class="section-heading text-center">Conta Coruja</h2>
 
-        <div class="row centered-form">
 
-            <div class="panel-group">
-
-                <div class="panel panel-default">
-
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">Verificar Senha</h3>
-                    </div>
-
-                    <p>
-                        Sua senha foi alterada. Click @Html.ActionLink("Entrar", "Login", "Conta", routeValues: null, htmlAttributes: new { id = "loginLink" })
-                    </p>
-
-
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <div class="alert-message alert-message-warning">
+                    <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
+                    <h4>
+                        Sua senha foi alterada. Click  @Html.ActionLink("Entrar", "Login", "Conta", routeValues: null, htmlAttributes: new { @class="a" })
+                    </h4>
 
                 </div>
-
             </div>
-
         </div>
-
 
     </div>
 

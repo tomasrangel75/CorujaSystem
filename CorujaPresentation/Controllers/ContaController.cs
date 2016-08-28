@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CorujaPresentation.Models;
+using System.Collections.Generic;
 
 namespace CorujaPresentation.Controllers
 {
@@ -96,6 +97,9 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
+        
+
+
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -120,10 +124,11 @@ namespace CorujaPresentation.Controllers
                     Cep = model.Cep,
                     Address = model.Address,
                     AddressNumber = model.AddressNumber,
+                    AddressDetail = model.AddressDetail,
                     Nhood = model.Nhood,
                     City = model.City,
                     State = model.State,
-                    Country = model.Country,
+                    //Country = model.Country,
                     NewsLetter = model.NewsLetter,
                     CellPhoneNumber = model.CellPhoneNumber
                 };

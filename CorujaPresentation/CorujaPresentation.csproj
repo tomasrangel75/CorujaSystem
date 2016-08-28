@@ -232,6 +232,7 @@
     <Compile Include="Controllers\ConteudoController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ApplicationUsersController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -275,6 +276,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CorujaImages\404.png" />
+    <Content Include="Content\CorujaImages\500.png" />
+    <Content Include="Content\CorujaImages\avatar2.png" />
     <Content Include="Content\CorujaImages\online.png" />
     <Content Include="Content\CorujaImages\Rodolfo.png" />
     <Content Include="Content\CorujaImages\Tomas.png" />
@@ -373,11 +377,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Conta\ShowMsg.cshtml" />
-    <Content Include="Views\ApplicationUsers\Create.cshtml" />
-    <Content Include="Views\ApplicationUsers\Delete.cshtml" />
-    <Content Include="Views\ApplicationUsers\Details.cshtml" />
-    <Content Include="Views\ApplicationUsers\Edit.cshtml" />
-    <Content Include="Views\ApplicationUsers\Index.cshtml" />
     <Content Include="Views\Admin\RoleList.cshtml" />
     <Content Include="Views\Admin\RoleDetails.cshtml" />
     <Content Include="Views\Admin\CreateRole.cshtml" />
@@ -396,6 +395,9 @@
     <Content Include="Views\Admin\DeleteRole.cshtml" />
     <Content Include="Views\Admin\DeleteUser.cshtml" />
     <Content Include="Views\Admin\AddUserToRole.cshtml" />
+    <Content Include="Views\Home\Basics.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\InternalServer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">

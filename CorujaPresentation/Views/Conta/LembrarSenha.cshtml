@@ -9,56 +9,50 @@
 
     <div class="container">
 
-        <h2 class="section-heading text-center">Esqueceu sua senha?</h2>
+        <h2 class="section-heading text-center">Conta Coruja</h2>
 
-        <div class="row centered-form">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 alert-message alert-message-warning">
+               
+             
+                    <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
+                    <h4>
+                        Esqueceu sua senha?
+                    </h4>
+                    @using (Html.BeginForm("LembrarSenha", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h5>Preencha seu Email abaixo</h5>
 
-            <div class="panel-group">
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
 
-                <div class="panel panel-default">
+                        <div class="col-xs-6">
 
-                    <div class="panel-body">
-
-                        @using (Html.BeginForm("LembrarSenha", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <h4>Preencher campo Email</h4>
-                            <hr />
-                            @Html.ValidationSummary("", new { @class = "text-danger" })
-
-                            <div class="col-xs-6">
-
-                                <div class="form-group">
-                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                                    <div class="col-md-10">
-                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                    </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" class="btn btn-default" value="Email Link" />
-                                    </div>
-                                </div>
-
                             </div>
-                        }
 
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" class="btn btn-primary" value="Enviar Email" />
+                                </div>
+                            </div>
 
-
-
-                    </div>
-
-                </div>
+                        </div>
+                    }
+               
 
             </div>
-
         </div>
-
-
+        
     </div>
 
 </section>
+
+
 
 
 @section Scripts {

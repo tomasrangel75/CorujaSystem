@@ -39,9 +39,9 @@ namespace CorujaPresentation.Models
         [Display(Name = "Nome")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "O campo SobreNome é obrigatório")]
+        [Required(ErrorMessage = "O campo Sobrenome é obrigatório")]
         [StringLength(30, ErrorMessage = "O {0} deve ter ao menos {2} caracteres.", MinimumLength = 3)]
-        [Display(Name = "SobreNome")]
+        [Display(Name = "Sobrenome")]
         public string LastName { get; set; }
 
         
@@ -72,10 +72,14 @@ namespace CorujaPresentation.Models
         [StringLength(50)]
         public string Address { get; set; }
 
-        [Display(Name = "Número / Complemento")]
+        [Display(Name = "Número")]
         [StringLength(20)]
         public string AddressNumber { get; set; }
-               
+
+        [Display(Name = "Complemento")]
+        [StringLength(20)]
+        public string AddressDetail { get; set; }
+
         [Display(Name = "Bairro")]
         [StringLength(20)]
         public string Nhood { get; set; }
@@ -88,15 +92,10 @@ namespace CorujaPresentation.Models
         [StringLength(2)]
         public string State { get; set; }
 
-        [Display(Name = "País")]
-        [StringLength(20)]
-        public string Country { get; set; }
-
-        //[DefaultValue(false)]
-        //public bool NewsLetter { get; set; }
-
-   
-        [DefaultValue(true)]
+        //[Display(Name = "País")]
+        //[StringLength(20)]
+        //public string Country { get; set; }
+     
         public bool NewsLetter { get; set; } = true;
 
         ////////////////////////////////////////////////////////

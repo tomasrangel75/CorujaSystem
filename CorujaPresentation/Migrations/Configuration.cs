@@ -41,11 +41,12 @@ namespace CorujaPresentation.Migrations
                 Graduation = "Malabarismo no sinal",
                 Cep = "05376050",
                 Address = "Rua Maso di Bianco",
-                AddressNumber = "102 / Barraco 5",
+                AddressNumber = "102",
+                AddressDetail = "Barraco dos Fundos",
                 Nhood = "Buraco fundo",
                 City = "São Paulo",
                 State = "SP",
-                Country = "BrasilVaronil",
+                //Country = "BrasilVaronil",
                 //NewsLetter = true,
                 //////////////////////////////////////////////////////////
 
@@ -64,7 +65,6 @@ namespace CorujaPresentation.Migrations
 
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             UserManager.AddToRole(userUpdate.Id, "Admin");
-
 
             SaveChanges(context);
 

@@ -10,22 +10,22 @@
 
     <div class="container">
 
-        <h2 class="section-heading text-center">Redefinir Senha</h2>
+        <h2 class="section-heading text-center">Conta Coruja</h2>
 
-        <div class="row centered-form">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 alert-message alert-message-warning">
 
-            <div class="panel-group">
+                   <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
+                    <h4>
+                        Redefinir sua senha
+                    </h4>
 
-                <div class="panel panel-default">
-
-                    <div class="panel-body">
-
+                    <div class="col-sm-12 col-md-12">
 
                         @using (Html.BeginForm("ResetSenha", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                         {
                             @Html.AntiForgeryToken()
-                            <h4>Redefinir sua senha</h4>
-                            <hr />
+                            <h5>Preencha os campos abaixo</h5>
                             @Html.ValidationSummary("", new { @class = "text-danger" })
                             @Html.HiddenFor(model => model.Code)
 
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
-                                        <input type="submit" class="btn btn-default" value="Reset" />
+                                        <input type="submit" class="btn btn-primary" value="Redefinir" />
                                     </div>
                                 </div>
 
@@ -58,16 +58,12 @@
 
                         }
 
-
                     </div>
-
-                </div>
+              
 
             </div>
-
         </div>
-
-
+      
     </div>
 
 </section>
