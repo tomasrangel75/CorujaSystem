@@ -47,7 +47,7 @@ namespace CorujaPresentation.Models
         
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
         public System.DateTime? BirthDate { get; set; }
 
 

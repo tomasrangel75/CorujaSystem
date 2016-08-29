@@ -94,10 +94,21 @@ namespace CorujaPresentation.Controllers
         [AllowAnonymous]
         public ActionResult Cadastro()
         {
+
+            SelectListItem[] lst = new SelectListItem[]{
+                                                new SelectListItem() {Text = "", Value="0"},
+                                                new SelectListItem() {Text = "Ensino Fundamental", Value="1"},
+                                                new SelectListItem() {Text = "Ensino Médio", Value="2"},
+                                                new SelectListItem() {Text = "Superior Incompleto", Value="3"},
+                                                new SelectListItem() {Text = "Superior Completo", Value="4"},
+                                                new SelectListItem() {Text = "Pós-Graduação", Value="5"},
+                                                new SelectListItem() {Text = "Mestrado", Value="6"},
+                                                new SelectListItem() {Text = "Doutorado", Value="7"},
+                                                new SelectListItem() {Text = "Superior em Andamento", Value="8"} };
+            ViewBag.Lst = lst;
             return View();
         }
 
-        
 
 
         [HttpPost]
@@ -151,7 +162,7 @@ namespace CorujaPresentation.Controllers
                 AddErrors(result);
             }
 
-           return View(model);
+            return View(model);
         }
 
         // /Account/ConfirmEmail
@@ -177,7 +188,7 @@ namespace CorujaPresentation.Controllers
 
             return callbackUrl;
         }
-      
+
         // /Account/ForgotPassword
         [AllowAnonymous]
         public ActionResult LembrarSenha()
@@ -202,12 +213,12 @@ namespace CorujaPresentation.Controllers
 
                 //For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 //Send an email with this link
-                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 await UserManager.SendEmailAsync(user.Id, "Reset Password", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">here</a>");
                 return RedirectToAction("ForgotPasswordConfirmation", "Account");
 
-                
+
             }
 
             // If we got this far, something failed, redisplay form
@@ -220,7 +231,7 @@ namespace CorujaPresentation.Controllers
         {
             return View();
         }
-      
+
         // /Account/ResetPassword
         [AllowAnonymous]
         public ActionResult ResetSenha(string code)
@@ -259,7 +270,7 @@ namespace CorujaPresentation.Controllers
         {
             return View();
         }
-      
+
         // /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -269,7 +280,7 @@ namespace CorujaPresentation.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-       protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
@@ -288,7 +299,7 @@ namespace CorujaPresentation.Controllers
 
             base.Dispose(disposing);
         }
-            
+
 
         #region Helpers
         // Used for XSRF protection when adding external logins

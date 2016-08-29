@@ -53,6 +53,7 @@ namespace CorujaPresentation
                        "~/Content/bootstrap-social.css",
                         "~/Content/bootstraptheme.css",
                          "~/Content/animate.css"
+              
                       ));
 
 

@@ -65,13 +65,12 @@
                                         @*DtNasc*@
                                         <div class="col-sm-4">
                                             @Html.LabelFor(m => m.BirthDate, new { htmlAttributes = new { @class = "" } })
-                                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-sm" } })
-
-                                            @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+                                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @type = "text", @class = "form-control input-sm" } })
+                                            @Html.ValidationMessageFor(m => m.BirthDate, "", new { @class = "text-danger" })
                                         </div>
 
                                         @*Cpf*@
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             @Html.LabelFor(m => m.Cpf, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Cpf, new { htmlAttributes = new { Id = "Cpf", @class = "form-control input-sm", placeholder = "CPF" } })
 
@@ -79,56 +78,41 @@
                                         </div>
 
                                         @*RG*@
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             @Html.LabelFor(m => m.Rg, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Rg, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "RG" } })
-
-                                            @Html.ValidationMessageFor(m => m.Rg, "", new { @class = "text-danger" })
+                                       
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         @*Celular*@
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             @Html.LabelFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Celular" } })
                                         </div>
 
                                         @*Tel Res.*@
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             @Html.LabelFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Telefone" } })
 
                                         </div>
+
+                                    </div>
+
+
+                                    <div class="form-group">
                                         @*Escolaridade*@
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-5">
                                             @Html.LabelFor(m => m.Graduation, new { htmlAttributes = new { @class = "" } })
-                                            @*@Html.EditorFor(m => m.Graduation, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "Graduação" } })*@
-
-                                            @Html.DropDownListFor(x => x.Graduation, new SelectListItem[]{
-                new SelectListItem() {Text = "Ensino Fundamental", Value="1"},
-                new SelectListItem() {Text = "Ensino Médio", Value="2"},
-                new SelectListItem() {Text = "Superior Incompleto", Value="3"},
-                new SelectListItem() {Text = "Superior Completo", Value="4"},
-                new SelectListItem() {Text = "Pós-Graduação", Value="5"},
-                new SelectListItem() {Text = "Mestrado", Value="6"},
-                new SelectListItem() {Text = "Doutorado", Value="7"},
-                new SelectListItem() {Text = "Superior em Andamento", Value="8"},
-                                       }, new { htmlAttributes = new { @class = "form-control" } })
-
-
+                                            @Html.DropDownListFor(x => x.Graduation, (SelectListItem[])ViewBag.Lst,new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                            
                                         </div>
-                                      
 
                                     </div>
 
-
-                                    @*<div class="form-group">
-                                      
-
-                                    </div>*@
-
-                                    </div>
+                                </div>
 
                             </div>
 
@@ -147,23 +131,23 @@
                                     <div class="form-group">
 
                                         @*CEP*@
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             @Html.LabelFor(m => m.Cep, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Cep, new { htmlAttributes = new { Id = "Cep", @class = "form-control input-sm", placeholder = "CEP" } })
                                         </div>
 
                                         @*ENDERECO*@
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-8">
                                             @Html.LabelFor(m => m.Address, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.Address, new { htmlAttributes = new { Id = "Address", @class = "form-control input-sm", placeholder = "Endereço" } })
-                                            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                                         
                                         </div>
 
                                     </div>
-                               
+
                                     <div class="form-group">
                                         @*Numero*@
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             @Html.LabelFor(m => m.AddressNumber, new { htmlAttributes = new { @class = "" } })
                                             @Html.EditorFor(m => m.AddressNumber, new { htmlAttributes = new { Id = "AddressNumber", @class = "form-control input-sm", placeholder = "Número" } })
                                         </div>
@@ -183,7 +167,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                    
+
                                         @*Cidade*@
                                         <div class="col-sm-5">
                                             @Html.LabelFor(m => m.City, new { htmlAttributes = new { @class = "" } })
