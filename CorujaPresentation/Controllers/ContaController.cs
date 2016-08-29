@@ -85,7 +85,7 @@ namespace CorujaPresentation.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Tentativa de login inválida");
                     return View(model);
             }
         }
@@ -108,8 +108,6 @@ namespace CorujaPresentation.Controllers
             ViewBag.Lst = lst;
             return View();
         }
-
-
 
         [HttpPost]
         [AllowAnonymous]
@@ -150,7 +148,7 @@ namespace CorujaPresentation.Controllers
                     // await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // Envia email de confirmação
-                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Account confirmation");
+                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirmação de Conta");
                     // Uncomment to debug locally 
                     //TempData["ViewBagLink"] = callbackUrl;
 
@@ -182,7 +180,7 @@ namespace CorujaPresentation.Controllers
             // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
             // Send an email with this link:
             string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
-            var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+            var callbackUrl = Url.Action("ConfirmEmail", "Conta", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
             await UserManager.SendEmailAsync(userID, subject, "Confirme sua conta clicando em <a href=\"" + callbackUrl + "\"></a>");
 
 
@@ -208,15 +206,15 @@ namespace CorujaPresentation.Controllers
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    return View("ConfirmacaoLembrarSenha");
                 }
 
                 //For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 //Send an email with this link
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await UserManager.SendEmailAsync(user.Id, "Reset Password", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">here</a>");
-                return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                var callbackUrl = Url.Action("ResetSenha", "Conta", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Reset de Senha", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">here</a>");
+                return RedirectToAction("ConfirmacaoLembrarSenha", "Conta");
 
 
             }
@@ -253,12 +251,12 @@ namespace CorujaPresentation.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ConfirmacaoResetSenha", "Conta");
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ConfirmacaoResetSenha", "Conta");
             }
             AddErrors(result);
             return View();

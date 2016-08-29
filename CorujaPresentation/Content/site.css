@@ -1298,14 +1298,27 @@ button.btn-search {
 /*#region     4.6 ======== SECTION FAQ */
 
 .panel-default > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #2E3436 0%, #2E3436 100%);
-  background-image:      -o-linear-gradient(top, #2E3436 0%, #2E3436 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#2E3436), to(#2E3436));
-  background-image:         linear-gradient(to bottom,#2E3436 0%, #2E3436 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2E3436', endColorstr='#2E3436', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #FCEFED 0%, #FCEFED 100%);
+  background-image:      -o-linear-gradient(top, #FCEFED 0%, #FCEFED 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FCEFED), to(#FCEFED));
+  background-image:         linear-gradient(to bottom,#FCEFED 0%, #FCEFED 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FCEFED', endColorstr='#FCEFED', GradientType=0);
   background-repeat: repeat-x;
-  color:whitesmoke;
+  background-color:blue;
+  color:black;
 }
+
+
+.imgAccordion {
+ background-image: url('CorujaImages/avatar2.png');
+ background-size: 24px 24px;
+ background-repeat: no-repeat;
+ width:24px;
+ height:24px;
+ float:left;
+ margin-right:5px;
+}
+
 
 
 /*#endregion */
@@ -1345,7 +1358,9 @@ button.btn-search {
 #LoginSection .form-control:focus {
     background-color: #FEFFEF;
 }  
-     
+  
+
+
 /*#endregion */
 
 /*#region     4.8 ======== SECTION CADASTRO */

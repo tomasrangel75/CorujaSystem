@@ -8,19 +8,19 @@ namespace CorujaPresentation.Models
 
     public class ForgotViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email obrigatório")]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email obrigatório")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Senha obrigatória")]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }
@@ -34,13 +34,13 @@ namespace CorujaPresentation.Models
         
         //Custom fields ////////////////////////////////////
 
-        [Required(ErrorMessage ="O campo Nome é obrigatório")]
-        [StringLength(30, ErrorMessage = "O {0} deve ter ao menos {2} caracteres.", MinimumLength = 3)]
+        [Required(ErrorMessage ="Nome obrigatório")]
+        [StringLength(30, ErrorMessage = "O {0} deve ter ao menos {2} caracteres", MinimumLength = 3)]
         [Display(Name = "Nome")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "O campo Sobrenome é obrigatório")]
-        [StringLength(30, ErrorMessage = "O {0} deve ter ao menos {2} caracteres.", MinimumLength = 3)]
+        [Required(ErrorMessage = "Sobrenome obrigatório")]
+        [StringLength(30, ErrorMessage = "O {0} deve ter ao menos {2} caracteres", MinimumLength = 3)]
         [Display(Name = "Sobrenome")]
         public string LastName { get; set; }
 
@@ -92,19 +92,15 @@ namespace CorujaPresentation.Models
         [StringLength(2)]
         public string State { get; set; }
 
-        //[Display(Name = "País")]
-        //[StringLength(20)]
-        //public string Country { get; set; }
-     
         public bool NewsLetter { get; set; } = true;
 
         ////////////////////////////////////////////////////////
 
         [Required]
-        [StringLength(50, ErrorMessage = "O {0} deve ter ao menos {2} caracteres.", MinimumLength = 3)]
+        [StringLength(50, ErrorMessage = "O {0} deve ter ao menos {2} caracteres", MinimumLength = 3)]
         public string Name { get; set; }
      
-        [Required(ErrorMessage = "O campo Email é obrigatório")]
+        [Required(ErrorMessage = "Email obrigatório")]
         [EmailAddress(ErrorMessage ="Email inválido")]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -119,34 +115,34 @@ namespace CorujaPresentation.Models
 
         ////////////////////////////////////////////////////////
 
-        [Required]
-        [StringLength(100, ErrorMessage = "A {0} deve ter ao menos {2} caracteres.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Senha obrigatória")]
+        [StringLength(100, ErrorMessage = "A {0} deve ter ao menos {2} caracteres", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar senha")]
-        [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não conferem.")]
+        [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não conferem")]
         public string ConfirmPassword { get; set; }
     }
 
     public class ResetPasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email obrigatório")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "A {0} deve ter ao menos {2} caracteres.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Senha obrigatória")]
+        [StringLength(100, ErrorMessage = "A {0} deve ter ao menos {2} caracteres", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Senha")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar senha")]
-        [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não conferem.")]
+        [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não conferem")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -154,7 +150,7 @@ namespace CorujaPresentation.Models
 
     public class ForgotPasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Email obrigatório")]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

@@ -476,3 +476,4 @@ C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.csproj.GenerateResource.Cache
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.dll
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.Migrations._4th.resources
