@@ -233,6 +233,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -257,6 +258,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Validation\CpfAttribute.cs" />
     <Compile Include="Models\Validation\Mod11.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -281,6 +283,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CorujaImages\404.png" />
     <Content Include="Content\CorujaImages\500.png" />
+    <Content Include="Content\CorujaImages\abd.jpg" />
     <Content Include="Content\CorujaImages\avatar2.png" />
     <Content Include="Content\CorujaImages\online.png" />
     <Content Include="Content\CorujaImages\Renata.png" />
@@ -435,6 +438,7 @@
     <Folder Include="Areas\Avaliacao\Controllers\" />
     <Folder Include="Areas\Avaliacao\Models\" />
     <Folder Include="Areas\Avaliacao\Views\Shared\" />
+    <Folder Include="Views\Manage\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <PropertyGroup>
