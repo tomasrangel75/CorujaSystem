@@ -24,7 +24,12 @@ namespace CorujaPresentation.Migrations
             {
                 RoleManager.Create(new IdentityRole("Admin"));
             }
-                      
+
+            if (RoleManager.RoleExists("Basico") == false)
+            {
+                RoleManager.Create(new IdentityRole("Basico"));
+            }
+
             // User
             var PasswordHash = new PasswordHasher();
 
@@ -47,7 +52,7 @@ namespace CorujaPresentation.Migrations
                 City = "São Paulo",
                 State = "SP",
                 //Country = "BrasilVaronil",
-                //NewsLetter = true,
+                NewsLetter = true,
                 //////////////////////////////////////////////////////////
 
                 UserName = "tomas@devtomas.com.br",

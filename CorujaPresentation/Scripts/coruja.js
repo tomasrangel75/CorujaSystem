@@ -17,3 +17,6 @@ $(document).on('click', '.navbar-collapse.collapse.in a:not(.dropdown-toggle)',
 
     }
     );
+
+
+

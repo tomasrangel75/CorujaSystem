@@ -22,16 +22,16 @@
                     @using (Html.BeginForm("LembrarSenha", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
-                        <h5>Preencha seu Email abaixo</h5>
 
-                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <h5>Preencha seu Email abaixo</h5>
 
                         <div class="col-xs-6">
 
                             <div class="form-group">
-                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-sm" })
+                                    @Html.ValidationSummary("", new { @class = "text-danger" })
                                 </div>
                             </div>
 

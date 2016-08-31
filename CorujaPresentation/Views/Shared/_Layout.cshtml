@@ -74,13 +74,8 @@
                         <li class="active">@Html.ActionLink("Conteúdo", "Index", "Conteudo", null, new { @class = "header" })</li>
 
                     </ul>
-
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li class="active">@Html.ActionLink(" Cadastre-se", "Cadastro", "Conta", null, new { @class = "glyphicon glyphicon-user" })</li>
-                        <li class="active">@Html.ActionLink(" Login", "Login", "Conta", null, new { @class = "glyphicon glyphicon-log-in" })</li>
-
-                    </ul>
-
+                    
+                    @Html.Partial("_LoginPartial")
                 </nav>
 
             </div>

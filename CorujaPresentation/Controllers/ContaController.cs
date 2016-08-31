@@ -85,7 +85,7 @@ namespace CorujaPresentation.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", "Tentativa de login inválida");
                     return View(model);
             }
         }
@@ -94,11 +94,20 @@ namespace CorujaPresentation.Controllers
         [AllowAnonymous]
         public ActionResult Cadastro()
         {
+
+            SelectListItem[] lst = new SelectListItem[]{
+                                                new SelectListItem() {Text = "", Value="0"},
+                                                new SelectListItem() {Text = "Ensino Fundamental", Value="1"},
+                                                new SelectListItem() {Text = "Ensino Médio", Value="2"},
+                                                new SelectListItem() {Text = "Superior Incompleto", Value="3"},
+                                                new SelectListItem() {Text = "Superior Completo", Value="4"},
+                                                new SelectListItem() {Text = "Pós-Graduação", Value="5"},
+                                                new SelectListItem() {Text = "Mestrado", Value="6"},
+                                                new SelectListItem() {Text = "Doutorado", Value="7"},
+                                                new SelectListItem() {Text = "Superior em Andamento", Value="8"} };
+            ViewBag.Lst = lst;
             return View();
         }
-
-        
-
 
         [HttpPost]
         [AllowAnonymous]
@@ -139,7 +148,7 @@ namespace CorujaPresentation.Controllers
                     // await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // Envia email de confirmação
-                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Account confirmation");
+                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirmação de Conta");
                     // Uncomment to debug locally 
                     //TempData["ViewBagLink"] = callbackUrl;
 
@@ -151,7 +160,7 @@ namespace CorujaPresentation.Controllers
                 AddErrors(result);
             }
 
-           return View(model);
+            return View(model);
         }
 
         // /Account/ConfirmEmail
@@ -171,13 +180,13 @@ namespace CorujaPresentation.Controllers
             // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
             // Send an email with this link:
             string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
-            var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+            var callbackUrl = Url.Action("ConfirmEmail", "Conta", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
             await UserManager.SendEmailAsync(userID, subject, "Confirme sua conta clicando em <a href=\"" + callbackUrl + "\"></a>");
 
 
             return callbackUrl;
         }
-      
+
         // /Account/ForgotPassword
         [AllowAnonymous]
         public ActionResult LembrarSenha()
@@ -197,17 +206,17 @@ namespace CorujaPresentation.Controllers
                 if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    return View("ConfirmacaoLembrarSenha");
                 }
 
                 //For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 //Send an email with this link
-                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await UserManager.SendEmailAsync(user.Id, "Reset Password", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">here</a>");
-                return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetSenha", "Conta", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Reset de Senha", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">here</a>");
+                return RedirectToAction("ConfirmacaoLembrarSenha", "Conta");
 
-                
+
             }
 
             // If we got this far, something failed, redisplay form
@@ -220,7 +229,7 @@ namespace CorujaPresentation.Controllers
         {
             return View();
         }
-      
+
         // /Account/ResetPassword
         [AllowAnonymous]
         public ActionResult ResetSenha(string code)
@@ -242,12 +251,12 @@ namespace CorujaPresentation.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ConfirmacaoResetSenha", "Conta");
             }
             var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction("ResetPasswordConfirmation", "Account");
+                return RedirectToAction("ConfirmacaoResetSenha", "Conta");
             }
             AddErrors(result);
             return View();
@@ -259,7 +268,7 @@ namespace CorujaPresentation.Controllers
         {
             return View();
         }
-      
+
         // /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -269,7 +278,7 @@ namespace CorujaPresentation.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-       protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
@@ -288,7 +297,7 @@ namespace CorujaPresentation.Controllers
 
             base.Dispose(disposing);
         }
-            
+
 
         #region Helpers
         // Used for XSRF protection when adding external logins

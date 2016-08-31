@@ -68,6 +68,6 @@ namespace CorujaPresentation.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<CorujaPresentation.Models.ApplicationUser> ApplicationUsers { get; set; }
+       
     }
 }
