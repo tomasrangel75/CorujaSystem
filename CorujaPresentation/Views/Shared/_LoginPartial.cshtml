@@ -1,23 +1,53 @@
 ﻿@using Microsoft.AspNet.Identity
+
+
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+    
+            <div class="container-fluid">
+
+                <div class="navbar-header" id="userIdArea">
+                    @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { @class= "userMailId", title = "Manage"  })
+                </div>
+
+                <div id ="logOffArea">
+                    <ul class="nav navbar-nav">
+
+                        <li id="logOffConta">
+                            @Html.ActionLink(" Perfil", "Perfil", "Conta", null, new { @class = "glyphicon glyphicon-user" })
+
+                            @*@Html.ActionLink(
+            linkText: " Conta",
+            actionName: "MinhaConta",
+            controllerName: "Conta",
+            routeValues: new { Id = User.Identity.GetUserId() },
+            htmlAttributes: null)*@
+
+                        </li>
+
+                        <li id="logOffSair">
+                            <a href="javascript:document.getElementById('logoutForm').submit()" class="glyphicon glyphicon-log-out">&nbsp;Sair</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+
+            </div>
+
+      
+
+
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
         <li class="active">@Html.ActionLink(" Cadastre-se", "Cadastro", "Conta", null, new { @class = "glyphicon glyphicon-user" })</li>
-        <li class="active">@Html.ActionLink(" Login", "Login", "Conta", null, new { @class = "glyphicon glyphicon-log-in" })</li>
+        <li class="active">@Html.ActionLink(" Entrar", "Login", "Conta", null, new { @class = "glyphicon glyphicon-log-in" })</li>
     </ul>
 }
 

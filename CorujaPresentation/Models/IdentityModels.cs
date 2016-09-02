@@ -11,12 +11,12 @@ namespace CorujaPresentation.Models
     public class ApplicationUser : IdentityUser
     {
         //Additional fields
- 
+
         public string FirstName { get; set; }
   
         public string LastName { get; set; }
 
-        public System.DateTime BirthDate { get; set; }
+        public System.DateTime? BirthDate { get; set; }
 
         public string Cpf { get; set; }
 
@@ -68,6 +68,6 @@ namespace CorujaPresentation.Models
             return new ApplicationDbContext();
         }
 
-       
+      
     }
 }

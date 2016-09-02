@@ -29,7 +29,7 @@ namespace CorujaPresentation
 
             email.Subject = message.Subject;
             email.Body = message.Body;
-
+        
             email.IsBodyHtml = true;
 
             using (var mailClient = new Gmail())

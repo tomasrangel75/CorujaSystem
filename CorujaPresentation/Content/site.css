@@ -84,6 +84,10 @@ h2, .h2 {
     color: #fff;
 }
 
+.input-sm{
+     font-size: 14px;
+}
+
 
 /* 2.2 Selection Color
 ---------------------------------------------------------------------------*/
@@ -1359,13 +1363,52 @@ button.btn-search {
     background-color: #FEFFEF;
 }  
   
+#userIdArea{
+       margin:10px 0 6px 0;padding:0;
+    }
 
+#logOffArea{
+    margin:0;
+    padding:0;
+}
+    #logOffArea  ul{
+    margin:0;
+    padding:0;
+}
+
+#logOffConta{
+     margin:0;
+    padding: 0 0.6em 0 0;
+}
+
+#logOffSair{
+     margin:0;
+    padding:0;
+}
+
+.userMailId:hover{
+    color:black;
+}
 
 /*#endregion */
 
 /*#region     4.8 ======== SECTION CADASTRO */
 
+@-webkit-keyframes autofill {
+    to {
+        color: #666;
+        background: transparent;
+    }
+}
 
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+#BirthDate{
+    font-size:14px;
+}
 
 .cadArea{
     -webkit-border-radius: 4px;
@@ -1395,10 +1438,8 @@ button.btn-search {
     
 #preenchimento{
     font-size:10px;
-    color:lightgray;
+    color:gray;
 }
-
-
 
  .cadSectionTitle{
     color:#ED4F37;
@@ -1420,7 +1461,7 @@ button.btn-search {
 #Graduation {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   display: block;
   width: 100%;
@@ -1462,10 +1503,41 @@ button.btn-search {
     font-style:normal;
     color:#EC725D; 
 }
+ 
 
 /*#endregion */
 
 
+/*#region     4.8 ======== SECTIONS CONTA */
+
+
+#LembrarSenha .form-control:hover{
+    background-color: #FEFFEF;
+}
+
+#LembrarSenha .form-control:focus{
+    background-color: #FEFFEF;
+}  
+
+
+#RedefinirSenha .form-control:hover{
+    background-color: #FEFFEF;
+}
+
+#RedefinirSenha .form-control:hover{
+    background-color: #FEFFEF;
+}  
+
+
+#AlterarSenha .form-control:hover{
+    background-color: #FEFFEF;
+}
+
+#AlterarSenha .form-control:focus{
+    background-color: #FEFFEF;
+}  
+
+/*#endregion */
 
 /** =======================================================*/
 

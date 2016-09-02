@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CorujaPresentation.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace CorujaPresentation.Controllers
 {
@@ -69,6 +70,7 @@ namespace CorujaPresentation.Controllers
         {
             if (!ModelState.IsValid)
             {
+              
                 return View(model);
             }
 
@@ -94,17 +96,7 @@ namespace CorujaPresentation.Controllers
         [AllowAnonymous]
         public ActionResult Cadastro()
         {
-
-            SelectListItem[] lst = new SelectListItem[]{
-                                                new SelectListItem() {Text = "", Value="0"},
-                                                new SelectListItem() {Text = "Ensino Fundamental", Value="1"},
-                                                new SelectListItem() {Text = "Ensino Médio", Value="2"},
-                                                new SelectListItem() {Text = "Superior Incompleto", Value="3"},
-                                                new SelectListItem() {Text = "Superior Completo", Value="4"},
-                                                new SelectListItem() {Text = "Pós-Graduação", Value="5"},
-                                                new SelectListItem() {Text = "Mestrado", Value="6"},
-                                                new SelectListItem() {Text = "Doutorado", Value="7"},
-                                                new SelectListItem() {Text = "Superior em Andamento", Value="8"} };
+            SelectListItem[] lst = GetLstGraduation();
             ViewBag.Lst = lst;
             return View();
         }
@@ -162,6 +154,93 @@ namespace CorujaPresentation.Controllers
 
             return View(model);
         }
+
+        //************************************************   
+
+        //PROFILE PAGE
+       
+        [AllowAnonymous]
+        public ActionResult Perfil()
+        {
+            return View();
+        }
+
+
+
+        // /Account/Edit
+    
+        [AllowAnonymous]
+        public ActionResult MinhaConta(int id)
+        {
+            SelectListItem[] lst = GetLstGraduation();
+            ViewBag.Lst = lst;
+            
+            var user = context.Users.First(u => u.Id.Equals(id.ToString()));
+            var model = new EditViewModel(user);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(model);
+        }
+        
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult MinhaConta(EditViewModel model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var currentUser = context.Users.First(u => u.Id.Equals(model.Id));
+
+                //context.SaveChanges();
+                //return RedirectToAction("Index");
+
+                currentUser.FirstName = model.FirstName;
+                currentUser.LastName = model.LastName;
+                currentUser.BirthDate = model.BirthDate;
+                currentUser.Cpf = model.Cpf;
+                currentUser.Rg = model.Rg;
+                currentUser.Graduation = model.Graduation;
+                currentUser.Cep = model.Cep;
+                currentUser.Address = model.Address;
+                currentUser.AddressNumber = model.AddressNumber;
+                currentUser.AddressDetail = model.AddressDetail;
+                currentUser.Nhood = model.Nhood;
+                currentUser.City = model.City;
+                currentUser.State = model.State;
+                currentUser.NewsLetter = model.NewsLetter;
+                currentUser.CellPhoneNumber = model.CellPhoneNumber;
+                currentUser.Email = model.Email;
+
+                var entry = context.Entry(currentUser);
+                context.Users.Attach(currentUser);
+                entry.State = EntityState.Modified;
+             
+            }
+  
+            return View(model);
+        }
+
+
+        private static SelectListItem[] GetLstGraduation()
+        {
+            return new SelectListItem[]{
+                                                new SelectListItem() {Text = "", Value="0"},
+                                                new SelectListItem() {Text = "Ensino Fundamental", Value="1"},
+                                                new SelectListItem() {Text = "Ensino Médio", Value="2"},
+                                                new SelectListItem() {Text = "Superior Incompleto", Value="3"},
+                                                new SelectListItem() {Text = "Superior Completo", Value="4"},
+                                                new SelectListItem() {Text = "Pós-Graduação", Value="5"},
+                                                new SelectListItem() {Text = "Mestrado", Value="6"},
+                                                new SelectListItem() {Text = "Doutorado", Value="7"},
+                                                new SelectListItem() {Text = "Superior em Andamento", Value="8"} };
+        }
+
+        //************************************************   
+
 
         // /Account/ConfirmEmail
         [AllowAnonymous]
@@ -268,6 +347,40 @@ namespace CorujaPresentation.Controllers
         {
             return View();
         }
+
+
+        //
+        // GET: /Conta/ChangePassword
+        public ActionResult AlterarSenha()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Conta/ChangePassword
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> AlterarSenha(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+            if (result.Succeeded)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                if (user != null)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                }
+                return RedirectToAction("Perfil", new { Message = "Senha Alterada com Sucesso" });
+            }
+            AddErrors(result);
+            return View(model);
+        }
+
+        
 
         // /Account/LogOff
         [HttpPost]
