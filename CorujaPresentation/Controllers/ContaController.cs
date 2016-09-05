@@ -70,7 +70,7 @@ namespace CorujaPresentation.Controllers
         {
             if (!ModelState.IsValid)
             {
-              
+
                 return View(model);
             }
 
@@ -96,8 +96,11 @@ namespace CorujaPresentation.Controllers
         [AllowAnonymous]
         public ActionResult Cadastro()
         {
-            SelectListItem[] lst = GetLstGraduation();
+            SelectList lst = GetLstGraduation();
             ViewBag.Lst = lst;
+            SelectList UfLst = GetUfs();
+            ViewBag.UfLst = UfLst;
+
             return View();
         }
 
@@ -158,24 +161,19 @@ namespace CorujaPresentation.Controllers
         //************************************************   
 
         //PROFILE PAGE
-       
-        [AllowAnonymous]
-        public ActionResult Perfil()
-        {
-            return View();
-        }
-
-
-
         // /Account/Edit
-    
+
         [AllowAnonymous]
-        public ActionResult MinhaConta(int id)
+        public ActionResult Dados()
         {
-            SelectListItem[] lst = GetLstGraduation();
+            SelectList lst = GetLstGraduation();
             ViewBag.Lst = lst;
-            
-            var user = context.Users.First(u => u.Id.Equals(id.ToString()));
+
+            SelectList UfLst = GetUfs();
+            ViewBag.UfLst = UfLst;
+
+            var currentUser = User.Identity.GetUserName().ToString();
+            var user = context.Users.First(u => u.UserName.Equals(currentUser));
             var model = new EditViewModel(user);
             if (user == null)
             {
@@ -183,21 +181,20 @@ namespace CorujaPresentation.Controllers
             }
             return View(model);
         }
-        
+
 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult MinhaConta(EditViewModel model)
+        public ActionResult Dados(EditViewModel model)
         {
 
             if (ModelState.IsValid)
             {
+
                 var currentUser = context.Users.First(u => u.Id.Equals(model.Id));
 
-                //context.SaveChanges();
-                //return RedirectToAction("Index");
-
+                currentUser.UserName = model.Email;
                 currentUser.FirstName = model.FirstName;
                 currentUser.LastName = model.LastName;
                 currentUser.BirthDate = model.BirthDate;
@@ -218,26 +215,68 @@ namespace CorujaPresentation.Controllers
                 var entry = context.Entry(currentUser);
                 context.Users.Attach(currentUser);
                 entry.State = EntityState.Modified;
-             
+                context.SaveChanges();
+
+                return View("Index");
+
             }
-  
-            return View(model);
+
+
+            ViewBag.errorMessage = "Erro ao atualizar dados";
+            return View("ShowMsg");
+
         }
 
 
-        private static SelectListItem[] GetLstGraduation()
+        private static SelectList GetLstGraduation()
         {
-            return new SelectListItem[]{
-                                                new SelectListItem() {Text = "", Value="0"},
-                                                new SelectListItem() {Text = "Ensino Fundamental", Value="1"},
-                                                new SelectListItem() {Text = "Ensino Médio", Value="2"},
-                                                new SelectListItem() {Text = "Superior Incompleto", Value="3"},
-                                                new SelectListItem() {Text = "Superior Completo", Value="4"},
-                                                new SelectListItem() {Text = "Pós-Graduação", Value="5"},
-                                                new SelectListItem() {Text = "Mestrado", Value="6"},
-                                                new SelectListItem() {Text = "Doutorado", Value="7"},
-                                                new SelectListItem() {Text = "Superior em Andamento", Value="8"} };
+
+            var GradLst = new SelectList(new[] { "", "Ensino Fundamental", "Ensino Médio", "Superior Incompleto", "Superior Completo", "Pós-Graduação", "Mestrado", "Doutorado", "Superior em Andamento" });
+
+            return GradLst;
+
         }
+
+
+        private static SelectList GetUfs()
+        {
+
+            var UfLst = new SelectList(new[] {
+                "",
+                "AC",
+                "AL",
+"AP",
+"AM",
+"BA",
+"CE",
+"DF",
+"ES",
+"GO",
+"MA",
+"MT",
+"MS",
+"MG",
+"PA",
+"PB",
+"PR",
+"PE",
+"PI",
+"RJ",
+"RN",
+"RS",
+"RO",
+"RR",
+"SC",
+"SP",
+"SE",
+"TO"
+
+            });
+
+            return UfLst;
+
+        }
+
 
         //************************************************   
 
@@ -349,7 +388,8 @@ namespace CorujaPresentation.Controllers
         }
 
 
-        //
+        //Alterar Senha ***********************************  
+
         // GET: /Conta/ChangePassword
         public ActionResult AlterarSenha()
         {
@@ -374,13 +414,16 @@ namespace CorujaPresentation.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
-                return RedirectToAction("Perfil", new { Message = "Senha Alterada com Sucesso" });
+                return RedirectToAction("Index", new { Message = "Senha Alterada com Sucesso" });
             }
+
             AddErrors(result);
+
             return View(model);
         }
 
-        
+
+        //************************************************   
 
         // /Account/LogOff
         [HttpPost]

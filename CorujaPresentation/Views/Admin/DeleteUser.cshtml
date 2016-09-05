@@ -1,9 +1,8 @@
-﻿
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityUser
 @{
     ViewBag.Title = "DeleteUser";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
 
 <section class="section section-gray">
 
@@ -11,6 +10,38 @@
         <h2 class="section-heading text-center">Excluir Usuário</h2>
 
         <div class="row">
+
+            <div>
+
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Excluir" class="btn btn-default" /> |
+                    </div>
+                }
+            </div>
 
         </div>
 
@@ -20,10 +51,10 @@
 
 
     <p class="help-block">
-        @Html.ActionLink("Perfil", "RoleDetails", "Admin")
+        @Html.ActionLink("RoleManager", "RoleManage", "Admin")
     </p>
     <p class="help-block">
-        @Html.ActionLink("Lista de Perfis", "RoleList", "Admin")
+        @Html.ActionLink("Lista de Usuários", "ListOfUsers", "Admin")
     </p>
 
 

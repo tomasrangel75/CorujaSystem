@@ -46,7 +46,7 @@ namespace CorujaPresentation.Models
 
         
         [Display(Name = "Data de Nascimento")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date,ErrorMessage = "O formato da data deve ser dd/mm/yyyy")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
         public System.DateTime? BirthDate { get; set; }
 
@@ -129,8 +129,6 @@ namespace CorujaPresentation.Models
 
     public class EditViewModel
     {
-
-        public EditViewModel() { }
         
         public EditViewModel(ApplicationUser user)
         {
@@ -157,6 +155,8 @@ namespace CorujaPresentation.Models
 
         public string Id { get; set; }
 
+        public string UserName { get; set; }
+
         [Required(ErrorMessage = "Nome obrigatório")]
         [StringLength(30, ErrorMessage = "O {0} deve ter ao menos {2} caracteres", MinimumLength = 3)]
         [Display(Name = "Nome")]
@@ -169,7 +169,7 @@ namespace CorujaPresentation.Models
 
 
         [Display(Name = "Data de Nascimento")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date, ErrorMessage = "O formato da data deve ser dd/mm/yyyy")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
         public System.DateTime? BirthDate { get; set; }
 

@@ -18,15 +18,11 @@
                     <ul class="nav navbar-nav">
 
                         <li id="logOffConta">
-                            @Html.ActionLink(" Perfil", "Perfil", "Conta", null, new { @class = "glyphicon glyphicon-user" })
-
-                            @*@Html.ActionLink(
-            linkText: " Conta",
-            actionName: "MinhaConta",
-            controllerName: "Conta",
-            routeValues: new { Id = User.Identity.GetUserId() },
-            htmlAttributes: null)*@
-
+                            <a class="dropdown-toggle header glyphicon glyphicon-user" data-toggle="dropdown" href="#"> Perfil<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Meus Dados", "Dados", "Conta", null, new { @class = "header" })</li>
+                                <li>@Html.ActionLink("Alterar Senha", "AlterarSenha", "Conta", null, new { @class = "header" })</li>
+                            </ul>
                         </li>
 
                         <li id="logOffSair">

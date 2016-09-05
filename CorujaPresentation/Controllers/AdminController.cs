@@ -28,34 +28,30 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
-              // Perfis ///////////////////////////////////////////
-        public ActionResult RoleList()
+        // Perfis ///////////////////////////////////////////
+        public ActionResult Roles()
         {
             var roles = roleManager.Roles.ToList();
             return View(roles);
-            
-        }
 
-        public ActionResult CreateRole()
-        {           
-            var role = new IdentityRole();
-            return View(role);
         }
-
+       
         [HttpPost]
-        public ActionResult CreateRole(IdentityRole newRole)
+        public ActionResult CreateRole(string newwRoleName)
         {
+            var _newRoleName = newwRoleName;
             if (ModelState.IsValid)
             {
-              
-                if (roleManager.RoleExists(newRole.Name) == false)
+
+                if (roleManager.RoleExists(_newRoleName) == false)
                 {
-                    roleManager.Create(newRole);
+                    var role = new IdentityRole(_newRoleName);
+                    roleManager.Create(role);
                 }
                 db.SaveChanges();
-                
+
             }
-            return RedirectToAction("RoleList");
+            return RedirectToAction("Roles");
         }
 
         public ActionResult DeleteRole(string id)
@@ -79,26 +75,45 @@ namespace CorujaPresentation.Controllers
             var role = roleManager.FindById(id);
             roleManager.Delete(role);
             db.SaveChanges();
-            return RedirectToAction("RoleList");
+            return RedirectToAction("Roles");
         }
 
-        public ActionResult RoleDetails(string id)
+        /// //////////////////////////////////////////////////////////////
+
+        public ActionResult ListOfUsers(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            var role = roleManager.FindById(id);
-            if (role == null)
-            {
-                return HttpNotFound();
-            }
-            return View(role);
+
+
+            return View();
         }
+
+        //[HttpPost]
+        //	public ActionResult ListOfUsersAction(string id)
+        //	{
+        //			var role = new IdentityRole();
+        //		var users = role.Users.ToList();
+
+
+        //		RedirectToAction("RoleManager");
+        //	}
 
 
 
         //Usuários e Perfis ////////////////////////////////
+
+        [ActionName("DeleteUser")]
+        public ActionResult DeleteUserFromRole(string id)
+        {
+            return View();
+        }
+
+        [ActionName("DeleteUser")]
+        [HttpPost]
+        public ActionResult DeleteUserFromRoleConfirm(string id)
+        {
+            return View();
+        }
+
 
         public ActionResult AddUserToRole(string id)
         {
@@ -107,11 +122,6 @@ namespace CorujaPresentation.Controllers
             return View(roles);
         }
 
-
-        public ActionResult DeleteUser(string id)
-        {
-            return View();
-        }
 
 
         protected override void Dispose(bool disposing)
