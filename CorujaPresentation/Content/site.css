@@ -1302,13 +1302,12 @@ button.btn-search {
 /*#region     4.6 ======== SECTION FAQ */
 
 .panel-default > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #00C0EF 0%, #00C0EF 100%);
-  background-image:      -o-linear-gradient(top, #00C0EF 0%, #00C0EF 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00C0EF), to(#00C0EF));
-  background-image:         linear-gradient(to bottom,#00C0EF 0%, #00C0EF 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00C0EF', endColorstr='#00C0EF', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #DCDCDC 0%, #FFFFF 100%);
+  background-image:      -o-linear-gradient(top, #DCDCDC 0%, #FFFFF 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#DCDCDC), to(#FFFFF));
+  background-image:         linear-gradient(to bottom,#DCDCDC 0%, #FFFFF 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DCDCDC', endColorstr='#FFFFF', GradientType=0);
   background-repeat: repeat-x;
-  background-color:blue;
   color:black;
 }
 
@@ -1604,4 +1603,6 @@ input:-webkit-autofill {
 
 /*#endregion */
 
-    
+   
+
+ 

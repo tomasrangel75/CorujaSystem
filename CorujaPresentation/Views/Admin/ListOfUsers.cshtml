@@ -1,38 +1,38 @@
-﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityUser>
+﻿@model IQueryable<CorujaPresentation.Models.RoleUsers>
 @{
     ViewBag.Title = "ListOfUsers";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <div>
-    <h2>model.name => Lista de Usuários</h2>
+    <h2>Lista de Usuários</h2>
 </div>
 <div>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => Model.Name)
+                Email
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => Model.Name)
+                Nome
             </th>
             <th></th>
 
         </tr>
 
-        @foreach (var item in Model.Users)
+        @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Id)
+                    @Html.DisplayFor(modelItem => item.UserMail)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.UserName)
                 </td>
 
                 <td>
-                    @Html.ActionLink("Excluir", "DeleteUser", "Admin", new { id = item.Id })
+                    @Html.ActionLink("Info", "SysUserDetails", "Admin", new { userEmail = item.UserMail })
                 </td>
 
             </tr>}

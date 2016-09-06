@@ -18,6 +18,11 @@
 
         <div class="row">
 
+            <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
+            <h4>
+                Admin
+            </h4>
+
             <div class="col-sm-12">
 
                 <h4 style="border-bottom: 1px solid #c5c5c5;">
@@ -34,35 +39,30 @@
 
             <div class="col-sm-4" style="padding: 20px">
 
-                @using (Html.BeginForm("CreateRole", "Admin", FormMethod.Post, new { @class = "", role = "form" }))
-                {
+                    <form action="~/Admin/CreateRole" method="post" class="" role="form">
 
-                    @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            Nome do Perfil
+                            <input id="txtRoleName" name="Name" type="text" class="form-control" required />
+                        </div>
 
+                        <div class="form-group">
+                            
+                            <input type="submit" class="btn btn-info btn-primary" value="Criar Perfil" />
+                        </div>
 
-
-                    <div class="form-group">
-                        Nome do Perfil
-                        <input id="txtName" name="newRoleName" type="text" class="form-control input-sm" />
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-info btn-primary" value="Criar Perfil" />
-                    </div>
-
-                }
-
+                    </form>
+              
                 <div class="cleaner_h30"></div>
             </div>
 
         </div>
 
-
         <div class="row">
 
-            <div id="result" class="col-sm-12">
-
-            </div>
+            <div id="result" class="col-sm-6">
+                <p class="alert-info">@TempData["ResultMessage"]</p>
+           </div>
 
         </div>
 
@@ -74,7 +74,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="example2" class="table table-bordered table-hover">
+                        <table id="example2" class="table table-row table-hover">
                             <thead>
                         
                                 <tr>
@@ -92,9 +92,16 @@
                                     <td>
                                         @item.Name
                                     </td>
-                                    <td>@Html.ActionLink("Users", "ListOfUsers", "Admin", new { id = item.Id }, new { @class= "a" })</td>
-                                    <td>@Html.ActionLink("Excluir", "DeleteRole", "Admin", new { id = item.Id }, new { @class = "a" })</td>
-
+                                   
+                                    <td>
+                                        <small class="label label-info" ><a style="color:aliceblue"  href="~/Admin/ListOfUsers?roleName=@item.Name">Users</a></small>
+                                    </td>
+                                   
+                                    <td>
+                                            <small onclick="return confirm('Confirmar exclusão?')" class="label label-danger" ><a style="color:aliceblue" href="~/Admin/DeleteRole?id=@item.Id">Excluir</a></small>
+                      
+                                    </td>
+                                   
                                 </tr>
                          }
                             </tbody>

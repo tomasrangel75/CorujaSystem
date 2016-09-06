@@ -1,0 +1,88 @@
+﻿
+@model  IEnumerable<CorujaPresentation.Models.ApplicationUser>
+@{
+    ViewBag.Title = "SysUsers";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!-- 	================================= -->
+<div class="content-wrapper" style="margin-left:0">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Usuários do Sistema
+        </h1>
+
+    </section>
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="row">
+
+            <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
+            <h4>
+                Lista
+            </h4>
+
+            <div class="col-sm-12">
+
+                <table id="example2" class="table table-row table-hover">
+                    <thead>
+
+                        <tr>
+
+                            <th>Nome</th>
+                            <th>Sobrenome</th>
+                            <th>Email</th>
+
+                            <th>Detalhes</th>
+                            
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.FirstName
+                                </td>
+
+                                <td>
+                                    @item.LastName
+                                </td>
+                                <td>
+                                    @item.Email
+                                </td>
+
+
+                                <td>
+                                    <small class="label label-info"><a style="color:aliceblue" href="~/Admin/SysUserDetails?userEmail=@item.Email">Info</a></small>
+                                </td>
+                              
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        @*<tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>*@
+                    </tfoot>
+                </table>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    
+     </section>
+
+</div>
