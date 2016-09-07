@@ -37,9 +37,6 @@
                                 <div class="col-sm-12">
                                     DadosPessoais
                                 </div>
-                           
-                          
-                                 
                                 
                             </div>
 
@@ -107,13 +104,13 @@
                                         </div>
 
                                     </div>
-
+                                   
 
                                     <div class="form-group">
                                         @*Escolaridade*@
                                         <div class="col-sm-6">
                                             @Html.LabelFor(m => m.Graduation, new { htmlAttributes = new { @class = "" } })
-                                            @Html.DropDownListFor(x => x.Graduation, (SelectListItem[])ViewBag.Lst,new { htmlAttributes = new { @class = "form-control input-sm" }})
+                                            @Html.DropDownListFor(x => x.Graduation, (SelectList)ViewBag.Lst,new { htmlAttributes = new { @class = "form-control input-sm" }})
                                             
                                         </div>
 
@@ -184,7 +181,10 @@
                                         @*UF*@
                                         <div class="col-sm-2">
                                             @Html.LabelFor(m => m.State, new { htmlAttributes = new { @class = "" } })
-                                            @Html.EditorFor(m => m.State, new { htmlAttributes = new { Id = "State", @class = "form-control input-sm"} })
+                                            @Html.DropDownListFor(x => x.State, (SelectList)ViewBag.UfLst, new { Id = "State", htmlAttributes = new { @class = "form-control input-sm" } })
+                                        
+                                            
+
                                         </div>
 
                                     </div>
@@ -198,7 +198,7 @@
 
                             <div class="row cadSectionTitle">
                                 <div class="col-sm-12">
-                                    Dados da Conta
+                                    Dados de Acesso
                                 </div>
                             </div>
 
@@ -252,13 +252,14 @@
                                             @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                                         </div>
 
-                                        <div class="col-sm-5">
-                                            <button id="btnCad" type="submit" class="btn btn-primary">Criar conta</button>
+                                        <div class="col-sm-4">
+                                            <button id="btnCad" type="submit" class="btn btn-primary" style="margin-left:50px">Criar conta</button>
                                         </div>
 
                                     </div>
 
                                     <div class="form-group">
+
                                     <div class="col-sm-12 pull-left">
                                         <small>
                                             <i class="asteriskCadastro">*</i> <span id="preenchimento">Preenchimento Obrigatório</span>
@@ -286,14 +287,6 @@
     </div>
 
 </section>
-
-
-
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/inputmask")
 
 
     <script type="text/javascript">

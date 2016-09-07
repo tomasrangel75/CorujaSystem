@@ -388,9 +388,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Conta\ShowMsg.cshtml" />
-    <Content Include="Views\Admin\RoleList.cshtml" />
-    <Content Include="Views\Admin\RoleDetails.cshtml" />
-    <Content Include="Views\Admin\CreateRole.cshtml" />
+    <Content Include="Views\Admin\Roles.cshtml" />
     <Content Include="Views\Admin\DefineUserRoles.cshtml" />
     <Content Include="Views\Conteudo\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -401,18 +399,19 @@
     <Content Include="Views\Home\Produtos.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\Testes.cshtml" />
-    <Content Include="Views\Admin\AdminCoruja.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Admin\DeleteRole.cshtml" />
-    <Content Include="Views\Admin\DeleteUser.cshtml" />
     <Content Include="Views\Admin\AddUserToRole.cshtml" />
     <Content Include="Views\Home\Basics.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\InternalServer.cshtml" />
-    <Content Include="Views\Conta\MinhaConta.cshtml" />
+    <Content Include="Views\Conta\Dados.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Conta\Perfil.cshtml" />
     <Content Include="Views\Conta\AlterarSenha.cshtml" />
+    <Content Include="Views\Admin\ListOfUsers.cshtml" />
+    <Content Include="Views\Admin\SysUsers.cshtml" />
+    <Content Include="Views\Admin\SysUserDetails.cshtml" />
+    <Content Include="Views\Admin\AdminCoruja.cshtml" />
+    <Content Include="Views\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">
