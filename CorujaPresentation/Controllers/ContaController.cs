@@ -111,14 +111,24 @@ namespace CorujaPresentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser
+
+                //Select max(idUser) + 1 from AspNetUsers
+                var maxIdUser = (from u in context.Users
+                                 orderby u.IdUser descending
+                                 select u).Take(1);
+                var newIdUser = Convert.ToInt32(maxIdUser) + 1;
+
+               var user = new ApplicationUser
                 {
+
                     UserName = model.Email,
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
                     SecurityStamp = Guid.NewGuid().ToString(),
 
                     //Additional Fields
+                    IdUser = newIdUser,
+                    RegisterDate = DateTime.Now,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     BirthDate = Convert.ToDateTime(model.BirthDate),
@@ -132,7 +142,6 @@ namespace CorujaPresentation.Controllers
                     Nhood = model.Nhood,
                     City = model.City,
                     State = model.State,
-                    //Country = model.Country,
                     NewsLetter = model.NewsLetter,
                     CellPhoneNumber = model.CellPhoneNumber
                 };
@@ -192,9 +201,10 @@ namespace CorujaPresentation.Controllers
             if (ModelState.IsValid)
             {
 
-                var currentUser = context.Users.First(u => u.Id.Equals(model.Id));
+                var currentUser = context.Users.First(u => u.IdUser == model.IdUser);
 
                 currentUser.UserName = model.Email;
+                currentUser.UpdateDate = DateTime.Now;
                 currentUser.FirstName = model.FirstName;
                 currentUser.LastName = model.LastName;
                 currentUser.BirthDate = model.BirthDate;
@@ -243,34 +253,8 @@ namespace CorujaPresentation.Controllers
 
             var UfLst = new SelectList(new[] {
                 "",
-                "AC",
-                "AL",
-"AP",
-"AM",
-"BA",
-"CE",
-"DF",
-"ES",
-"GO",
-"MA",
-"MT",
-"MS",
-"MG",
-"PA",
-"PB",
-"PR",
-"PE",
-"PI",
-"RJ",
-"RN",
-"RS",
-"RO",
-"RR",
-"SC",
-"SP",
-"SE",
-"TO"
-
+                "AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ",
+                "RN","RS","RO","RR","SC","SP","SE","TO"
             });
 
             return UfLst;

@@ -478,3 +478,5 @@ C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.pdb
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.Migrations._4th.resources
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.Migrations._5th.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.Migrations._6th.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.Migrations._7th.resources

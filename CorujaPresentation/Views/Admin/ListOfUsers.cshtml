@@ -17,6 +17,12 @@
             <th>
                 Nome
             </th>
+
+            <th>
+                Data de Cadastro
+            </th>
+
+
             <th></th>
 
         </tr>
@@ -32,7 +38,11 @@
                 </td>
 
                 <td>
-                    @Html.ActionLink("Info", "SysUserDetails", "Admin", new { userEmail = item.UserMail })
+                    @Html.DisplayFor(modelItem => item.RegisterDate)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Info", "SysUserDetails", "Admin", new { IdUser = item.UserMail })
                 </td>
 
             </tr>}

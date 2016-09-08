@@ -15,7 +15,7 @@ namespace CorujaPresentation.Controllers
 
         private ApplicationDbContext db;
         private RoleManager<IdentityRole> roleManager;
-
+     
         public AdminController()
         {
             db = new ApplicationDbContext();
@@ -88,7 +88,7 @@ namespace CorujaPresentation.Controllers
                        from roleUsers in db.Users
                        orderby roleUsers.FirstName, roleUsers.LastName
                        where roleUsers.Roles.Any(r => r.RoleId.Equals(roleId))
-                       select new RoleUsers { UserMail = roleUsers.Email, UserName = roleUsers.FirstName + " " + roleUsers.LastName };
+                       select new RoleUsers { UserMail = roleUsers.Email, UserName = roleUsers.FirstName + " " + roleUsers.LastName, RegisterDate = roleUsers.RegisterDate };
 
             return View(allUsers);
 
