@@ -38,6 +38,8 @@ namespace CorujaPresentation.Migrations
             {
                 // Add the following so our Seed data is complete:
                 //Custom Fields //////////////////////////////////////////
+                IdUser = 1,
+                RegisterDate = DateTime.Now,
                 FirstName = "Tomás",
                 LastName = "Rangel",
                 BirthDate = Convert.ToDateTime("10/05/1975"),

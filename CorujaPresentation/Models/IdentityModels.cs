@@ -12,6 +12,12 @@ namespace CorujaPresentation.Models
     {
         //Additional fields
 
+        public int IdUser { get; set; }
+
+        public System.DateTime? RegisterDate { get; set; }
+
+        public System.DateTime? UpdateDate { get; set; }
+
         public string FirstName { get; set; }
   
         public string LastName { get; set; }
@@ -67,15 +73,7 @@ namespace CorujaPresentation.Models
         {
             return new ApplicationDbContext();
         }
-
-        public System.Data.Entity.DbSet<CorujaPresentation.Models.ApplicationUser> ApplicationUsers { get; set; }
+              
     }
-
-    public class RoleUsers
-    {
-
-        public string UserMail { get; set; }
-        public string UserName { get; set; }
-    }
-
+       
 }

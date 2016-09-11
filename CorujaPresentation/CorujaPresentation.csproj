@@ -259,6 +259,14 @@
     <Compile Include="Migrations\201609021525504_5th.Designer.cs">
       <DependentUpon>201609021525504_5th.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609082050583_6th.cs" />
+    <Compile Include="Migrations\201609082050583_6th.Designer.cs">
+      <DependentUpon>201609082050583_6th.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609082103455_7th.cs" />
+    <Compile Include="Migrations\201609082103455_7th.Designer.cs">
+      <DependentUpon>201609082103455_7th.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -388,8 +396,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Conta\ShowMsg.cshtml" />
-    <Content Include="Views\Admin\Roles.cshtml" />
-    <Content Include="Views\Admin\DefineUserRoles.cshtml" />
+    <Content Include="Views\Admin\ListOfRoles.cshtml" />
     <Content Include="Views\Conteudo\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -400,7 +407,6 @@
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\Testes.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Admin\AddUserToRole.cshtml" />
     <Content Include="Views\Home\Basics.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\InternalServer.cshtml" />
@@ -408,10 +414,16 @@
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Conta\AlterarSenha.cshtml" />
     <Content Include="Views\Admin\ListOfUsers.cshtml" />
-    <Content Include="Views\Admin\SysUsers.cshtml" />
-    <Content Include="Views\Admin\SysUserDetails.cshtml" />
     <Content Include="Views\Admin\AdminCoruja.cshtml" />
     <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Admin\RoleDetails.cshtml" />
+    <Content Include="Views\Admin\EditRole.cshtml" />
+    <Content Include="Views\Admin\DeleteRole.cshtml" />
+    <Content Include="Views\Admin\AddRole.cshtml" />
+    <Content Include="Views\Admin\UserDetails.cshtml" />
+    <Content Include="Views\Admin\AddUser.cshtml" />
+    <Content Include="Views\Admin\DeleteUser.cshtml" />
+    <Content Include="Views\Admin\EditUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">
@@ -428,6 +440,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609021525504_5th.resx">
       <DependentUpon>201609021525504_5th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609082050583_6th.resx">
+      <DependentUpon>201609082050583_6th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609082103455_7th.resx">
+      <DependentUpon>201609082103455_7th.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

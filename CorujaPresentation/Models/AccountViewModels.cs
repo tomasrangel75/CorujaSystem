@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace CorujaPresentation.Models
 {
@@ -95,10 +96,7 @@ namespace CorujaPresentation.Models
         public bool NewsLetter { get; set; } = true;
 
         ////////////////////////////////////////////////////////
-
-        [Required]
-        [StringLength(50, ErrorMessage = "O {0} deve ter ao menos {2} caracteres", MinimumLength = 3)]
-        public string Name { get; set; }
+        
      
         [Required(ErrorMessage = "Email obrigatório")]
         [EmailAddress(ErrorMessage ="Email inválido")]
@@ -132,7 +130,7 @@ namespace CorujaPresentation.Models
         
         public EditViewModel(ApplicationUser user)
         {
-            this.Id = user.Id;
+            this.IdUser = user.IdUser;
             this.FirstName = user.FirstName;
             this.LastName = user.LastName;
             this.Email = user.Email;
@@ -153,7 +151,7 @@ namespace CorujaPresentation.Models
             this.CellPhoneNumber = user.CellPhoneNumber;
         }
 
-        public string Id { get; set; }
+        public int IdUser { get; set; }
 
         public string UserName { get; set; }
 
@@ -283,4 +281,33 @@ namespace CorujaPresentation.Models
         [Compare("NewPassword", ErrorMessage = "A nova senha e a senha de confirmação não conferem")]
         public string ConfirmPassword { get; set; }
     }
+
+    public class RoleUsers
+    {
+
+        public string UserMail { get; set; }
+        public string UserName { get; set; }
+        public System.DateTime? RegisterDate { get; set; }
+    }
+
+    public class RoleViewModel
+    {
+        public string Id { get; set; }
+        [Required(AllowEmptyStrings = false)]
+        [Display(Name = "Nome")]
+        public string Name { get; set; }
+    }
+
+    public class EditUserViewModel
+    {
+        public string Id { get; set; }
+
+        [Required(AllowEmptyStrings = false)]
+        [Display(Name = "Email")]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        public IEnumerable<SelectListItem> RolesList { get; set; }
+    }
+
 }
