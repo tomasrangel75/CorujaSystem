@@ -70,8 +70,17 @@
                         <li>@Html.ActionLink("Parceiros", "Parceiros", "Home", null, new { @class = "header" })</li>
                         <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "header" })</li>
 
-                        <li>@Html.ActionLink("Admin", "AdminCoruja", "Admin", null, new { @class = "header" })</li>
-                        <li>@Html.ActionLink("Conteúdo", "Index", "Conteudo", null, new { @class = "header" })</li>
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Admin", "AdminCoruja", "Admin", null, new { @class = "header" })</li>
+                            <li>@Html.ActionLink("Conteúdo", "Index", "Conteudo", null, new { @class = "header" })</li>
+                        }
+
+                        @if (Request.IsAuthenticated && User.IsInRole("Conteudo"))
+                        {
+                            <li>@Html.ActionLink("Conteúdo", "Index", "Conteudo", null, new { @class = "header" })</li>
+                        }
+
 
                     </ul>
                     

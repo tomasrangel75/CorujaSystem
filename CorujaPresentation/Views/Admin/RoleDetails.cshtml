@@ -6,21 +6,20 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Detalhes do perfil</h2>
+<h2>@ViewBag.Title</h2>
 
 <div>
-    <h4>Roles.</h4>
-    <hr />
+   
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            Nome
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
     </dl>
 </div>
-<h4>List of users in this role</h4>
+<h4>Lista de usuários nesse perfil</h4>
 @if (ViewBag.UserCount == 0)
 {
     <hr />
@@ -40,7 +39,7 @@
 </table>
 <p>
     @Html.ActionLink("Editar", "EditRole", new { id = Model.Id }) |
-    @Html.ActionLink("Perfis", "ListOfRoles")
+    @Html.ActionLink("Lista de perfis", "ListOfRoles")
 </p>
 
 

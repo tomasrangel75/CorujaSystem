@@ -7,16 +7,14 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Editar perfil</h2>
-
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Perfis</h4>
-        <hr />
+    
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
 

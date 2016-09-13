@@ -7,16 +7,17 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Excluir perfil</h2>
+<h2>@ViewBag.Title</h2>
 
 <h3>Confirmar exclusão de perfil? </h3>
-<p>Excluindo o perfil todos usuários serão removidos desse perfil. Os usuários não serão removidos.</p>
+<p>Excluindo o perfil todos usuários serão removidos desse perfil</p>
+<p>Os usuários não serão removidos</p>
+
 <div>
-    <h4>Role.</h4>
-    <hr />
+   
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+           Nome
         </dt>
 
         <dd>

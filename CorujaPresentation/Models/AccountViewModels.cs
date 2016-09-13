@@ -47,7 +47,7 @@ namespace CorujaPresentation.Models
 
         
         [Display(Name = "Data de Nascimento")]
-        [DataType(DataType.Date,ErrorMessage = "O formato da data deve ser dd/mm/yyyy")]
+        [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
         public System.DateTime? BirthDate { get; set; }
 
@@ -57,13 +57,17 @@ namespace CorujaPresentation.Models
         [Cpf(ErrorMessage = "CPF inválido")]
         public string Cpf { get; set; }
 
-        [Required(ErrorMessage = "RG obrigatório")]
         [Display(Name = "RG")]
         public string Rg { get; set; }
 
+
+        // This property will hold a grad, selected by user
         [Display(Name = "Graduação")]
         [StringLength(30)]
         public string Graduation { get; set; }
+
+        // This property will hold all available gradss for selection
+        public IEnumerable<SelectListItem> Grads { get; set; }
 
         [Display(Name = "CEP")]
         //[Cep("Cep inválido")]
@@ -93,7 +97,11 @@ namespace CorujaPresentation.Models
         [StringLength(2)]
         public string State { get; set; }
 
-        public bool NewsLetter { get; set; } = true;
+        // This property will hold all available gradss for selection
+        public IEnumerable<SelectListItem> States { get; set; }
+
+
+        public bool NewsLetter { get; set; } = false;
 
         ////////////////////////////////////////////////////////
         
@@ -121,23 +129,29 @@ namespace CorujaPresentation.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar senha")]
-        [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não conferem")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "A senha e a senha de confirmação não conferem")]
         public string ConfirmPassword { get; set; }
     }
 
     public class EditViewModel
     {
-        
+        public EditViewModel(){ }
+
         public EditViewModel(ApplicationUser user)
         {
             this.IdUser = user.IdUser;
+            this.UserName = user.UserName;
+
             this.FirstName = user.FirstName;
             this.LastName = user.LastName;
+
             this.Email = user.Email;
             this.BirthDate = user.BirthDate;
+
             this.Cpf = user.Cpf;
             this.Rg = user.Rg;
             this.Graduation = user.Graduation;
+
             this.Cep = user.Cep;
             this.Address = user.Address;
             this.AddressNumber = user.AddressNumber;
@@ -145,6 +159,7 @@ namespace CorujaPresentation.Models
             this.Nhood = user.Nhood;
             this.City = user.City;
             this.State = user.State;
+
             this.NewsLetter = user.NewsLetter;
             this.Email = user.Email;
             this.PhoneNumber = user.PhoneNumber;
@@ -167,8 +182,8 @@ namespace CorujaPresentation.Models
 
 
         [Display(Name = "Data de Nascimento")]
-        [DataType(DataType.Date, ErrorMessage = "O formato da data deve ser dd/mm/yyyy")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MMM/yyyy}")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public System.DateTime? BirthDate { get; set; }
 
 
@@ -185,8 +200,10 @@ namespace CorujaPresentation.Models
         [StringLength(30)]
         public string Graduation { get; set; }
 
+        // This property will hold all available gradss for selection
+        public IEnumerable<SelectListItem> Grads { get; set; }
+
         [Display(Name = "CEP")]
-        //[Cep("Cep inválido")]
         public string Cep { get; set; }
 
         [Display(Name = "Endereço")]
@@ -213,11 +230,11 @@ namespace CorujaPresentation.Models
         [StringLength(2)]
         public string State { get; set; }
 
-        public bool NewsLetter { get; set; } = true;
-        
-        [Required]
-        [StringLength(50, ErrorMessage = "O {0} deve ter ao menos {2} caracteres", MinimumLength = 3)]
-        public string Name { get; set; }
+        // This property will hold all available gradss for selection
+        public IEnumerable<SelectListItem> States { get; set; }
+
+        public bool NewsLetter { get; set; } 
+            
 
         [Required(ErrorMessage = "Email obrigatório")]
         [EmailAddress(ErrorMessage = "Email inválido")]
@@ -249,7 +266,7 @@ namespace CorujaPresentation.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar senha")]
-        [Compare("Password", ErrorMessage = "A senha e a senha de confirmação não conferem")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "A senha e a senha de confirmação não conferem")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -278,18 +295,10 @@ namespace CorujaPresentation.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmar nova senha")]
-        [Compare("NewPassword", ErrorMessage = "A nova senha e a senha de confirmação não conferem")]
+        [System.ComponentModel.DataAnnotations.Compare("NewPassword", ErrorMessage = "A nova senha e a senha de confirmação não conferem")]
         public string ConfirmPassword { get; set; }
     }
-
-    public class RoleUsers
-    {
-
-        public string UserMail { get; set; }
-        public string UserName { get; set; }
-        public System.DateTime? RegisterDate { get; set; }
-    }
-
+    
     public class RoleViewModel
     {
         public string Id { get; set; }

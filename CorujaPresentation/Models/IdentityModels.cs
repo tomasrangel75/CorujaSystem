@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -14,15 +15,17 @@ namespace CorujaPresentation.Models
 
         public int IdUser { get; set; }
 
-        public System.DateTime? RegisterDate { get; set; }
+        public DateTime? RegisterDate { get; set; }
 
-        public System.DateTime? UpdateDate { get; set; }
+        public DateTime? UpdateDate { get; set; }
+
+        public DateTime? LastLogin { get; set; }
 
         public string FirstName { get; set; }
   
         public string LastName { get; set; }
 
-        public System.DateTime? BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
 
         public string Cpf { get; set; }
 
