@@ -172,6 +172,7 @@ a.bg-primary:hover {
             color: inherit;
         }
 
+
 /*#endregion */
 
 /*#region BUTTON */
@@ -416,8 +417,6 @@ img {
     font-size:xx-large;
 
 }
-
-
 
 /*#endregion */
 
@@ -1491,7 +1490,7 @@ input:-webkit-autofill {
  #BirthDate    {
     height: 30px;
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5;
     border-radius: 3px;
 }
@@ -1508,6 +1507,13 @@ input:-webkit-autofill {
 
 /*#region     4.8 ======== SECTIONS CONTA */
 
+#EditSection .form-control:hover{
+    background-color: #FEFFEF;
+}
+
+#EditSection .form-control:focus{
+    background-color: #FEFFEF;
+}  
 
 #LembrarSenha .form-control:hover{
     background-color: #FEFFEF;
@@ -1604,5 +1610,3 @@ input:-webkit-autofill {
 /*#endregion */
 
    
-
- 

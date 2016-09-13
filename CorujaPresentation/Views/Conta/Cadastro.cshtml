@@ -68,7 +68,7 @@
                                         @*DtNasc*@
                                         <div class="col-sm-4">
                                             @Html.LabelFor(m => m.BirthDate, new { htmlAttributes = new { @class = "" } })
-                                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @type = "text", @class = "form-control input-sm"} })
+                                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @type = "text", @class = "form-control input-sm", data_val_date = "O formato da data deve ser dd/mm/yyyy" } })
                                             @Html.ValidationMessageFor(m => m.BirthDate, "", new { @class = "text-danger" })
                                         </div>
 
@@ -105,16 +105,26 @@
 
                                     </div>
                                    
-
+                         
                                     <div class="form-group">
-                                        @*Escolaridade*@
-                                        <div class="col-sm-6">
-                                            @Html.LabelFor(m => m.Graduation, new { htmlAttributes = new { @class = "" } })
-                                            @Html.DropDownListFor(x => x.Graduation, (SelectList)ViewBag.Lst,new { htmlAttributes = new { @class = "form-control input-sm" }})
-                                            
-                                        </div>
 
-                                    </div>
+                                            @* Grad selection dropdown *@
+                                            <div class="col-sm-6">
+                                                @Html.LabelFor(m => m.Graduation)
+                                                @Html.DropDownListFor(m => m.Graduation, // 1. Store selected value in Model.State;
+                                                                                     // when page is rendered after postback,
+                                                                                     // take selected value from Model.State.
+
+                                              // 2. Take list of values from Model.States
+                                              Model.Grads,
+                                             
+
+                                              //3. A class name to assign to <select> tag
+                                              new { @class = "form-control input-sm" })
+                                            </div>
+
+                                        </div>
+                         
 
                                 </div>
 
@@ -178,14 +188,20 @@
                                             @Html.EditorFor(m => m.City, new { htmlAttributes = new { Id = "City", @class = "form-control input-sm"} })
                                         </div>
 
-                                        @*UF*@
+                                        @* State selection dropdown *@
                                         <div class="col-sm-2">
-                                            @Html.LabelFor(m => m.State, new { htmlAttributes = new { @class = "" } })
-                                            @Html.DropDownListFor(x => x.State, (SelectList)ViewBag.UfLst, new { Id = "State", htmlAttributes = new { @class = "form-control input-sm" } })
-                                        
-                                            
+                                            @Html.LabelFor(m => m.State)
+                                            @Html.DropDownListFor(m => m.State, // 1. Store selected value in Model.State;
+                                                            // when page is rendered after postback,
+                                                            // take selected value from Model.State.
 
+                                              // 2. Take list of values from Model.States
+                                              Model.States,
+                                            
+                                              //3. A class name to assign to <select> tag
+                                              new { @class = "form-control input-sm" })
                                         </div>
+
 
                                     </div>
 
@@ -218,7 +234,11 @@
                                         </div>
 
                                         <div class="col-sm-4">
-                                            <small><label class="checkbox-inline" style="margin-top:35px">@Html.CheckBox("ReceiveNewsletter", false) Aceito receber Newsletter da Coruja</label></small>
+                                            <small>
+                                                <label class="checkbox-inline" style="margin-top:35px">
+                                                    @Html.CheckBoxFor(m => m.NewsLetter) Aceito receber Newsletter da Coruja
+                                                </label>
+                                            </small>
                                         </div>
 
                                     </div>
@@ -355,6 +375,7 @@
         });
 
     </script>
+
 
 
 }

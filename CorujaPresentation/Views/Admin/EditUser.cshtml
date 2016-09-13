@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Editar usuário</h2>
+<h2>@ViewBag.Title</h2>
 
 
 @using (Html.BeginForm())
@@ -14,8 +14,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Editar usuário</h4>
-        <hr />
+       
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
 
@@ -27,7 +26,7 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.Label("Roles", new { @class = "control-label col-md-2" })
+            @Html.Label("Perfis", new { @class = "control-label col-md-2" })
             <span class=" col-md-10">
                 @foreach (var item in Model.RolesList)
                 {

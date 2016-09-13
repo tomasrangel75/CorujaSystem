@@ -74,12 +74,34 @@ namespace CorujaPresentation.Controllers
                 return View(model);
             }
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
+            var user = context.Users.First(x => x.UserName.Equals(model.Email));
+            if (user != null)
+            {
+                if (user.EmailConfirmed == false)
+                {
+                    ViewBag.errorMessage = "Usuário com email não confirmado";
+                    return View("ShowMsg");
+                }
+            }
+
+
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
+
+
+                    var userLogged = context.Users.First(x => x.UserName.Equals(model.Email));
+                    if (userLogged != null)
+                    {
+                        userLogged.LastLogin = DateTime.Now;
+                        var entry = context.Entry(userLogged);
+                        context.Users.Attach(userLogged);
+                        entry.State = EntityState.Modified;
+                        context.SaveChanges();
+                    }
+
+
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -96,12 +118,12 @@ namespace CorujaPresentation.Controllers
         [AllowAnonymous]
         public ActionResult Cadastro()
         {
-            SelectList lst = GetLstGraduation();
-            ViewBag.Lst = lst;
-            SelectList UfLst = GetUfs();
-            ViewBag.UfLst = UfLst;
-
-            return View();
+            var model = new RegisterViewModel();
+            var grads = GetLstGraduation();
+            var sts = GetUfs();
+            model.Grads = GetSelectListItems(grads);
+            model.States = GetSelectListItems(sts);
+            return View(model);
         }
 
         [HttpPost]
@@ -116,9 +138,11 @@ namespace CorujaPresentation.Controllers
                 var maxIdUser = (from u in context.Users
                                  orderby u.IdUser descending
                                  select u).Take(1);
-                var newIdUser = Convert.ToInt32(maxIdUser) + 1;
+                int x = await context.Users.MaxAsync(y => y.IdUser);
 
-               var user = new ApplicationUser
+                var newIdUser = x + 1;
+
+                var user = new ApplicationUser
                 {
 
                     UserName = model.Email,
@@ -131,7 +155,7 @@ namespace CorujaPresentation.Controllers
                     RegisterDate = DateTime.Now,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    BirthDate = Convert.ToDateTime(model.BirthDate),
+                    BirthDate = (model.BirthDate.HasValue) ? Convert.ToDateTime(model.BirthDate) : model.BirthDate,
                     Cpf = model.Cpf,
                     Rg = model.Rg,
                     Graduation = model.Graduation,
@@ -156,7 +180,7 @@ namespace CorujaPresentation.Controllers
                     // Uncomment to debug locally 
                     //TempData["ViewBagLink"] = callbackUrl;
 
-                    ViewBag.errorMessage = "Confirme se o Email foi enviado para o seu Inbox";
+                    ViewBag.errorMessage = "Email de confirmação enviado, verifique seu inbox";
                     return View("ShowMsg");
                 }
 
@@ -164,33 +188,35 @@ namespace CorujaPresentation.Controllers
                 AddErrors(result);
             }
 
+            var grads = GetLstGraduation();
+            var sts = GetUfs();
+            model.Grads = GetSelectListItems(grads);
+            model.States = GetSelectListItems(sts);
+
             return View(model);
         }
 
-        //************************************************   
 
-        //PROFILE PAGE
         // /Account/Edit
-
         [AllowAnonymous]
         public ActionResult Dados()
         {
-            SelectList lst = GetLstGraduation();
-            ViewBag.Lst = lst;
-
-            SelectList UfLst = GetUfs();
-            ViewBag.UfLst = UfLst;
 
             var currentUser = User.Identity.GetUserName().ToString();
             var user = context.Users.First(u => u.UserName.Equals(currentUser));
-            var model = new EditViewModel(user);
             if (user == null)
             {
                 return HttpNotFound();
             }
+
+            var model = new EditViewModel(user);
+            var grads = GetLstGraduation();
+            var sts = GetUfs();
+            model.Grads = GetSelectListItems(grads);
+            model.States = GetSelectListItems(sts);
+
             return View(model);
         }
-
 
         [HttpPost]
         [AllowAnonymous]
@@ -198,71 +224,100 @@ namespace CorujaPresentation.Controllers
         public ActionResult Dados(EditViewModel model)
         {
 
-            if (ModelState.IsValid)
+            try
             {
 
-                var currentUser = context.Users.First(u => u.IdUser == model.IdUser);
+                if (ModelState.IsValid)
+                {
 
-                currentUser.UserName = model.Email;
-                currentUser.UpdateDate = DateTime.Now;
-                currentUser.FirstName = model.FirstName;
-                currentUser.LastName = model.LastName;
-                currentUser.BirthDate = model.BirthDate;
-                currentUser.Cpf = model.Cpf;
-                currentUser.Rg = model.Rg;
-                currentUser.Graduation = model.Graduation;
-                currentUser.Cep = model.Cep;
-                currentUser.Address = model.Address;
-                currentUser.AddressNumber = model.AddressNumber;
-                currentUser.AddressDetail = model.AddressDetail;
-                currentUser.Nhood = model.Nhood;
-                currentUser.City = model.City;
-                currentUser.State = model.State;
-                currentUser.NewsLetter = model.NewsLetter;
-                currentUser.CellPhoneNumber = model.CellPhoneNumber;
-                currentUser.Email = model.Email;
+                    var currentUser = context.Users.First(u => u.IdUser == model.IdUser);
+                    currentUser.UserName = model.Email;
 
-                var entry = context.Entry(currentUser);
-                context.Users.Attach(currentUser);
-                entry.State = EntityState.Modified;
-                context.SaveChanges();
+                    currentUser.UpdateDate = DateTime.Now;
+                    currentUser.FirstName = model.FirstName;
+                    currentUser.LastName = model.LastName;
+                    currentUser.BirthDate = (model.BirthDate.HasValue) ? Convert.ToDateTime(model.BirthDate) : model.BirthDate;
+                    currentUser.Cpf = model.Cpf;
+                    currentUser.Rg = model.Rg;
+                    currentUser.Graduation = model.Graduation;
+                    currentUser.Cep = model.Cep;
+                    currentUser.Address = model.Address;
+                    currentUser.AddressNumber = model.AddressNumber;
+                    currentUser.AddressDetail = model.AddressDetail;
+                    currentUser.Nhood = model.Nhood;
+                    currentUser.City = model.City;
+                    currentUser.State = model.State;
+                    currentUser.NewsLetter = model.NewsLetter;
+                    currentUser.CellPhoneNumber = model.CellPhoneNumber;
+                    currentUser.Email = model.Email;
 
-                return View("Index");
+                    var entry = context.Entry(currentUser);
+                    context.Users.Attach(currentUser);
+                    entry.State = EntityState.Modified;
+                    context.SaveChanges();
 
+                    RedirectToAction("Index", "Home");
+                    return View("../Home/Index");
+
+                }
+
+            }
+            catch (Exception exc)
+            {
+                ViewBag.errorMessage = "Erro ao atualizar dados, " + exc.Message.ToString();
+                return View("ShowMsg");
             }
 
 
-            ViewBag.errorMessage = "Erro ao atualizar dados";
-            return View("ShowMsg");
+            var grads = GetLstGraduation();
+            var sts = GetUfs();
+            model.Grads = GetSelectListItems(grads);
+            model.States = GetSelectListItems(sts);
+
+            return View("Dados", model);
 
         }
 
-
-        private static SelectList GetLstGraduation()
+        private IEnumerable<string> GetLstGraduation()
         {
-
-            var GradLst = new SelectList(new[] { "", "Ensino Fundamental", "Ensino Médio", "Superior Incompleto", "Superior Completo", "Pós-Graduação", "Mestrado", "Doutorado", "Superior em Andamento" });
-
-            return GradLst;
-
+            return new List<string>
+            {
+               "", "Ensino Fundamental", "Ensino Médio", "Superior Incompleto", "Superior Completo", "Pós-Graduação", "Mestrado", "Doutorado", "Superior em Andamento"
+            };
         }
 
-
-        private static SelectList GetUfs()
+        private IEnumerable<string> GetUfs()
         {
 
-            var UfLst = new SelectList(new[] {
+            return new List<string>
+            {
                 "",
                 "AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ",
                 "RN","RS","RO","RR","SC","SP","SE","TO"
-            });
-
-            return UfLst;
+            };
 
         }
 
+        private IEnumerable<SelectListItem> GetSelectListItems(IEnumerable<string> elements)
+        {
+            // Create an empty list to hold result of the operation
+            var selectList = new List<SelectListItem>();
 
-        //************************************************   
+            // For each string in the 'elements' variable, create a new SelectListItem object
+            // that has both its Value and Text properties set to a particular value.
+            // This will result in MVC rendering each item as:
+            //     <option value="State Name">State Name</option>
+            foreach (var element in elements)
+            {
+                selectList.Add(new SelectListItem
+                {
+                    Value = element,
+                    Text = element
+                });
+            }
+
+            return selectList;
+        }
 
 
         // /Account/ConfirmEmail
@@ -282,7 +337,7 @@ namespace CorujaPresentation.Controllers
             // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
             // Send an email with this link:
             string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
-            var callbackUrl = Url.Action("ConfirmEmail", "Conta", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
+            var callbackUrl = Url.Action("ConfirmacaoEmail", "Conta", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
             await UserManager.SendEmailAsync(userID, subject, "Confirme sua conta clicando em <a href=\"" + callbackUrl + "\"></a>");
 
 
@@ -372,15 +427,13 @@ namespace CorujaPresentation.Controllers
         }
 
 
-        //Alterar Senha ***********************************  
-
         // GET: /Conta/ChangePassword
         public ActionResult AlterarSenha()
         {
             return View();
         }
 
-        //
+
         // POST: /Conta/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -407,9 +460,7 @@ namespace CorujaPresentation.Controllers
         }
 
 
-        //************************************************   
-
-        // /Account/LogOff
+        //Account/LogOff    ********************************   
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()

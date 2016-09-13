@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Lista de perfis</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Adicionar perfil", "Create")
+    @Html.ActionLink("Adicionar perfil", "AddRole")
 </p>
 <table class="table">
     <tr>

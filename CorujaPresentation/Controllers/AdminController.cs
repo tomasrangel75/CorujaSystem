@@ -110,7 +110,7 @@ namespace CorujaPresentation.Controllers
                     ModelState.AddModelError("", roleresult.Errors.First());
                     return View();
                 }
-                return RedirectToAction("ListOfRoles");
+                return RedirectToAction("../Admin/ListOfRoles");
             }
             return View();
         }
@@ -144,7 +144,7 @@ namespace CorujaPresentation.Controllers
                 var role = await RoleManager.FindByIdAsync(roleModel.Id);
                 role.Name = roleModel.Name;
                 await RoleManager.UpdateAsync(role);
-                return RedirectToAction("Index");
+                return RedirectToAction("../Admin/ListOfRoles");
             }
             return View();
         }
@@ -196,7 +196,7 @@ namespace CorujaPresentation.Controllers
                     ModelState.AddModelError("", result.Errors.First());
                     return View();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("../Admin/ListOfRoles");
             }
             return View();
         }
@@ -332,7 +332,7 @@ namespace CorujaPresentation.Controllers
                     ModelState.AddModelError("", result.Errors.First());
                     return View();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("../Admin/ListOfUsers");
             }
             ModelState.AddModelError("", "Something failed.");
             return View();
@@ -378,19 +378,12 @@ namespace CorujaPresentation.Controllers
                     ModelState.AddModelError("", result.Errors.First());
                     return View();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("../Admin/ListOfUsers");
             }
             return View();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+    
 
     }
 

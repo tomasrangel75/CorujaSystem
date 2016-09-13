@@ -7,16 +7,14 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Adicionar perfil</h2>
-
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Perfil</h4>
-        <hr />
+       
         @Html.ValidationSummary(true)
 
         <div class="form-group">

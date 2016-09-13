@@ -25,3 +25,16 @@ C:\Users\tomas_rangel\Documents\GitHub\CorujaSys\Coruja.Data\bin\Debug\EntityFra
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSys\Coruja.Data\bin\Debug\EntityFramework.xml
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSys\Coruja.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSys\Coruja.Data\bin\Debug\Elmah.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\Coruja.Data.dll.config
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\Coruja.Data.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\Coruja.Data.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\Coruja.Model.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\Elmah.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\EntityFramework.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\Coruja.Model.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\EntityFramework.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\obj\Debug\Coruja.Data.csprojResolveAssemblyReference.cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\obj\Debug\Coruja.Data.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\Coruja.Data\obj\Debug\Coruja.Data.pdb
