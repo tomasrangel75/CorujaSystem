@@ -180,7 +180,7 @@ namespace CorujaPresentation.Controllers
                     // Uncomment to debug locally 
                     //TempData["ViewBagLink"] = callbackUrl;
 
-                    ViewBag.errorMessage = "Email de confirmação enviado, verifique seu inbox";
+                    ViewBag.errorMessage = "Email de confirmação enviado, verifique seu inbox e confirme seu endereço";
                     return View("ShowMsg");
                 }
 
@@ -484,6 +484,13 @@ namespace CorujaPresentation.Controllers
                     _signInManager.Dispose();
                     _signInManager = null;
                 }
+
+                if (context != null)
+                {
+                    context.Dispose();
+                    context = null;
+                }
+
             }
 
             base.Dispose(disposing);

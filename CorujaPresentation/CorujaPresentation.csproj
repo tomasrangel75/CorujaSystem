@@ -230,6 +230,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Avaliacao\AvaliacaoAreaRegistration.cs" />
+    <Compile Include="Controllers\ColaboradoresController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\ConteudoController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -399,7 +400,6 @@
     <Content Include="Views\Conta\Cadastro.cshtml" />
     <Content Include="Views\Conta\ResetSenha.cshtml" />
     <Content Include="Views\Conta\ConfirmacaoResetSenha.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Conta\ShowMsg.cshtml" />
     <Content Include="Views\Admin\ListOfRoles.cshtml" />
@@ -421,7 +421,6 @@
     <Content Include="Views\Conta\AlterarSenha.cshtml" />
     <Content Include="Views\Admin\ListOfUsers.cshtml" />
     <Content Include="Views\Admin\AdminCoruja.cshtml" />
-    <Content Include="Views\View.cshtml" />
     <Content Include="Views\Admin\RoleDetails.cshtml" />
     <Content Include="Views\Admin\EditRole.cshtml" />
     <Content Include="Views\Admin\DeleteRole.cshtml" />
@@ -475,6 +474,7 @@
     <Folder Include="Areas\Avaliacao\Controllers\" />
     <Folder Include="Areas\Avaliacao\Models\" />
     <Folder Include="Areas\Avaliacao\Views\Shared\" />
+    <Folder Include="Views\Colaboradores\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <PropertyGroup>

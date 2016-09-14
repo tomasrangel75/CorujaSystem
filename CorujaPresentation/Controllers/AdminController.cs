@@ -383,7 +383,24 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
-    
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && _userManager != null)
+            {
+                _userManager.Dispose();
+                _userManager = null;
+            }
+
+            if (disposing && _roleManager != null)
+            {
+                _roleManager.Dispose();
+                _roleManager = null;
+            }
+
+            base.Dispose(disposing);
+        }
+
 
     }
 
