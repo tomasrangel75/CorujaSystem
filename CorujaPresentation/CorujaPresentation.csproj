@@ -96,29 +96,50 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.1.0.0\lib\net451\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.0.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SendGrid, Version=7.0.2.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sendgrid.7.0.2\lib\SendGrid.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SendGrid.CSharp.HTTP.Client, Version=2.0.4.0, Culture=neutral, PublicKeyToken=79219bf4e5ecaaca, processorArchitecture=MSIL">
-      <HintPath>..\packages\SendGrid.CSharp.HTTP.Client.2.0.4\lib\SendGrid.CSharp.HTTP.Client.dll</HintPath>
+    <Reference Include="SendGrid, Version=8.0.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.8.0.4\lib\SendGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid.CSharp.HTTP.Client, Version=3.0.0.0, Culture=neutral, PublicKeyToken=79219bf4e5ecaaca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.CSharp.HTTP.Client.3.0.0\lib\SendGrid.CSharp.HTTP.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid.NetCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.NetCore.1.0.0-rtm-00002\lib\net451\SendGrid.NetCore.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.0.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Collections.Concurrent" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.0.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -170,6 +191,7 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Serialization" />
     <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
@@ -229,15 +251,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Avaliacao\AvaliacaoAreaRegistration.cs" />
-    <Compile Include="Controllers\ColaboradoresController.cs" />
+    <Compile Include="Areas\Colaboradores\ColaboradoresAreaRegistration.cs" />
+    <Compile Include="Areas\Colaboradores\Controllers\ColaboradorController.cs" />
+    <Compile Include="Areas\CorujaCrianca\Controllers\SlidesController.cs" />
+    <Compile Include="Areas\CorujaCrianca\CorujaCriancaAreaRegistration.cs" />
+    <Compile Include="Areas\CursosPalestras\Controllers\CursosController.cs" />
+    <Compile Include="Areas\CursosPalestras\CursosPalestrasAreaRegistration.cs" />
+    <Compile Include="Areas\Escola\Controllers\HomeEscolaController.cs" />
+    <Compile Include="Areas\Escola\EscolaAreaRegistration.cs" />
+    <Compile Include="Areas\Especialista\Controllers\HomeEspecialistaController.cs" />
+    <Compile Include="Areas\Especialista\EspecialistaAreaRegistration.cs" />
     <Compile Include="Controllers\ContaController.cs" />
-    <Compile Include="Controllers\ConteudoController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,7 +304,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Validation\CpfAttribute.cs" />
     <Compile Include="Models\Validation\Mod11.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -304,6 +330,7 @@
     <Content Include="Content\CorujaImages\500.png" />
     <Content Include="Content\CorujaImages\abd.jpg" />
     <Content Include="Content\CorujaImages\avatar2.png" />
+    <Content Include="Content\CorujaImages\dog.png" />
     <Content Include="Content\CorujaImages\online.png" />
     <Content Include="Content\CorujaImages\Renata.png" />
     <Content Include="Content\CorujaImages\Rodolfo.png" />
@@ -344,7 +371,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\Avaliacao\Views\web.config" />
     <Content Include="Scripts\AdminApp.js" />
     <Content Include="Scripts\AdminApp.min.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -360,6 +386,16 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\Colaboradores\Views\web.config" />
+    <Content Include="Areas\Colaboradores\Views\Colaborador\Index.cshtml" />
+    <Content Include="Areas\Especialista\Views\web.config" />
+    <Content Include="Areas\Escola\Views\web.config" />
+    <Content Include="Areas\CorujaCrianca\Views\web.config" />
+    <Content Include="Areas\CursosPalestras\Views\web.config" />
+    <Content Include="Areas\CorujaCrianca\Views\Slides\Index.cshtml" />
+    <Content Include="Areas\CursosPalestras\Views\Cursos\Index.cshtml" />
+    <Content Include="Areas\Escola\Views\HomeEscola\Index.cshtml" />
+    <Content Include="Areas\Especialista\Views\HomeEspecialista\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -382,7 +418,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="SiteAtual\Canal Coruja Educação.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -403,7 +438,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Conta\ShowMsg.cshtml" />
     <Content Include="Views\Admin\ListOfRoles.cshtml" />
-    <Content Include="Views\Conteudo\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Equipe.cshtml" />
@@ -417,7 +451,6 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\InternalServer.cshtml" />
     <Content Include="Views\Conta\Dados.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Conta\AlterarSenha.cshtml" />
     <Content Include="Views\Admin\ListOfUsers.cshtml" />
     <Content Include="Views\Admin\AdminCoruja.cshtml" />
@@ -429,6 +462,7 @@
     <Content Include="Views\Admin\AddUser.cshtml" />
     <Content Include="Views\Admin\DeleteUser.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\Home\Conteudo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">
@@ -471,11 +505,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Avaliacao\Controllers\" />
-    <Folder Include="Areas\Avaliacao\Models\" />
-    <Folder Include="Areas\Avaliacao\Views\Shared\" />
-    <Folder Include="Views\Colaboradores\" />
-    <Folder Include="Views\Product\" />
+    <Folder Include="Areas\Colaboradores\Models\" />
+    <Folder Include="Areas\Colaboradores\Views\Shared\" />
+    <Folder Include="Areas\CorujaCrianca\Models\" />
+    <Folder Include="Areas\CorujaCrianca\Views\Shared\" />
+    <Folder Include="Areas\CursosPalestras\Models\" />
+    <Folder Include="Areas\CursosPalestras\Views\Shared\" />
+    <Folder Include="Areas\Escola\Models\" />
+    <Folder Include="Areas\Escola\Views\Shared\" />
+    <Folder Include="Areas\Especialista\Models\" />
+    <Folder Include="Areas\Especialista\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

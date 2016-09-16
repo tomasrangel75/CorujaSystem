@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using CorujaPresentation.Models;
-using System.Net.Mail;
-using CorujaPresentation.GmailService;
+//using CorujaPresentation.GmailService;
 using System.Configuration;
 using System.Net;
 using SendGrid;
-using System.Diagnostics;
+
 
 namespace CorujaPresentation
 {
-    public class EmailService : IIdentityMessageService
+    // google
+    /*public class EmailService : IIdentityMessageService
     {
         public async Task SendAsync(IdentityMessage message)
         {
@@ -42,7 +38,46 @@ namespace CorujaPresentation
 
         }
 
+    }*/
+
+
+    public class EmailService : IIdentityMessageService
+    {
+        public Task SendAsync(IdentityMessage message)
+        {
+            return configSendGridasync(message);
+        }
+
+        private Task configSendGridasync(IdentityMessage message)
+        {
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new System.Net.Mail.MailAddress(
+                                "Joe@contoso.com", "Joe S.");
+            myMessage.Subject = message.Subject;
+            myMessage.Text = message.Body;
+            myMessage.Html = message.Body;
+
+            var credentials = new NetworkCredential(
+                       ConfigurationManager.AppSettings["mailAccount"],
+                       ConfigurationManager.AppSettings["mailPassword"]
+                       );
+
+            // Create a Web transport for sending email.
+            var transportWeb = new Web(credentials);
+
+            // Send the email.
+            if (transportWeb != null)
+            {
+                return transportWeb.DeliverAsync(myMessage);
+            }
+            else
+            {
+                return Task.FromResult(0);
+            }
+        }
     }
+
 
     public class SmsService : IIdentityMessageService
     {

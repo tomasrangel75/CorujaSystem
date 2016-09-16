@@ -495,3 +495,11 @@ C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPr
 C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.Migrations._7th.resources
 C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.Migrations._8th.resources
 C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.csproj.GenerateResource.Cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\bin\SendGrid.NetCore.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\bin\System.Buffers.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\bin\System.Text.Encodings.Web.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\bin\System.Text.Encodings.Web.xml

@@ -134,6 +134,11 @@ a.bg-primary:hover {
     background-color: #da955a;
 }
 
+
+.atWork{
+    background-image:url("../Content/CorujaImages/dog.png")
+}
+
 /*#region CIRCLE */
 
 .img-circle {

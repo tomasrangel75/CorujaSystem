@@ -24,11 +24,7 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
-        public ActionResult Produtos()
-        {
-            return View();
-        }
-
+       
         public ActionResult Equipe()
         {
             return View();
@@ -39,12 +35,7 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
-        public ActionResult Testes()
-        {
-            return View();
-        }
-
-        public ActionResult Basics()
+        public ActionResult Conteudo()
         {
             return View();
         }
