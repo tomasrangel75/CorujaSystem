@@ -11,83 +11,11 @@ using CorujaPresentation.Models;
 using System.Configuration;
 using System.Net;
 using SendGrid;
-
+using System.Diagnostics;
 
 namespace CorujaPresentation
 {
-    // google
-    /*public class EmailService : IIdentityMessageService
-    {
-        public async Task SendAsync(IdentityMessage message)
-        {
-            MailMessage email = new MailMessage(new MailAddress("noreply@myproject.com", "(do not reply)"),
-          new MailAddress(message.Destination));
-
-            email.Subject = message.Subject;
-            email.Body = message.Body;
-        
-            email.IsBodyHtml = true;
-
-            using (var mailClient = new Gmail())
-            {
-                //In order to use the original from email address, uncomment this line:
-                email.From = new MailAddress(mailClient.UserName, "(do not reply)");
-
-                await mailClient.SendMailAsync(email);
-            }
-
-        }
-
-    }*/
-
-
-    public class EmailService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            return configSendGridasync(message);
-        }
-
-        private Task configSendGridasync(IdentityMessage message)
-        {
-            var myMessage = new SendGridMessage();
-            myMessage.AddTo(message.Destination);
-            myMessage.From = new System.Net.Mail.MailAddress(
-                                "Joe@contoso.com", "Joe S.");
-            myMessage.Subject = message.Subject;
-            myMessage.Text = message.Body;
-            myMessage.Html = message.Body;
-
-            var credentials = new NetworkCredential(
-                       ConfigurationManager.AppSettings["mailAccount"],
-                       ConfigurationManager.AppSettings["mailPassword"]
-                       );
-
-            // Create a Web transport for sending email.
-            var transportWeb = new Web(credentials);
-
-            // Send the email.
-            if (transportWeb != null)
-            {
-                return transportWeb.DeliverAsync(myMessage);
-            }
-            else
-            {
-                return Task.FromResult(0);
-            }
-        }
-    }
-
-
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
-        }
-    }
-
+  
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
@@ -133,7 +61,6 @@ namespace CorujaPresentation
                 BodyFormat = "Your security code is {0}"
             });
             manager.EmailService = new EmailService();
-            manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
@@ -177,5 +104,43 @@ namespace CorujaPresentation
         }
     }
 
+    public class EmailService : IIdentityMessageService
+    {
+        public async Task SendAsync(IdentityMessage message)
+        {
+            await configSendGridasync(message);
+        }
+
+        // Use NuGet to install SendGrid (Basic C# client lib) 
+        private async Task configSendGridasync(IdentityMessage message)
+        {
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new System.Net.Mail.MailAddress(
+                                "coruja@corujaedu.com.br", "Teu Cú animal");
+            myMessage.Subject = message.Subject;
+            myMessage.Text = message.Body;
+            myMessage.Html = message.Body;
+
+            var credentials = new NetworkCredential(
+                       ConfigurationManager.AppSettings["userName"],
+                       ConfigurationManager.AppSettings["userPassword"]
+                       );
+
+            // Create a Web transport for sending email.
+            var transportWeb = new Web(credentials);
+
+            // Send the email.
+            if (transportWeb != null)
+            {
+                await transportWeb.DeliverAsync(myMessage);
+            }
+            else
+            {
+                Trace.TraceError("Failed to create Web transport.");
+                await Task.FromResult(0);
+            }
+        }
+    }
 
 }

@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace CorujaPresentation.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
 
         public AdminController()

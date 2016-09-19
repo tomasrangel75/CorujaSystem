@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace CorujaPresentation.Controllers
 {
-    public class ErrorController : Controller
+    public class ErrorController : BaseController
     {
 
         public ActionResult Error(int statusCode, Exception exception)

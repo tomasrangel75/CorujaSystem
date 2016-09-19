@@ -13,7 +13,7 @@ using System.Data.Entity;
 namespace CorujaPresentation.Controllers
 {
     [Authorize]
-    public class ContaController : Controller
+    public class ContaController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -172,15 +172,16 @@ namespace CorujaPresentation.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    // Loga novo usuário
-                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    // Envia email de confirmação
-                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirmação de Conta");
-                    // Uncomment to debug locally 
-                    //TempData["ViewBagLink"] = callbackUrl;
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmacaoEmail", "Conta",
+                       new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id,
+                       "Confirme sua conta", "Confirme sua conta clicando <a href=\""
+                       + callbackUrl + "\">aqui</a>");
                     
-
                     ViewBag.errorMessage = "Email de confirmação enviado para " + user.Email.ToString() + ", verifique seu inbox e confirme seu endereço";
                    
                     return View("ShowMsg");
@@ -334,19 +335,7 @@ namespace CorujaPresentation.Controllers
             return View(result.Succeeded ? "ConfirmacaoEmail" : "Error");
         }
 
-        private async Task<string> SendEmailConfirmationTokenAsync(string userID, string subject)
-        {
-            // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-            // Send an email with this link:
-            string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
-            var callbackUrl = Url.Action("ConfirmacaoEmail", "Conta", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
-            await UserManager.SendEmailAsync(userID, subject, "Confirme sua conta clicando <a href=\"" + callbackUrl + "\">aqui</a>");
-
-
-            return callbackUrl;
-        }
-
-        // /Account/ForgotPassword
+             // /Account/ForgotPassword
         [AllowAnonymous]
         public ActionResult LembrarSenha()
         {
@@ -372,7 +361,7 @@ namespace CorujaPresentation.Controllers
                 //Send an email with this link
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetSenha", "Conta", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await UserManager.SendEmailAsync(user.Id, "Reset de Senha", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">here</a>");
+                await UserManager.SendEmailAsync(user.Id, "Reset de Senha", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">aqui</a>");
                 return RedirectToAction("ConfirmacaoLembrarSenha", "Conta");
 
 
