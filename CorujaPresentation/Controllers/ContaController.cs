@@ -74,16 +74,20 @@ namespace CorujaPresentation.Controllers
                 return View(model);
             }
 
-            var user = context.Users.First(x => x.UserName.Equals(model.Email));
-            if (user != null)
-            {
-                if (user.EmailConfirmed == false)
-                {
-                    ViewBag.errorMessage = "Usuário com email não confirmado";
-                    return View("ShowMsg");
-                }
-            }
 
+            var us = UserManager.FindByEmail(model.Email);
+            if (us == null)
+            {
+                ViewBag.Msg = "Usuário ou senha inválidos!";
+                return View(model);
+            }
+            else { 
+                    if (us.EmailConfirmed == false)
+                    {
+                        ViewBag.Msg = "Usuário com email não confirmado!";
+                        return View(model);
+                    }
+            }
 
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
@@ -109,7 +113,7 @@ namespace CorujaPresentation.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Tentativa de login inválida");
+                    ModelState.AddModelError("", "Tentativa de login inválida!");
                     return View(model);
             }
         }
@@ -182,7 +186,7 @@ namespace CorujaPresentation.Controllers
                        "Confirme sua conta", "Confirme sua conta clicando <a href=\""
                        + callbackUrl + "\">aqui</a>");
                     
-                    ViewBag.errorMessage = "Email de confirmação enviado para " + user.Email.ToString() + ", verifique seu inbox e confirme seu endereço";
+                    ViewBag.Msg = "<p>Email de confirmação enviado para <span style = 'color:#EE573C'>" + user.Email.ToString() + "</span></p> <br> <p>Verifique seu inbox e confirme seu endereço</p>";
                    
                     return View("ShowMsg");
                 }
@@ -267,7 +271,7 @@ namespace CorujaPresentation.Controllers
             }
             catch (Exception exc)
             {
-                ViewBag.errorMessage = "Erro ao atualizar dados, " + exc.Message.ToString();
+                ViewBag.Msg = "Erro ao atualizar dados, " + exc.Message.ToString();
                 return View("ShowMsg");
             }
 
@@ -442,7 +446,8 @@ namespace CorujaPresentation.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
-                return RedirectToAction("Index", new { Message = "Senha Alterada com Sucesso" });
+                ViewBag.Msg = "Senha Alterada com Sucesso";
+                return View("ShowMsg");
             }
 
             AddErrors(result);

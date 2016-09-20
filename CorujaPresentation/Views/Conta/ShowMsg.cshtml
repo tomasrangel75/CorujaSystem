@@ -9,25 +9,17 @@
 
     <div class="container">
 
-        <h2 class="section-heading text-center text-danger">Canal Coruja</h2>
+        <h2 class="section-heading text-center">Canal Coruja</h2>
 
         <div class="row">
-            <div class="col-sm-12 col-md-12 alert-message alert-message-warning">
+            <div class="col-sm-12 col-md-12 alert-message">
               
                 
-                    <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
+                <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
                     
-                    @{
-                        if (String.IsNullOrEmpty(ViewBag.errorMessage))
-                        {
-                            <h5 class="text-danger">Erro ao processar a requisição da página</h5>
-                        }
-                        else
-                        {
-                            <h5 class="text-danger">@ViewBag.errorMessage</h5>
-                        }
-                    }
-
+                <p>
+                    ViewBag.Msg
+                </p>
               
 
             </div>

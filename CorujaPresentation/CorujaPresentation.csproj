@@ -515,7 +515,6 @@
     <Folder Include="Areas\Escola\Views\Shared\" />
     <Folder Include="Areas\Especialista\Models\" />
     <Folder Include="Areas\Especialista\Views\Shared\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

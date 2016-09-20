@@ -11,7 +11,7 @@
             <div class="container-fluid">
 
                 <div class="navbar-header" id="userIdArea">
-                    @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { @class= "userMailId", title = "Manage"  })
+                   @User.Identity.GetUserName()
                 </div>
 
                 <div id ="logOffArea">

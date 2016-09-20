@@ -40,6 +40,12 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
+        public ActionResult Testes()
+        {
+            ViewBag.Msg = "<p>Email de confirmação enviado para <a >tomas@gmail.com.br</a> </p> <p>Verifique seu inbox e confirme seu endereço</p>";
+            return View();
+            
+        }
 
     }
 

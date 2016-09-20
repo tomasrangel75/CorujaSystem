@@ -117,7 +117,7 @@ namespace CorujaPresentation
             var myMessage = new SendGridMessage();
             myMessage.AddTo(message.Destination);
             myMessage.From = new System.Net.Mail.MailAddress(
-                                "coruja@corujaedu.com.br", "Teu Cú animal");
+                                "coruja@corujaedu.com.br", "Confirmação de Email");
             myMessage.Subject = message.Subject;
             myMessage.Text = message.Body;
             myMessage.Html = message.Body;

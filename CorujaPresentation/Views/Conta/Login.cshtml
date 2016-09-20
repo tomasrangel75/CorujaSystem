@@ -58,6 +58,9 @@
                                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                     </div>
 
+                                    <div class="form-group text-danger"  id="msg">
+                                        @ViewBag.Msg
+                                    </div>
 
                                     <div class="form-group">
 
