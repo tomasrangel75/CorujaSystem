@@ -9,6 +9,7 @@ using Microsoft.Owin.Security;
 using CorujaPresentation.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
+using CorujaPresentation.ViewModels;
 
 namespace CorujaPresentation.Controllers
 {

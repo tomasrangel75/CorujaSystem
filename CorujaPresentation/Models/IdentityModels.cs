@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.ComponentModel.DataAnnotations;
 
 namespace CorujaPresentation.Models
 {
@@ -64,19 +62,5 @@ namespace CorujaPresentation.Models
             return userIdentity;
         }
     }
-
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("CorujaConnection", throwIfV1Schema: false)
-        {
-        }
-
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-              
-    }
-       
+           
 }

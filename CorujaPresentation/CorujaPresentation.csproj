@@ -259,7 +259,7 @@
     <Compile Include="Areas\CursosPalestras\CursosPalestrasAreaRegistration.cs" />
     <Compile Include="Areas\Escola\Controllers\HomeEscolaController.cs" />
     <Compile Include="Areas\Escola\EscolaAreaRegistration.cs" />
-    <Compile Include="Areas\Especialista\Controllers\HomeEspecialistaController.cs" />
+    <Compile Include="Areas\Especialista\Controllers\AmbienteController.cs" />
     <Compile Include="Areas\Especialista\EspecialistaAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
@@ -302,10 +302,11 @@
       <DependentUpon>201609121326164_8th.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DataAccess.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Validation\CpfAttribute.cs" />
-    <Compile Include="Models\Validation\Mod11.cs" />
+    <Compile Include="ViewModels\Validation\CpfAttribute.cs" />
+    <Compile Include="ViewModels\Validation\Mod11.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -363,6 +364,7 @@
     <Content Include="Content\CorujaImages\tumblr_inline_o72of0qmQS1u2r1xm_540.jpg" />
     <Content Include="Content\CorujaImages\tumblr_inline_o81w5fbKiM1u2r1xm_540.jpg" />
     <Content Include="Content\CorujaImages\write12.svg" />
+    <Content Include="Content\simple-sidebar.css" />
     <Content Include="Content\site.css" />
     <Content Include="Content\Teste.css" />
     <Content Include="favicon.ico" />
@@ -395,7 +397,12 @@
     <Content Include="Areas\CorujaCrianca\Views\Slides\Index.cshtml" />
     <Content Include="Areas\CursosPalestras\Views\Cursos\Index.cshtml" />
     <Content Include="Areas\Escola\Views\HomeEscola\Index.cshtml" />
-    <Content Include="Areas\Especialista\Views\HomeEspecialista\Index.cshtml" />
+    <Content Include="Areas\Especialista\Views\Ambiente\Home.cshtml" />
+    <Content Include="Views\Shared\_LayoutEspecialista.cshtml" />
+    <Content Include="Areas\Especialista\Views\Ambiente\Resultados.cshtml" />
+    <Content Include="Areas\Especialista\Views\Ambiente\Relatorios.cshtml" />
+    <Content Include="Areas\Especialista\Views\Ambiente\Ajuda.cshtml" />
+    <Content Include="Areas\Especialista\Views\Ambiente\Avaliacoes.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -448,7 +455,7 @@
     <Content Include="Views\Home\Testes.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Home\Basics.cshtml" />
-    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\PageNotFound.cshtml" />
     <Content Include="Views\Error\InternalServer.cshtml" />
     <Content Include="Views\Conta\Dados.cshtml" />
     <Content Include="Views\Conta\AlterarSenha.cshtml" />
@@ -463,6 +470,11 @@
     <Content Include="Views\Admin\DeleteUser.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\Home\Conteudo.cshtml" />
+    <Content Include="Views\Error\BadRequest.cshtml" />
+    <Content Include="Views\Error\Unauthorized.cshtml" />
+    <Content Include="Views\Error\Forbidden.cshtml" />
+    <Content Include="Views\Error\CustomError.cshtml" />
+    <Content Include="Views\Error\ErrorBase.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">
@@ -499,9 +511,9 @@
       <Project>{ec069295-2129-42d6-9691-2d3ab6218d2e}</Project>
       <Name>Coruja.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Coruja.Model\Coruja.Model.csproj">
+    <ProjectReference Include="..\Coruja.Model\Coruja.Models.csproj">
       <Project>{c553b3bf-a4b4-45ed-9939-e179503d57bb}</Project>
-      <Name>Coruja.Model</Name>
+      <Name>Coruja.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0047)http://canal.corujaedu.com.br/acessar/index.php -->
+<html class="login-bg gt-ie8 gt-ie9 not-ie login-content" dir="ltr" lang="pt-br" xml:lang="pt-br">
+<!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta property="og:title" content="Canal Coruja Educação">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Canal Coruja Educação">
+    <meta property="og:site_name" content="Canal Coruja Educação">
+    @*editar*@
+    <meta property="og:url" content="http://canal.corujaedu.com.br">
+    <meta property="og:image" content="http://canal.corujaedu.com.br/theme/image.php?theme=corujaedu&amp;component=theme&amp;image=logo">
+    @*end*@
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    @*editar corujinha local*@
+    <link rel="shortcut icon" href="http://canal.corujaedu.com.br/theme/image.php?theme=corujaedu&amp;component=theme&amp;image=favicon">
+    @*end*@
+    <title>@ViewBag.Title - Canal Coruja Educação</title>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+        @Styles.Render("~/Content/css")
+
+        <link href="~/Content/simple-sidebar.css" rel="stylesheet" />
+       
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="enable-animations">
+    <div id="document" class="document">
+        <!-- HEADER ================================= -->
+        <header id="header" class="header-section section section-dark navbar navbar-fixed-top">
+            <nav class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"> MENU <span class="fa fa-bars"></span></button>
+                @*alterar*@
+                <a class="navbar-logo navbar-brand" href="http://canal.corujaedu.com.br/acessar/index.php#">
+                    @*end*@
+                    <img id="logo_img" src="~/Content/CorujaImages/logo-coruja.png" alt="Coruja Educação" width="240" height="65">
+                </a>
+            </nav>
+            <div class="container navbar-container">
+                <nav class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">@Html.ActionLink("Home", "Index", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+
+
+                        <li>
+                            <a class="dropdown-toggle header" data-toggle="dropdown" href="#">Produtos<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+
+                                <li>@Html.ActionLink("Especialista", "Home", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })</li>
+                                <li>@Html.ActionLink("Escola", "Produtos", "Home", null, new { @class = "header" })</li>
+                                <li>@Html.ActionLink("Cursos e Palestras", "Produtos", "Home", null, new { @class = "header" })</li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Equipe", "Equipe", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        <li>@Html.ActionLink("Blog", "Blog", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        <li>@Html.ActionLink("Parceiros", "Parceiros", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        <li>@Html.ActionLink("FAQ", "FAQ", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Admin", "AdminCoruja", new { area = "", controller = "Admin" }, new { @class = "header" })</li>
+                            <li>@Html.ActionLink("Conteúdo", "Conteudo", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        }
+                        @if (Request.IsAuthenticated && User.IsInRole("Conteudo"))
+                        {
+                            <li>@Html.ActionLink("Conteúdo", "Conteudo", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        }
+
+                        @if (Request.IsAuthenticated && User.IsInRole("Colaboradores"))
+                        {
+                            <li>@Html.ActionLink("Colaborador", "Index", "Colaborador", new { Area = "Colaboradores" }, new { @class = "header" })</li>
+                        }
+
+                    </ul>
+
+                    @Html.Partial("_LoginPartial")
+                </nav>
+            </div>
+        </header>
+        
+        <section id="LoginSection" class="section section-gray">
+
+                <div class="container">
+
+                    <h2 class="section-heading text-center">Especialista</h2>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="sidebar-nav">
+                                <div class="well">
+                                    <ul class="nav ">
+                                        
+                                        <li class="nav-header">Sidebar</li>
+                                       
+                                         <li class="active">
+                                           @Html.ActionLink("Home", "Home", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                        </li>
+
+                                        <li>
+                                            @Html.ActionLink("Avaliações", "Avaliacoes", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                        </li>
+                                        
+                                        <li>
+                                            @Html.ActionLink("Resultados", "Resultados", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                        </li>
+                                        
+                                        <li>
+                                            @Html.ActionLink("Relatórios", "Relatorios", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                        </li>
+                                        
+                                        <li>
+                                            @Html.ActionLink("Ajuda", "Ajuda", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                        </li>
+                                     
+                                    </ul>
+                                </div>
+                                <!--/.well -->
+                            </div>
+                            <!--/sidebar-nav-fixed -->
+                        </div>
+
+                        <!--/span-->
+                        <div class="col-md-9">
+                               
+                                 @RenderBody()
+       
+                        </div>
+                   </div>
+                    <!--/row-->
+
+                </div>
+                <!--/.fluid-container-->
+            
+
+        </section>
+        
+            <footer id="footer" class="section">
+                <div class="container center">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <h4 class="letter-spacing-1">ENDEREÇO</h4>
+                            <!-- Contact Address -->
+                            <address>
+                                <ul class="list-unstyled">
+                                    <li class="footer-sprite address">
+                                        Av. Presidente Juscelino Kubitschek, nº 1726<br>
+                                        Conjunto 113, 11º Andar<br>
+                                        Itaim Bibi, São Paulo - SP, CEP 04543-000
+                                    </li>
+                                    <li class="footer-sprite email">
+                                        <a href="mailto:"></a>
+                                    </li>
+                                </ul>
+                            </address><!-- /Contact Address -->
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="row text-center">
+                                <div class="col-md-1 col-sm-4 btnSocialSpace socialAlign">
+                                    <a class="btn btn-x btn-social-icon btn-facebook btnSpace" href="http://facebook.com/corujaedu" target="_blank">
+                                        <span class="fa fa-facebook"></span>
+                                    </a>
+
+                                </div>
+                                <div class="col-md-1 col-sm-4 btnSocialSpace socialAlign">
+                                    <a class="btn btn-xl btn-social-icon btn-tumblr btnSpace" href="http://blog.corujaedu.com.br/" target="_blank">
+                                        <span class="fa fa-tumblr"></span>
+                                    </a>
+
+                                </div>
+                                <div class="col-md-1 col-sm-4 btnSocialSpace socialAlign">
+                                    <a class="btn btn-xl btn-social-icon btn-facebook btnSpace" href="https://www.youtube.com/channel/UCHyUf7MmvkSVWwJBMwSy5jg" style="background-color:#E62117;" target="_blank">
+                                        <span class="fa fa-youtube"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <h4 class="letter-spacing-1">CONTATOS</h4>
+                            <ul class="footer-posts list-unstyled">
+                                <li class="footer-sprite phone">
+                                    Telefone: (11) 3542-7786
+                                </li>
+                                <li class="footer-sprite">
+                                    <a href="mailto:contato@corujaedu.com.br?subject=[Fale%20com%20a%20Coruja]&amp;cco=christian@corujaedu.com.br" class="footer">contato@corujaedu.com.br</a>
+                                    <small></small><!-- /texto para o contato -->
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="social-or-login center">
+                        <span>LICENÇAS</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 copyright">
+                            <p> © 2016 Coruja Educação</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 copyright">
+                            <p class="text-right"> Icons made by <a href="http://www.freepik.com/" title="Freepik" class="footer">Freepik</a> from <a href="http://www.flaticon.com/" title="Flaticon" class="footer">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" class="footer">CC BY 3.0</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+</div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/inputmask")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/coruja")
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coruja.Model", "Coruja.Model\Coruja.Model.csproj", "{C553B3BF-A4B4-45ED-9939-E179503D57BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coruja.Models", "Coruja.Model\Coruja.Models.csproj", "{C553B3BF-A4B4-45ED-9939-E179503D57BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coruja.Data", "Coruja.Data\Coruja.Data.csproj", "{EC069295-2129-42D6-9691-2D3AB6218D2E}"
 EndProject

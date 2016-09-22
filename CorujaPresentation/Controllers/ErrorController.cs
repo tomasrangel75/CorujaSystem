@@ -1,30 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
 namespace CorujaPresentation.Controllers
 {
-    public class ErrorController : BaseController
+
+    public class ErrorController : Controller
     {
-
-        public ActionResult Error(int statusCode, Exception exception)
+       
+        public PartialViewResult PageNotFound()
         {
-            Response.StatusCode = statusCode;
-            ViewBag.StatusCode = statusCode + " Error";
-            return View();
+            Response.StatusCode = (int)HttpStatusCode.NotFound;
+            return PartialView();
         }
 
-        public ActionResult NotFound()
+        public PartialViewResult CustomError()
         {
-            return View();
+            Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            return PartialView();
         }
 
-        public ActionResult InternalServer()
+
+        public PartialViewResult BadRequest ()
         {
-            return View();
+            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            return PartialView();
         }
+
+        public PartialViewResult Unauthorized()
+        {
+            Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+            return PartialView();
+        }
+
+        public PartialViewResult Forbidden()
+        {
+            Response.StatusCode = (int)HttpStatusCode.Forbidden;
+            return PartialView();
+        }
+
+
+
+
+
+
+
+
+
+
 
     }
 }

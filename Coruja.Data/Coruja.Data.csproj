@@ -56,9 +56,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Coruja.Model\Coruja.Model.csproj">
+    <ProjectReference Include="..\Coruja.Model\Coruja.Models.csproj">
       <Project>{c553b3bf-a4b4-45ed-9939-e179503d57bb}</Project>
-      <Name>Coruja.Model</Name>
+      <Name>Coruja.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
