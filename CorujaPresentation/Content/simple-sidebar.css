@@ -71,12 +71,12 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color:  #2a251d;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #D7451F;
     background: rgba(255,255,255,0.2);
 }
 
@@ -92,13 +92,20 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: #2a251d;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    color: #2a251d;
     background: none;
 }
+
+.sideBarHeads{
+    color:#5090C1;
+    font-size:14px;
+    line-height: 30px;
+}
+
 
 @media(min-width:768px) {
     #wrapper {

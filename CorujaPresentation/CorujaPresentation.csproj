@@ -403,6 +403,7 @@
     <Content Include="Areas\Especialista\Views\Ambiente\Relatorios.cshtml" />
     <Content Include="Areas\Especialista\Views\Ambiente\Ajuda.cshtml" />
     <Content Include="Areas\Especialista\Views\Ambiente\Avaliacoes.cshtml" />
+    <Content Include="Diagram.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -455,7 +456,6 @@
     <Content Include="Views\Home\Testes.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Home\Basics.cshtml" />
-    <Content Include="Views\Error\PageNotFound.cshtml" />
     <Content Include="Views\Error\InternalServer.cshtml" />
     <Content Include="Views\Conta\Dados.cshtml" />
     <Content Include="Views\Conta\AlterarSenha.cshtml" />
@@ -475,6 +475,8 @@
     <Content Include="Views\Error\Forbidden.cshtml" />
     <Content Include="Views\Error\CustomError.cshtml" />
     <Content Include="Views\Error\ErrorBase.cshtml" />
+    <Content Include="Views\Shared\PageNotFound.cshtml" />
+    <Content Include="Views\Error\PageNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">

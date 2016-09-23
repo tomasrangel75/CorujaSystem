@@ -107,11 +107,26 @@ namespace CorujaPresentation
             httpContext.Response.Clear();
             httpContext.Response.StatusCode = statusCode;
             httpContext.Response.TrySkipIisCustomErrors = true;
+
             routeData.Values["controller"] = "Error";
             routeData.Values["action"] = action;
 
-            controller.ViewData.Model = new HandleErrorInfo(ex, currentController, currentAction);
-            ((IController)controller).Execute(new RequestContext(new HttpContextWrapper(httpContext), routeData));
+            IControllerFactory factory = ControllerBuilder.Current.GetControllerFactory();
+            var requestContext = new RequestContext(new HttpContextWrapper(httpContext), routeData);
+            var controll = factory.CreateController(requestContext, "Error");
+
+            httpContext.Response.ContentType = "text/html";
+            
+            try
+                {
+                controll.Execute(requestContext);
+            }
+            finally
+            {
+                factory.ReleaseController(controller);
+            }
+            
+            
         }
     }
 }

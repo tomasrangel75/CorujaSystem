@@ -506,7 +506,6 @@ img {
     background-color: rgba(0,0,0,0.5);
     height: 100%;
     width: 100%;
-    background-position: fixed;
     position: absolute;
     top: 0px;
 }
@@ -705,7 +704,7 @@ img {
 }
 
 
-.navbar-toggle {position: relative;z-index: 200;margin: 20px 20px 0px 20px;padding: 7px 10px;border-radius: 2;-webkit-transition: all ease 0.25s;transition: all ease 0.25s; font-size: 1.5rem; font-family: "Montserrat", sans-serif; color: white;}
+.navbar-toggle {position: relative;z-index: 200;margin: 20px 20px 0px 20px;padding: 7px 10px;border-radius: 2px;-webkit-transition: all ease 0.25s;transition: all ease 0.25s; font-size: 1.5rem; font-family: "Montserrat", sans-serif; color: white;}
 .navbar-toggle:hover, .navbar-toggle:focus {background-color: transparent !important;}
 .navbar-toggle, .navbar-inverse .navbar-toggle {border-color: rgba(255,255,255,0.0);}
 .navbar-toggle:hover, .navbar-toggle:focus,
@@ -1510,48 +1509,49 @@ input:-webkit-autofill {
 
 /*#endregion */
 
-/*#region     4.8 ======== SECTIONS CONTA */
+/* ==========================================================================
+   5. SECTIONS PROD
+========================================================================== */
 
-#EditSection .form-control:hover{
-    background-color: #FEFFEF;
-}
+/*#region     5.1 ======== ESPECIALISTA  */
 
-#EditSection .form-control:focus{
-    background-color: #FEFFEF;
-}  
+#navEspecialista li a:focus, a:hover {
+        color:#2a251d;
+    }
+    
+#navEspecialista li .a {
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+    color: #D7451F;
+    text-decoration: underline;
+}   
+ 
 
-#LembrarSenha .form-control:hover{
-    background-color: #FEFFEF;
-}
+#navEspecialista li a:focus, a:hover {
+        text-decoration: none;
+        outline: 0;
+        color:#2a251d;
+        cursor:pointer;
+    }
 
-#LembrarSenha .form-control:focus{
-    background-color: #FEFFEF;
-}  
+/*#endregion */
 
-
-#RedefinirSenha .form-control:hover{
-    background-color: #FEFFEF;
-}
-
-#RedefinirSenha .form-control:hover{
-    background-color: #FEFFEF;
-}  
+/*#region     5.2 ======== ESCOLA */
 
 
-#AlterarSenha .form-control:hover{
-    background-color: #FEFFEF;
-}
 
-#AlterarSenha .form-control:focus{
-    background-color: #FEFFEF;
-}  
+/*#endregion */
+
+/*#region     5.3 ======== CURSOS E PALESTRAS */
+
+
 
 /*#endregion */
 
 /** =======================================================*/
 
 /* ==========================================================================
-   5. RESPONSIVE
+   6. RESPONSIVE
 ========================================================================== */
 
 /*#region Responsive */

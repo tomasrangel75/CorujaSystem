@@ -22,10 +22,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-        @Styles.Render("~/Content/css")
 
-        <link href="~/Content/simple-sidebar.css" rel="stylesheet" />
-       
+    <link href="~/Content/simple-sidebar.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -88,32 +88,31 @@
 
                     <h2 class="section-heading text-center">Especialista</h2>
 
-                    <div class="row">
+                    <div class="row" style="min-height:400px">
                         <div class="col-md-3">
-                            <div class="sidebar-nav">
+                            <div class="sidebar-nav" id="SideBarEspecialista">
                                 <div class="well">
-                                    <ul class="nav ">
+                                    <ul class="nav" id="navEspecialista">
                                         
-                                        <li class="nav-header">Sidebar</li>
-                                       
-                                         <li class="active">
-                                           @Html.ActionLink("Home", "Home", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
-                                        </li>
-
-                                        <li>
-                                            @Html.ActionLink("Avaliações", "Avaliacoes", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
-                                        </li>
+                                        <li><span class="sideBarHeads">0 Relatórios Disponíveis</span></li>
+                                        <li><span class="sideBarHeads">0 Relatórios Enviados</span></li>
+                                        <li><span class="sideBarHeads">0 Relatórios Recebidos</span></li>
+                                                                                 
                                         
                                         <li>
-                                            @Html.ActionLink("Resultados", "Resultados", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                            @Html.ActionLink("AVALIAÇÕES", "Avaliacoes", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
                                         </li>
                                         
                                         <li>
-                                            @Html.ActionLink("Relatórios", "Relatorios", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                            @Html.ActionLink("RESULTADOS", "Resultados", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
                                         </li>
                                         
                                         <li>
-                                            @Html.ActionLink("Ajuda", "Ajuda", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                            @Html.ActionLink("RELATÓRIOS", "Relatorios", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                        </li>
+                                        
+                                        <li>
+                                            @Html.ActionLink("AJUDA", "Ajuda", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
                                         </li>
                                      
                                     </ul>
@@ -138,7 +137,7 @@
 
         </section>
         
-            <footer id="footer" class="section">
+        <footer id="footer" class="section">
                 <div class="container center">
                     <div class="row">
                         <div class="col-md-4 text-center">
