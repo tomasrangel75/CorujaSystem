@@ -56,12 +56,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Coruja.Model\Coruja.Model.csproj">
-      <Project>{c553b3bf-a4b4-45ed-9939-e179503d57bb}</Project>
-      <Name>Coruja.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

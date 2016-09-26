@@ -13,14 +13,17 @@
 
 
         <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="alert-message alert-message-warning">
+            <div class="col-sm-6 col-md-6 alert-message">
+            
                     <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
-                    <h4>
-                        Sua senha foi alterada. Click  @Html.ActionLink("Entrar", "Login", "Conta", routeValues: null, htmlAttributes: new { @class="a" })
-                    </h4>
+                    <p>
+                        Sua senha foi alterada
+                    </p> 
+                    
+                    <p>@Html.ActionLink("Entrar no Canal Coruja", "Login", "Conta", routeValues: null, htmlAttributes: new { @class="a" })
+                    </p>
+                    
 
-                </div>
             </div>
         </div>
 

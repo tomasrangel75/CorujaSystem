@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using CorujaPresentation.Models;
-using System.Net.Mail;
-using CorujaPresentation.GmailService;
+//using CorujaPresentation.GmailService;
 using System.Configuration;
 using System.Net;
 using SendGrid;
@@ -20,39 +15,7 @@ using System.Diagnostics;
 
 namespace CorujaPresentation
 {
-    public class EmailService : IIdentityMessageService
-    {
-        public async Task SendAsync(IdentityMessage message)
-        {
-            MailMessage email = new MailMessage(new MailAddress("noreply@myproject.com", "(do not reply)"),
-          new MailAddress(message.Destination));
-
-            email.Subject = message.Subject;
-            email.Body = message.Body;
-        
-            email.IsBodyHtml = true;
-
-            using (var mailClient = new Gmail())
-            {
-                //In order to use the original from email address, uncomment this line:
-                email.From = new MailAddress(mailClient.UserName, "(do not reply)");
-
-                await mailClient.SendMailAsync(email);
-            }
-
-        }
-
-    }
-
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
-        }
-    }
-
+  
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
@@ -98,7 +61,6 @@ namespace CorujaPresentation
                 BodyFormat = "Your security code is {0}"
             });
             manager.EmailService = new EmailService();
-            manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
@@ -142,5 +104,43 @@ namespace CorujaPresentation
         }
     }
 
+    public class EmailService : IIdentityMessageService
+    {
+        public async Task SendAsync(IdentityMessage message)
+        {
+            await configSendGridasync(message);
+        }
+
+        // Use NuGet to install SendGrid (Basic C# client lib) 
+        private async Task configSendGridasync(IdentityMessage message)
+        {
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new System.Net.Mail.MailAddress(
+                                "coruja@corujaedu.com.br", "Confirmação de Email");
+            myMessage.Subject = message.Subject;
+            myMessage.Text = message.Body;
+            myMessage.Html = message.Body;
+
+            var credentials = new NetworkCredential(
+                       ConfigurationManager.AppSettings["userName"],
+                       ConfigurationManager.AppSettings["userPassword"]
+                       );
+
+            // Create a Web transport for sending email.
+            var transportWeb = new Web(credentials);
+
+            // Send the email.
+            if (transportWeb != null)
+            {
+                await transportWeb.DeliverAsync(myMessage);
+            }
+            else
+            {
+                Trace.TraceError("Failed to create Web transport.");
+                await Task.FromResult(0);
+            }
+        }
+    }
 
 }

@@ -1,4 +1,4 @@
-﻿@model CorujaPresentation.Models.ResetPasswordViewModel
+﻿@model CorujaPresentation.ViewModels.ResetPasswordViewModel
 @{
     ViewBag.Title = "Redefinir senha";
 }
@@ -13,7 +13,7 @@
         <h2 class="section-heading text-center">Conta Coruja</h2>
 
         <div class="row">
-            <div class="col-sm-12 col-md-12 alert-message alert-message-warning">
+            <div class="col-sm-12 col-md-12 alert-message">
 
                    <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
                     <h4>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-8">
-                                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2" })
+                                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "" })
 
                                         @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-sm" })
                                         @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })

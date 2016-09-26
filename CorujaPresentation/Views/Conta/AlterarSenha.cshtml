@@ -1,4 +1,4 @@
-﻿@model CorujaPresentation.Models.ChangePasswordViewModel
+﻿@model CorujaPresentation.ViewModels.ChangePasswordViewModel
 @{
     ViewBag.Title = "AlterarSenha";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,7 +13,7 @@
         <h2 class="section-heading text-center">Conta Coruja</h2>
 
         <div class="row">
-            <div class="col-sm-12 col-md-12 alert-message alert-message-warning">
+            <div class="col-sm-12 col-md-12 alert-message">
 
 
                 <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
@@ -21,7 +21,7 @@
                     Alteração de Senha
                 </h4>
 
-                @using (Html.BeginForm("ChangePassword", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                @using (Html.BeginForm("AlterarSenha", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     @Html.AntiForgeryToken()
 

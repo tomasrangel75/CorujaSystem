@@ -55,30 +55,40 @@
 
                     <ul class="nav navbar-nav">
 
-                        <li class="active">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "header" })</li>
+                        <li class="active">@Html.ActionLink("Home", "Index", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        
+                        
                         <li>
                             <a class="dropdown-toggle header" data-toggle="dropdown" href="#">Produtos<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Avaliações", "Produtos", "Home", null, new { @class = "header" })</li>
-                                <li>@Html.ActionLink("Cursos", "Produtos", "Home", null, new { @class = "header" })</li>
-                                <li>@Html.ActionLink("Palestras", "Produtos", "Home", null, new { @class = "header" })</li>
+                                
+                                <li>@Html.ActionLink("Especialista", "Home", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })</li>
+
+                                <li>@Html.ActionLink("Escola", "Produtos", "Home", null, new { @class = "header" })</li>
+                                <li>@Html.ActionLink("Cursos e Palestras", "Produtos", "Home", null, new { @class = "header" })</li>
                             </ul>
                         </li>
 
-                        <li>@Html.ActionLink("Equipe", "Equipe", "Home", null, new { @class = "header" })</li>
-                        <li>@Html.ActionLink("Blog", "Blog", "Home", null, new { @class = "header" })</li>
-                        <li>@Html.ActionLink("Parceiros", "Parceiros", "Home", null, new { @class = "header" })</li>
-                        <li>@Html.ActionLink("FAQ", "FAQ", "Home", null, new { @class = "header" })</li>
+                        <li>@Html.ActionLink("Equipe", "Equipe", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        <li>@Html.ActionLink("Blog", "Blog", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        <li>@Html.ActionLink("Parceiros", "Parceiros", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        <li>@Html.ActionLink("FAQ", "FAQ", new { area = "", controller = "Home" }, new { @class = "header" })</li>
 
                         @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                         {
-                            <li>@Html.ActionLink("Admin", "AdminCoruja", "Admin", null, new { @class = "header" })</li>
-                            <li>@Html.ActionLink("Conteúdo", "Index", "Conteudo", null, new { @class = "header" })</li>
+                            <li>@Html.ActionLink("Admin", "AdminCoruja", new { area = "", controller = "Admin" }, new { @class = "header" })</li>
+                            <li>@Html.ActionLink("Conteúdo", "Conteudo", new { area = "", controller = "Home" }, new { @class = "header" })</li>
                         }
 
                         @if (Request.IsAuthenticated && User.IsInRole("Conteudo"))
                         {
-                            <li>@Html.ActionLink("Conteúdo", "Index", "Conteudo", null, new { @class = "header" })</li>
+                            <li>@Html.ActionLink("Conteúdo", "Conteudo", new { area = "", controller = "Home" }, new { @class = "header" })</li>
+                        }
+
+
+                        @if (Request.IsAuthenticated && User.IsInRole("Colaboradores"))
+                        {
+                            <li>@Html.ActionLink("Colaborador", "Index", "Colaborador", new { Area = "Colaboradores" }, new { @class = "header" })</li>
                         }
 
 
@@ -184,6 +194,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/inputmask")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/coruja")
 
 
     @RenderSection("scripts", required: false)

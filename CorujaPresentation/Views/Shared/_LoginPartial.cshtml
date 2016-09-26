@@ -11,7 +11,7 @@
             <div class="container-fluid">
 
                 <div class="navbar-header" id="userIdArea">
-                    @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { @class= "userMailId", title = "Manage"  })
+                   @User.Identity.GetUserName()
                 </div>
 
                 <div id ="logOffArea">
@@ -20,8 +20,10 @@
                         <li id="logOffConta">
                             <a class="dropdown-toggle header glyphicon glyphicon-user" data-toggle="dropdown" href="#"> Perfil<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Meus Dados", "Dados", "Conta", null, new { @class = "header" })</li>
-                                <li>@Html.ActionLink("Alterar Senha", "AlterarSenha", "Conta", null, new { @class = "header" })</li>
+                                
+                                <li>@Html.ActionLink("Meus Dados", "Dados", new { area = "", controller = "Conta" }, new { @class = "header" })</li>
+
+                               <li>@Html.ActionLink("Alterar Senha", "AlterarSenha", new { area = "", controller = "Conta" }, new { @class = "header" })</li>
                             </ul>
                         </li>
 
@@ -42,8 +44,8 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li class="active">@Html.ActionLink(" Cadastre-se", "Cadastro", "Conta", null, new { @class = "glyphicon glyphicon-user" })</li>
-        <li class="active">@Html.ActionLink(" Entrar", "Login", "Conta", null, new { @class = "glyphicon glyphicon-log-in" })</li>
+        <li class="active">@Html.ActionLink(" Cadastre-se", "Cadastro", new { area = "", controller = "Conta" }, new { @class = "glyphicon glyphicon-user" })</li>
+        <li class="active">@Html.ActionLink(" Entrar", "Login", new { area = "", controller = "Conta" }, new { @class = "glyphicon glyphicon-log-in" })</li>
     </ul>
 }
 

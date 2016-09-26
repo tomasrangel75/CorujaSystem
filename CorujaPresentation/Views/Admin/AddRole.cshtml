@@ -1,6 +1,6 @@
 ﻿
 
-@model CorujaPresentation.Models.RoleViewModel
+@model CorujaPresentation.ViewModels.RoleViewModel
 
 @{
     ViewBag.Title = "Adicionar perfil";
@@ -34,6 +34,6 @@
 }
 
 <div>
-    @Html.ActionLink("Lista de perfis", "ListOfRoles")
+    @Html.ActionLink("Lista de perfis", "ListOfRoles", new { area = "", controller = "Admin" })
 </div>
 

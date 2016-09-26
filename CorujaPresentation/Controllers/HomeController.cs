@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace CorujaPresentation.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
 
         public ActionResult Index()
@@ -24,11 +24,7 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
-        public ActionResult Produtos()
-        {
-            return View();
-        }
-
+       
         public ActionResult Equipe()
         {
             return View();
@@ -39,16 +35,23 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
+        public ActionResult Conteudo()
+        {
+            return View();
+        }
+
+        public PartialViewResult SysError()
+        {
+            return PartialView();
+        }
+        
+
         public ActionResult Testes()
         {
+            ViewBag.Msg = "<p>Email de confirmação enviado para <a >tomas@gmail.com.br</a> </p> <p>Verifique seu inbox e confirme seu endereço</p>";
             return View();
+            
         }
-
-        public ActionResult Basics()
-        {
-            return View();
-        }
-
 
     }
 

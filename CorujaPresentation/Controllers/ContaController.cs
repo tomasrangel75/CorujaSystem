@@ -9,11 +9,12 @@ using Microsoft.Owin.Security;
 using CorujaPresentation.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
+using CorujaPresentation.ViewModels;
 
 namespace CorujaPresentation.Controllers
 {
     [Authorize]
-    public class ContaController : Controller
+    public class ContaController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -74,16 +75,20 @@ namespace CorujaPresentation.Controllers
                 return View(model);
             }
 
-            var user = context.Users.First(x => x.UserName.Equals(model.Email));
-            if (user != null)
-            {
-                if (user.EmailConfirmed == false)
-                {
-                    ViewBag.errorMessage = "Usuário com email não confirmado";
-                    return View("ShowMsg");
-                }
-            }
 
+            var us = UserManager.FindByEmail(model.Email);
+            if (us == null)
+            {
+                ViewBag.Msg = "Usuário ou senha inválidos!";
+                return View(model);
+            }
+            else { 
+                    if (us.EmailConfirmed == false)
+                    {
+                        ViewBag.Msg = "Usuário com email não confirmado!";
+                        return View(model);
+                    }
+            }
 
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
@@ -109,7 +114,7 @@ namespace CorujaPresentation.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Tentativa de login inválida");
+                    ModelState.AddModelError("", "Tentativa de login inválida!");
                     return View(model);
             }
         }
@@ -172,15 +177,18 @@ namespace CorujaPresentation.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    // Loga novo usuário
-                    // await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    // Envia email de confirmação
-                    string callbackUrl = await SendEmailConfirmationTokenAsync(user.Id, "Confirmação de Conta");
-                    // Uncomment to debug locally 
-                    //TempData["ViewBagLink"] = callbackUrl;
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    ViewBag.errorMessage = "Email de confirmação enviado, verifique seu inbox";
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmacaoEmail", "Conta",
+                       new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id,
+                       "Confirme sua conta", "Confirme sua conta clicando <a href=\""
+                       + callbackUrl + "\">aqui</a>");
+                    
+                    ViewBag.Msg = "<p>Email de confirmação enviado para <span style = 'color:#EE573C'>" + user.Email.ToString() + "</span></p> <br> <p>Verifique seu inbox e confirme seu endereço</p>";
+                   
                     return View("ShowMsg");
                 }
 
@@ -264,7 +272,7 @@ namespace CorujaPresentation.Controllers
             }
             catch (Exception exc)
             {
-                ViewBag.errorMessage = "Erro ao atualizar dados, " + exc.Message.ToString();
+                ViewBag.Msg = "Erro ao atualizar dados, " + exc.Message.ToString();
                 return View("ShowMsg");
             }
 
@@ -329,22 +337,10 @@ namespace CorujaPresentation.Controllers
                 return View("Error");
             }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+            return View(result.Succeeded ? "ConfirmacaoEmail" : "Error");
         }
 
-        private async Task<string> SendEmailConfirmationTokenAsync(string userID, string subject)
-        {
-            // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-            // Send an email with this link:
-            string code = await UserManager.GenerateEmailConfirmationTokenAsync(userID);
-            var callbackUrl = Url.Action("ConfirmacaoEmail", "Conta", new { userId = userID, code = code }, protocol: Request.Url.Scheme);
-            await UserManager.SendEmailAsync(userID, subject, "Confirme sua conta clicando em <a href=\"" + callbackUrl + "\"></a>");
-
-
-            return callbackUrl;
-        }
-
-        // /Account/ForgotPassword
+             // /Account/ForgotPassword
         [AllowAnonymous]
         public ActionResult LembrarSenha()
         {
@@ -370,7 +366,7 @@ namespace CorujaPresentation.Controllers
                 //Send an email with this link
                 string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
                 var callbackUrl = Url.Action("ResetSenha", "Conta", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                await UserManager.SendEmailAsync(user.Id, "Reset de Senha", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">here</a>");
+                await UserManager.SendEmailAsync(user.Id, "Reset de Senha", "Para redefinir sua senha clique <a href=\"" + callbackUrl + "\">aqui</a>");
                 return RedirectToAction("ConfirmacaoLembrarSenha", "Conta");
 
 
@@ -451,7 +447,8 @@ namespace CorujaPresentation.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                 }
-                return RedirectToAction("Index", new { Message = "Senha Alterada com Sucesso" });
+                ViewBag.Msg = "Senha Alterada com Sucesso";
+                return View("ShowMsg");
             }
 
             AddErrors(result);
@@ -484,6 +481,13 @@ namespace CorujaPresentation.Controllers
                     _signInManager.Dispose();
                     _signInManager = null;
                 }
+
+                if (context != null)
+                {
+                    context.Dispose();
+                    context = null;
+                }
+
             }
 
             base.Dispose(disposing);

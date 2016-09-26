@@ -1,4 +1,5 @@
 ﻿using CorujaPresentation.Models;
+using CorujaPresentation.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -13,7 +14,7 @@ using System.Web.Mvc;
 
 namespace CorujaPresentation.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
 
         public AdminController()
@@ -383,7 +384,24 @@ namespace CorujaPresentation.Controllers
             return View();
         }
 
-    
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && _userManager != null)
+            {
+                _userManager.Dispose();
+                _userManager = null;
+            }
+
+            if (disposing && _roleManager != null)
+            {
+                _roleManager.Dispose();
+                _roleManager = null;
+            }
+
+            base.Dispose(disposing);
+        }
+
 
     }
 
