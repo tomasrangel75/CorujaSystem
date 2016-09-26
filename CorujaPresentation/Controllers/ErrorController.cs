@@ -10,9 +10,7 @@ namespace CorujaPresentation.Controllers
 
     public class ErrorController : Controller
     {
-       
-       
-        
+              
         
     }
 }

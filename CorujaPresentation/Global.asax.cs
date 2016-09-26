@@ -62,7 +62,7 @@ namespace CorujaPresentation
 
             var controller = new ErrorController();
             var routeData = new RouteData();
-            var action = "CustomError";
+           // var action = "CustomError";
             var statusCode = 500;
 
             if (ex is HttpException)
@@ -99,7 +99,7 @@ namespace CorujaPresentation
             }
             else if (ex is AuthenticationException)
             {
-                action = "Forbidden";
+               // action = "Forbidden";
                 statusCode = 403;
             }
 

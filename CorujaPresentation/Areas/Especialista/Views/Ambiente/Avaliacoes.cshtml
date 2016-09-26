@@ -4,5 +4,64 @@
     Layout = "~/Views/Shared/_LayoutEspecialista.cshtml";
 }
 
-<h2>Avaliacoes</h2>
+    <div class="row HeadRowEspec">
+        <div class="col-md-9">
+            <h2>Baixe sua Avaliação <i class="fa fa-fw fa-download"></i></h2>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-2">
+            <h4>Domínios</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3"><input id="chkApr" type="checkbox" value="Aprendizagem" class="checkBoxEspec"/>&nbsp;Aprendizagem</div>
+        <div class="col-md-3"><input id="chkLp" type="checkbox"  value="Português" class="checkBoxEspec"/>&nbsp;Português</div>
+        <div class="col-md-3"><input id="chkMat" type="checkbox" value="Matemática" class="checkBoxEspec"/>&nbsp;Matemática</div>
+    </div>
+
+<hr/>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h4>Ano</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"><input id="chkAno1" type="checkbox" value="1º Ano" class="checkBoxEspec"/>&nbsp;1º Ano</div>
+        <div class="col-md-2"><input id="chkAno2" type="checkbox" value="2º Ano" class="checkBoxEspec"/>&nbsp;2º Ano</div>
+        <div class="col-md-2"><input id="chkAno3" type="checkbox" value="3º Ano" class="checkBoxEspec"/>&nbsp;3º Ano</div>
+    </div>
+
+<hr/>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h4>Versão</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2"><input id="chkVersaoA" type="checkbox" value="Versão A" class="checkBoxEspec"/>&nbsp;Versão A</div>
+
+        <div class="col-md-2"><input id="chkVersaoB" type="checkbox" value="Versão B" class="checkBoxEspec"/>&nbsp;Versão B</div>
+    </div>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-3">
+        <p id="selection"></p>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <div class="col-md-offset-6 col-md-2">
+        <input id="btnDownload" type="button" value="Download" class="btn btn-primary" />
+    </div>
+</div>

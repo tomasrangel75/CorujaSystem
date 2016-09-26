@@ -260,13 +260,15 @@
     <Compile Include="Areas\Escola\Controllers\HomeEscolaController.cs" />
     <Compile Include="Areas\Escola\EscolaAreaRegistration.cs" />
     <Compile Include="Areas\Especialista\Controllers\AmbienteController.cs" />
-    <Compile Include="Areas\Especialista\Controllers\UserMapKeysController.cs" />
+    <Compile Include="Areas\Especialista\Controllers\EspecialistaApiController.cs" />
     <Compile Include="Areas\Especialista\EspecialistaAreaRegistration.cs" />
+    <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filter\ModelValidatorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
