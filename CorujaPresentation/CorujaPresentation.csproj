@@ -260,6 +260,7 @@
     <Compile Include="Areas\Escola\Controllers\HomeEscolaController.cs" />
     <Compile Include="Areas\Escola\EscolaAreaRegistration.cs" />
     <Compile Include="Areas\Especialista\Controllers\AmbienteController.cs" />
+    <Compile Include="Areas\Especialista\Controllers\UserMapKeysController.cs" />
     <Compile Include="Areas\Especialista\EspecialistaAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
@@ -303,6 +304,14 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess.cs" />
+    <Compile Include="DAL\Repositories\IRepository.cs" />
+    <Compile Include="DAL\Repositories\Repository.cs" />
+    <Compile Include="DAL\Service\ApiService.cs" />
+    <Compile Include="DAL\Service\IService.cs" />
+    <Compile Include="DAL\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="DAL\UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="Models\ReportKey.cs" />
+    <Compile Include="Models\UserMapKey.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\Validation\CpfAttribute.cs" />
@@ -456,7 +465,6 @@
     <Content Include="Views\Home\Testes.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Home\Basics.cshtml" />
-    <Content Include="Views\Error\InternalServer.cshtml" />
     <Content Include="Views\Conta\Dados.cshtml" />
     <Content Include="Views\Conta\AlterarSenha.cshtml" />
     <Content Include="Views\Admin\ListOfUsers.cshtml" />
@@ -470,13 +478,8 @@
     <Content Include="Views\Admin\DeleteUser.cshtml" />
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\Home\Conteudo.cshtml" />
-    <Content Include="Views\Error\BadRequest.cshtml" />
-    <Content Include="Views\Error\Unauthorized.cshtml" />
-    <Content Include="Views\Error\Forbidden.cshtml" />
-    <Content Include="Views\Error\CustomError.cshtml" />
-    <Content Include="Views\Error\ErrorBase.cshtml" />
     <Content Include="Views\Shared\PageNotFound.cshtml" />
-    <Content Include="Views\Error\PageNotFound.cshtml" />
+    <Content Include="Views\Home\SysError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606091702093_1st.resx">
@@ -509,25 +512,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Coruja.Data\Coruja.Data.csproj">
-      <Project>{ec069295-2129-42d6-9691-2d3ab6218d2e}</Project>
-      <Name>Coruja.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Coruja.Model\Coruja.Models.csproj">
-      <Project>{c553b3bf-a4b4-45ed-9939-e179503d57bb}</Project>
-      <Name>Coruja.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\Colaboradores\Models\" />
     <Folder Include="Areas\Colaboradores\Views\Shared\" />
-    <Folder Include="Areas\CorujaCrianca\Models\" />
     <Folder Include="Areas\CorujaCrianca\Views\Shared\" />
-    <Folder Include="Areas\CursosPalestras\Models\" />
     <Folder Include="Areas\CursosPalestras\Views\Shared\" />
-    <Folder Include="Areas\Escola\Models\" />
     <Folder Include="Areas\Escola\Views\Shared\" />
-    <Folder Include="Areas\Especialista\Models\" />
     <Folder Include="Areas\Especialista\Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>

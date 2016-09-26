@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "PageNotFound";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="Error" class="section">
+    <div class="container">
+        <h2 class="section-heading text-center">Canal Coruja</h2>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                @{
+                    switch (HttpContext.Current.Response.StatusCode)
+                    {
+                        case 400:
+                            <text>
+                                <h1>BadRequest</h1>
+                            </text>
+                            break;
+                        case 401:
+                            <text>
+                                <h1>Unauthorized</h1>
+                            </text>
+                            break;
+                        case 403:
+                            <text>
+                                <h1>Forbidden</h1>
+                            </text>
+                            break;
+                        case 404:
+                            <text>
+                                <h1>PageNotFound!</h1>
+                                <img src="~/Content/CorujaImages/404.png" alt="404" />
+
+                            </text>
+                            break;
+                        case 500:
+                            <text>
+                                <h1>Internal Server Error!</h1>
+                               <img src="~/Content/CorujaImages/500.png" alt="500" />
+                            </text>
+                            break;
+
+                        default:
+                            <text>
+                                <h1>Custom Error</h1>
+                            </text>
+
+                            break;
+                    }
+                }
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <p>Entre em contato com a Coruja e reporte o erro ocorrido</p>
+                <ul class="footer-posts list-unstyled">
+                    <li class="footer-sprite">
+                        <a href="mailto:contato@corujaedu.com.br?subject=[Fale%20com%20a%20Coruja]&amp;cco=christian@corujaedu.com.br" class="footer">contato@corujaedu.com.br</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        </div>
+   
+    #define DEBUG
+    #if DEBUG
+   
+         <div>
+
+        <p>httpContext.Response.StatusCode: @HttpContext.Current.Response.StatusCode</p>
+        <p>Action: @Model.ActionName</p>
+        <p>Controller: @Model.ControllerName</p>
+        <p>Model Exc Message: @Model.Exception.Message</p>
+        <p>Model Exc Stack Trace: @Model.Exception.StackTrace</p>
+
+    </div>
+
+    #endif
+
+</section>
+

@@ -47,7 +47,7 @@ namespace CorujaPresentation.Models
 
         //public string Country { get; set; }
 
-        public bool NewsLetter { get; set; } = true;
+        public bool NewsLetter { get; set; }
 
         public string CellPhoneNumber { get; set; }
 

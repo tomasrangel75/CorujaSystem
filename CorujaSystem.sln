@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coruja.Models", "Coruja.Model\Coruja.Models.csproj", "{C553B3BF-A4B4-45ED-9939-E179503D57BB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coruja.Data", "Coruja.Data\Coruja.Data.csproj", "{EC069295-2129-42D6-9691-2D3AB6218D2E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorujaPresentation", "CorujaPresentation\CorujaPresentation.csproj", "{D03A1AB1-C35F-4B5A-93A0-CCC5C32D2C2D}"
 EndProject
 Global
@@ -15,14 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C553B3BF-A4B4-45ED-9939-E179503D57BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C553B3BF-A4B4-45ED-9939-E179503D57BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C553B3BF-A4B4-45ED-9939-E179503D57BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C553B3BF-A4B4-45ED-9939-E179503D57BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC069295-2129-42D6-9691-2D3AB6218D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC069295-2129-42D6-9691-2D3AB6218D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC069295-2129-42D6-9691-2D3AB6218D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC069295-2129-42D6-9691-2D3AB6218D2E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D03A1AB1-C35F-4B5A-93A0-CCC5C32D2C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D03A1AB1-C35F-4B5A-93A0-CCC5C32D2C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D03A1AB1-C35F-4B5A-93A0-CCC5C32D2C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU

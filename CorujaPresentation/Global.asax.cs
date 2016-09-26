@@ -70,32 +70,32 @@ namespace CorujaPresentation
                 var httpEx = ex as HttpException;
                 statusCode = httpEx.GetHttpCode();
 
-                switch (httpEx.GetHttpCode())
-                {
-                    case 400:
-                        action = "BadRequest";
-                        break;
+                //switch (httpEx.GetHttpCode())
+                //{
+                //    case 400:
+                //        action = "BadRequest";
+                //        break;
 
-                    case 401:
-                        action = "Unauthorized";
-                        break;
+                //    case 401:
+                //        action = "Unauthorized";
+                //        break;
 
-                    case 403:
-                        action = "Forbidden";
-                        break;
+                //    case 403:
+                //        action = "Forbidden";
+                //        break;
 
-                    case 404:
-                        action = "PageNotFound";
-                        break;
+                //    case 404:
+                //        action = "PageNotFound";
+                //        break;
 
-                    case 500:
-                        action = "CustomError";
-                        break;
+                //    case 500:
+                //        action = "CustomError";
+                //        break;
 
-                    default:
-                        action = "CustomError";
-                        break;
-                }
+                //    default:
+                //        action = "CustomError";
+                //        break;
+                //}
             }
             else if (ex is AuthenticationException)
             {
@@ -108,8 +108,10 @@ namespace CorujaPresentation
             httpContext.Response.StatusCode = statusCode;
             httpContext.Response.TrySkipIisCustomErrors = true;
 
-            routeData.Values["controller"] = "Error";
-            routeData.Values["action"] = action;
+            routeData.Values["controller"] = "Home";
+            //routeData.Values["action"] = action;
+            routeData.Values["action"] = "SysError";
+
 
             IControllerFactory factory = ControllerBuilder.Current.GetControllerFactory();
             var requestContext = new RequestContext(new HttpContextWrapper(httpContext), routeData);
