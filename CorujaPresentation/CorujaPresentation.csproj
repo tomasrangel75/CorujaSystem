@@ -262,7 +262,6 @@
     <Compile Include="Areas\Especialista\Controllers\AmbienteController.cs" />
     <Compile Include="Areas\Especialista\Controllers\EspecialistaApiController.cs" />
     <Compile Include="Areas\Especialista\EspecialistaAreaRegistration.cs" />
-    <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -304,6 +303,10 @@
     <Compile Include="Migrations\201609121326164_8th.Designer.cs">
       <DependentUpon>201609121326164_8th.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609272134492_11th.cs" />
+    <Compile Include="Migrations\201609272134492_11th.Designer.cs">
+      <DependentUpon>201609272134492_11th.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DataAccess.cs" />
     <Compile Include="DAL\Repositories\IRepository.cs" />
@@ -314,6 +317,7 @@
     <Compile Include="DAL\UnitOfWork\UnitOfWork.cs" />
     <Compile Include="Models\ReportKey.cs" />
     <Compile Include="Models\UserMapKey.cs" />
+    <Compile Include="Models\UserFile.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="ViewModels\Validation\CpfAttribute.cs" />
@@ -408,7 +412,7 @@
     <Content Include="Areas\CorujaCrianca\Views\Slides\Index.cshtml" />
     <Content Include="Areas\CursosPalestras\Views\Cursos\Index.cshtml" />
     <Content Include="Areas\Escola\Views\HomeEscola\Index.cshtml" />
-    <Content Include="Areas\Especialista\Views\Ambiente\Home.cshtml" />
+    <Content Include="Areas\Especialista\Views\Ambiente\SobreEspecialista.cshtml" />
     <Content Include="Views\Shared\_LayoutEspecialista.cshtml" />
     <Content Include="Areas\Especialista\Views\Ambiente\Resultados.cshtml" />
     <Content Include="Areas\Especialista\Views\Ambiente\Relatorios.cshtml" />
@@ -507,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609121326164_8th.resx">
       <DependentUpon>201609121326164_8th.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609272134492_11th.resx">
+      <DependentUpon>201609272134492_11th.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

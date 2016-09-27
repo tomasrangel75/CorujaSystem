@@ -14,6 +14,7 @@ using System.Web.Mvc;
 
 namespace CorujaPresentation.Controllers
 {
+      
     public class AdminController : BaseController
     {
 

@@ -609,3 +609,4 @@ C:\Users\Tomas\Desktop\New folder\CorujaSystem-DEV_FrontEnd\CorujaPresentation\b
 C:\Users\Tomas\Desktop\New folder\CorujaSystem-DEV_FrontEnd\CorujaPresentation\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Tomas\Desktop\New folder\CorujaSystem-DEV_FrontEnd\CorujaPresentation\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Tomas\Desktop\New folder\CorujaSystem-DEV_FrontEnd\CorujaPresentation\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaPresentation\obj\Debug\CorujaPresentation.Migrations._11th.resources

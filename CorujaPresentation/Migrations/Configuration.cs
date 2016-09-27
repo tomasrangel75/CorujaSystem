@@ -62,7 +62,8 @@ namespace CorujaPresentation.Migrations
                 PhoneNumber = "551100000000",
                 CellPhoneNumber = "5511984076905",
                 SecurityStamp = Guid.NewGuid().ToString(),
-                PasswordHash = PasswordHash.HashPassword("C0ruj@2013")
+                PasswordHash = PasswordHash.HashPassword("C0ruj@2013"),
+                UsedReport =0
             };
 
             context.Users.AddOrUpdate(U => U.UserName,

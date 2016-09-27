@@ -51,6 +51,7 @@ namespace CorujaPresentation.Models
 
         public string CellPhoneNumber { get; set; }
 
+        public int UsedReport { get; set; }
         ////////////////////////////////////
 
 

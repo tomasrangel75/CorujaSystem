@@ -8,8 +8,9 @@ namespace CorujaPresentation.Areas.Especialista.Controllers
 {
     public class AmbienteController : Controller
     {
+        
         // GET: Especialista/HomeEspecialista
-        public ActionResult Home()
+        public ActionResult SobreEspecialista()
         {
             return View();
         }
@@ -33,6 +34,7 @@ namespace CorujaPresentation.Areas.Especialista.Controllers
         {
             return View();
         }
-       
+
+
     }
 }
