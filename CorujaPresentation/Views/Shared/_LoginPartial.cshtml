@@ -1,17 +1,27 @@
 ﻿@using Microsoft.AspNet.Identity
+@using System.Security.Claims
 
 
 @if (Request.IsAuthenticated)
-{
-    using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-        @Html.AntiForgeryToken()
 
-    
-            <div class="container-fluid">
+            {
+
+                var identity = (ClaimsIdentity)User.Identity;
+                var name = identity.FindFirstValue(ClaimTypes.GivenName) ?? identity.GetUserName();
+
+
+
+                using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                        <div class="container-fluid">
 
                 <div class="navbar-header" id="userIdArea">
-                   @User.Identity.GetUserName()
+                   @*@User.Identity.GetUserName()*@
+                  @name 
+
                 </div>
 
                 <div id ="logOffArea">

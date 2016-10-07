@@ -3,13 +3,12 @@ using System.Web;
 using System.Web.Services;
 using System.Web.Services.Protocols;
 using System.ComponentModel;
+using CorujaPresentation.Models;
 
 namespace CorujaPresentation
 {
-    public class UserFile
+    public class UserFile: Base
     {
-        public int Id { get; set; }
-
         public int IdUser { get; set; }
 
         public string FileType { get; set; }

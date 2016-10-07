@@ -11,5 +11,7 @@ namespace CorujaPresentation.DAL
 	{
 		IRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
 		void Save();
-	}
+        int SetUpProfile(int action, string userId, string profile);
+
+    }
 }
