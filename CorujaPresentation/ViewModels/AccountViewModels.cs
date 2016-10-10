@@ -35,6 +35,7 @@ namespace CorujaPresentation.ViewModels
     {
 
         //Custom fields ////////////////////////////////////
+        public int IdUser { get; set; }
 
         [Required(ErrorMessage ="Nome obrigatório")]
         [StringLength(30, ErrorMessage = "O {0} deve ter ao menos {2} caracteres", MinimumLength = 3)]

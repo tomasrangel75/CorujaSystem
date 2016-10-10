@@ -1,6 +1,6 @@
 ﻿
+
 @{
-    ViewBag.Title = "PageNotFound";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <section id="Error" class="section">
@@ -36,7 +36,7 @@
                         case 500:
                             <text>
                                 <h1>Internal Server Error!</h1>
-                               <img src="~/Content/CorujaImages/500.png" alt="500" />
+                                <img src="~/Content/CorujaImages/500.png" alt="500" />
                             </text>
                             break;
 
@@ -51,9 +51,9 @@
 
             </div>
         </div>
-
+     
         <div class="row">
-            <div class="col-md-4 text-center">
+            <div class="col-md-12 text-center">
                 <p>Entre em contato com a Coruja e reporte o erro ocorrido</p>
                 <ul class="footer-posts list-unstyled">
                     <li class="footer-sprite">
@@ -63,22 +63,17 @@
             </div>
         </div>
 
-        </div>
-   
-    #define DEBUG
-    #if DEBUG
-   
-         <div>
+    </div>
 
-        <p>httpContext.Response.StatusCode: @HttpContext.Current.Response.StatusCode</p>
+    <div>
+
+        @*<p>httpContext.Response.StatusCode: @HttpContext.Current.Response.StatusCode</p>
         <p>Action: @Model.ActionName</p>
         <p>Controller: @Model.ControllerName</p>
         <p>Model Exc Message: @Model.Exception.Message</p>
-        <p>Model Exc Stack Trace: @Model.Exception.StackTrace</p>
+        <p>Model Exc Stack Trace: @Model.Exception.StackTrace</p>*@
 
     </div>
-
-    #endif
 
 </section>
 

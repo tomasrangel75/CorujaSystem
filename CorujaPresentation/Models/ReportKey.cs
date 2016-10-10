@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CorujaPresentation.Models
 {
-	public class ReportKey
-	{
-		public int Id { get; set; }
+	public class ReportKey: Base
+    {
 		public string KeyCode { get; set; }
 		public int ReportNumber { get; set; }
 		public bool IsActive { get; set; }

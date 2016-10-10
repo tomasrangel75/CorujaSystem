@@ -23,7 +23,8 @@ namespace CorujaPresentation.DAL
 		public virtual void Add(T entity)
 		{
 			_dbset.Add(entity);
-		}
+
+        }
 	
 		public virtual void Delete(T entity)
 		{
@@ -99,5 +100,6 @@ namespace CorujaPresentation.DAL
 			_context.SaveChanges();
 		}
 
-	}
+          
+    }
 }
