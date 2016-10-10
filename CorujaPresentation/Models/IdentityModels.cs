@@ -51,6 +51,7 @@ namespace CorujaPresentation.Models
 
         public string CellPhoneNumber { get; set; }
 
+        public int UsedReport { get; set; }
         ////////////////////////////////////
 
 
@@ -58,7 +59,9 @@ namespace CorujaPresentation.Models
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+
             // Add custom user claims here
+          
             return userIdentity;
         }
     }

@@ -1,4 +1,5 @@
-﻿using CorujaPresentation.Models;
+﻿using CorujaPresentation.DAL;
+using CorujaPresentation.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace CorujaPresentation.DAL
 		private Repository<ApplicationUser> _applicationUsers;
 
 		private ApplicationDbContext _ctx;
-		public ApiService()
+
+        public ApiService()
 		{
 			_ctx = new ApplicationDbContext ();
 		}
@@ -25,9 +27,9 @@ namespace CorujaPresentation.DAL
 			{
 				if (_reportKeys == null)
 				{
-					//_reportKeys = new ApplicationDbContext(_ctx);
-				}
-				return _reportKeys;
+                    _reportKeys = new Repository<ReportKey>(_ctx);
+                }
+                return _reportKeys;
 			}
 
 		}
@@ -38,7 +40,7 @@ namespace CorujaPresentation.DAL
 			{
 				if (_userMapKeys == null)
 				{
-					//_userMapKeys = new CursosRepository(_ctx);
+					_userMapKeys = new Repository<UserMapKey>(_ctx);
 				}
 				return _userMapKeys;
 			}
@@ -51,7 +53,7 @@ namespace CorujaPresentation.DAL
 			{
 				if (_applicationUsers == null)
 				{
-					//_applicationUsers = new ProfessorsRepository(_ctx);
+					_applicationUsers = new Repository<ApplicationUser>(_ctx);
 				}
 				return _applicationUsers;
 			}

@@ -1515,6 +1515,15 @@ input:-webkit-autofill {
 
 /*#region     5.1 ======== ESPECIALISTA  */
 
+
+.HeadRowEspec{
+    margin-bottom:50px;
+}
+
+.checkBoxEspec:hover {
+    cursor:pointer;
+}
+
 #navEspecialista li a:focus, a:hover {
         color:#2a251d;
     }
@@ -1533,6 +1542,7 @@ input:-webkit-autofill {
         color:#2a251d;
         cursor:pointer;
     }
+
 
 /*#endregion */
 

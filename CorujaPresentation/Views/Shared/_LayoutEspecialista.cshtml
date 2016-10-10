@@ -51,7 +51,7 @@
                             <a class="dropdown-toggle header" data-toggle="dropdown" href="#">Produtos<span class="caret"></span></a>
                             <ul class="dropdown-menu">
 
-                                <li>@Html.ActionLink("Especialista", "Home", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })</li>
+                                <li>@Html.ActionLink("Especialista", "SobreEspecialista", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })</li>
                                 <li>@Html.ActionLink("Escola", "Produtos", "Home", null, new { @class = "header" })</li>
                                 <li>@Html.ActionLink("Cursos e Palestras", "Produtos", "Home", null, new { @class = "header" })</li>
                             </ul>
@@ -98,7 +98,10 @@
                                         <li><span class="sideBarHeads">0 Relatórios Enviados</span></li>
                                         <li><span class="sideBarHeads">0 Relatórios Recebidos</span></li>
                                                                                  
-                                        
+                                        <li>
+                                            @Html.ActionLink("ESPECIALISTA", "SobreEspecialista", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
+                                        </li>
+
                                         <li>
                                             @Html.ActionLink("AVALIAÇÕES", "Avaliacoes", "Ambiente", new { Area = "Especialista" }, new { @class = "header" })
                                         </li>

@@ -10,6 +10,7 @@ using CorujaPresentation.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
 using CorujaPresentation.ViewModels;
+using System.Security.Claims;
 
 namespace CorujaPresentation.Controllers
 {
@@ -146,6 +147,8 @@ namespace CorujaPresentation.Controllers
                 int x = await context.Users.MaxAsync(y => y.IdUser);
 
                 var newIdUser = x + 1;
+                model.IdUser = newIdUser;
+
 
                 var user = new ApplicationUser
                 {
@@ -156,7 +159,7 @@ namespace CorujaPresentation.Controllers
                     SecurityStamp = Guid.NewGuid().ToString(),
 
                     //Additional Fields
-                    IdUser = newIdUser,
+                    IdUser = model.IdUser,
                     RegisterDate = DateTime.Now,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
@@ -177,6 +180,8 @@ namespace CorujaPresentation.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, model.FirstName));
+                    UserManager.AddClaim(user.Id, new Claim(ClaimTypes.UserData, model.IdUser.ToString()));
 
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 

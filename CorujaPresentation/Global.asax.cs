@@ -62,7 +62,7 @@ namespace CorujaPresentation
 
             var controller = new ErrorController();
             var routeData = new RouteData();
-            var action = "CustomError";
+           // var action = "CustomError";
             var statusCode = 500;
 
             if (ex is HttpException)
@@ -99,7 +99,7 @@ namespace CorujaPresentation
             }
             else if (ex is AuthenticationException)
             {
-                action = "Forbidden";
+               // action = "Forbidden";
                 statusCode = 403;
             }
 
@@ -107,7 +107,6 @@ namespace CorujaPresentation
             httpContext.Response.Clear();
             httpContext.Response.StatusCode = statusCode;
             httpContext.Response.TrySkipIisCustomErrors = true;
-
             routeData.Values["controller"] = "Home";
             //routeData.Values["action"] = action;
             routeData.Values["action"] = "SysError";
@@ -115,20 +114,21 @@ namespace CorujaPresentation
 
             IControllerFactory factory = ControllerBuilder.Current.GetControllerFactory();
             var requestContext = new RequestContext(new HttpContextWrapper(httpContext), routeData);
-            var controll = factory.CreateController(requestContext, "Error");
-
+            var controll = factory.CreateController(requestContext, "Home");
+            
             httpContext.Response.ContentType = "text/html";
             
+
             try
-                {
+            {
                 controll.Execute(requestContext);
             }
             finally
             {
                 factory.ReleaseController(controller);
             }
-            
-            
+
+
         }
     }
 }
