@@ -1,0 +1,32 @@
+﻿@model CorujaSystem.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Excluir usuário";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Confirmar exclusão de usuário?</h3>
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Lista de usuários", "ListOfUsers")
+        </div>
+    }
+</div>
