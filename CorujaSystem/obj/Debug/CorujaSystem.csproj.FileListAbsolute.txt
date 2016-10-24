@@ -1,0 +1,211 @@
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.csprojResolveAssemblyReference.cache
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\CorujaSystem.dll.config
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\CorujaSystem.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\CorujaSystem.pdb
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Antlr3.Runtime.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\EntityFramework.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\EntityFramework.SqlServer.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Google.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Web.Infrastructure.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Newtonsoft.Json.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Owin.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Net.Http.Formatting.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Helpers.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Http.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Http.WebHost.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Mvc.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Optimization.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Razor.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Deployment.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Razor.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\WebGrease.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Helpers.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Mvc.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Optimization.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Razor.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Deployment.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Razor.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Antlr3.Runtime.pdb
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Newtonsoft.Json.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Net.Http.Formatting.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Http.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\System.Web.Http.WebHost.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\EntityFramework.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\EntityFramework.SqlServer.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Google.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.dll
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.pdb
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.Migrations._1st.resources
+c:\users\tomas\documents\visual studio 2013\Projects\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.csproj.GenerateResource.Cache
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\CorujaSystem.dll.config
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\CorujaSystem.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\CorujaSystem.pdb
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Antlr3.Runtime.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Elmah.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\EntityFramework.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Newtonsoft.Json.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Owin.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\SendGrid.CSharp.HTTP.Client.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\SendGrid.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\SendGrid.NetCore.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Buffers.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Net.Http.Formatting.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Text.Encodings.Web.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Helpers.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Http.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Http.WebHost.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Mvc.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Optimization.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Razor.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Razor.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\WebGrease.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Newtonsoft.Json.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Text.Encodings.Web.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Helpers.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Mvc.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Optimization.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Razor.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Razor.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Antlr3.Runtime.pdb
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Net.Http.Formatting.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Http.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\System.Web.Http.WebHost.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\EntityFramework.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.csprojResolveAssemblyReference.cache
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.Migrations._1st.resources
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.csproj.GenerateResource.Cache
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.dll
+C:\Users\tomas_rangel\Desktop\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\CorujaSystem.dll.config
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\CorujaSystem.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\CorujaSystem.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Antlr3.Runtime.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Elmah.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\EntityFramework.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Newtonsoft.Json.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Owin.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\SendGrid.CSharp.HTTP.Client.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\SendGrid.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\SendGrid.NetCore.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Buffers.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Net.Http.Formatting.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Text.Encodings.Web.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Helpers.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Http.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Http.WebHost.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Mvc.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Optimization.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Razor.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Razor.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\WebGrease.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Newtonsoft.Json.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Text.Encodings.Web.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Helpers.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Mvc.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Optimization.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Razor.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.WebPages.Razor.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Antlr3.Runtime.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Net.Http.Formatting.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Http.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\System.Web.Http.WebHost.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\EntityFramework.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.csprojResolveAssemblyReference.cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.Migrations._1st.resources
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.csproj.GenerateResource.Cache
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.pdb

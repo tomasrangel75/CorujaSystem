@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CorujaSystem.Models.UserMapKey" Collapsed="true">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Models\UserMapKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.UserAction" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAgAAACAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Models\Action.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.Base" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Base.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.ApplicationUser" Collapsed="true">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAACSAGAAAMAAAAAIaAAAAAAAICAAAABASkAAg=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.Report" Collapsed="true">
+    <Position X="8.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAEAAAABAAAAAAAAABAEAAAAAAAAAA=</HashCode>
+      <FileName>Models\Report.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.ReportKey" Collapsed="true">
+    <Position X="8.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAFAAAAAAAAAAQAAAAAAAAAAQACAA=</HashCode>
+      <FileName>Models\ReportKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.Especialist" Collapsed="true">
+    <Position X="8.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAACAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Models\RptCls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.Student" Collapsed="true">
+    <Position X="8.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAIAAQAAgAAAAICAAAEAAAAAAA=</HashCode>
+      <FileName>Models\RptCls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.Pontuacao" Collapsed="true">
+    <Position X="8.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAgAEAAAAAAAAAQAACABAAAAAAAAAAAAAAAAAKAgA=</HashCode>
+      <FileName>Models\RptCls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.Models.Test" Collapsed="true">
+    <Position X="8.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Models\Test.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CorujaSystem.UserFile" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="CorujaSystem.Models.Base" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="1.062" />
+        <Point X="4.75" Y="1.312" />
+        <Point X="5.167" Y="1.312" Type="JumpStart" />
+        <Point X="5.333" Y="1.312" Type="JumpEnd" />
+        <Point X="10" Y="1.312" />
+        <Point X="10" Y="1.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAACAAAgAAAAAAAAAQAAABAIQAAAAAAQAAACAA=</HashCode>
+      <FileName>Models\UserFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

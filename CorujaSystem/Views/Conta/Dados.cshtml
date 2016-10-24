@@ -1,0 +1,306 @@
+﻿@model CorujaSystem.VM.EditViewModel
+@{
+    ViewBag.Title = "Edicao";
+}
+
+<!-- EDICAO	================================= -->
+<section id="EditSection" class="section section-gray">
+  
+    <div class="container">
+
+        <h2 class="section-heading text-center">Conta Coruja</h2>
+
+        <div class="row centered-form">
+
+            <div class="col-sm-6 col-sm-offset-3">
+
+                <div class="panel panel-default">
+
+                    <div id="cadTitle">
+
+                        <h3>
+                            <i class="glyphicon glyphicon-pencil">
+                            </i>
+                            Dados Pessoais
+                        </h3>
+
+                    </div>
+
+                    <div class="panel-body">
+
+                        @using (Html.BeginForm("Dados", "Conta", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+
+                            <div class="row cadSectionTitle">
+                                <div class="col-sm-12">
+                                    Conta Coruja
+                                </div>
+
+
+                            </div>
+
+                            <div class="row cadSection">
+
+                                <div class="col-sm-12">
+
+                                    <div class="form-group">
+                                        @*Nome*@
+                                        <div class="col-sm-6">
+
+                                
+                                            <i class="asteriskCadastro">*</i>
+                                            @Html.LabelFor(m => m.FirstName, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control input-sm" } })
+
+                                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                                        </div>
+                                        @*Sobrenome*@
+                                        <div class="col-sm-6">
+                                            <i class="asteriskCadastro">*</i>
+                                            @Html.LabelFor(m => m.LastName, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control input-sm" } })
+
+                                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        @*DtNasc*@
+                                        <div class="col-sm-4">
+                                            @Html.LabelFor(m => m.BirthDate, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @type = "text", @class = "form-control input-sm", data_val_date = "O formato da data deve ser dd/mm/yyyy" } })
+                                            @Html.ValidationMessageFor(m => m.BirthDate, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        @*Cpf*@
+                                        <div class="col-sm-4">
+                                            <i class="asteriskCadastro">*</i>
+                                            @Html.LabelFor(m => m.Cpf, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.Cpf, new { htmlAttributes = new { Id = "Cpf", @class = "form-control input-sm" } })
+
+                                            @Html.ValidationMessageFor(m => m.Cpf, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        @*RG*@
+                                        <div class="col-sm-4">
+                                            @Html.LabelFor(m => m.Rg, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.Rg, new { htmlAttributes = new { @class = "form-control input-sm" } })
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @*Celular*@
+                                        <div class="col-sm-4">
+                                            @Html.LabelFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                        </div>
+
+                                        @*Tel Res.*@
+                                        <div class="col-sm-4">
+                                            @Html.LabelFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.PhoneNumber, new { htmlAttributes = new { @class = "form-control input-sm" } })
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+     
+                                        @* Grad selection dropdown *@
+                                         <div class="col-sm-6">
+                                            @Html.LabelFor(m => m.Graduation)
+                                            @Html.DropDownListFor(m => m.Graduation, // 1. Store selected value in Model.State;
+                                                                                                    // when page is rendered after postback,
+                                                                                                    // take selected value from Model.State.
+
+                                              // 2. Take list of values from Model.States
+                                              Model.Grads,
+
+                                           
+                                              //3. A class name to assign to <select> tag
+                                              new { @class = "form-control input-sm" })
+                                        </div>
+
+                                        <div class="col-sm-2">
+ 
+                                            @Html.HiddenFor(m => m.IdUser)            
+
+                                        </div>
+
+                                   </div>
+
+                                </div>
+
+                            </div>
+
+                            @*=============================================================================*@
+
+                            <div class="row cadSectionTitle">
+                                <div class="col-sm-12">
+                                    Endereço
+                                </div>
+                            </div>
+
+                            <div class="row cadSection">
+
+                                <div class="col-sm-12">
+
+                                    <div class="form-group">
+
+                                        @*CEP*@
+                                        <div class="col-sm-3">
+                                            @Html.LabelFor(m => m.Cep, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.Cep, new { htmlAttributes = new { Id = "Cep", @class = "form-control input-sm" } })
+                                        </div>
+
+                                        @*ENDERECO*@
+                                        <div class="col-sm-9">
+                                            @Html.LabelFor(m => m.Address, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.Address, new { htmlAttributes = new { Id = "Address", @class = "form-control input-sm" } })
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        @*Numero*@
+                                        <div class="col-sm-2">
+                                            @Html.LabelFor(m => m.AddressNumber, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.AddressNumber, new { htmlAttributes = new { Id = "AddressNumber", @class = "form-control input-sm" } })
+                                        </div>
+
+                                        @*Complemento*@
+                                        <div class="col-sm-4">
+                                            @Html.LabelFor(m => m.AddressDetail, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.AddressDetail, new { htmlAttributes = new { Id = "AddressDetail", @class = "form-control input-sm" } })
+                                        </div>
+
+                                        @*Bairro*@
+                                        <div class="col-sm-6">
+                                            @Html.LabelFor(m => m.Nhood, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.Nhood, new { htmlAttributes = new { Id = "Nhood", @class = "form-control input-sm" } })
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        @*Cidade*@
+                                        <div class="col-sm-5">
+                                            @Html.LabelFor(m => m.City, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.City, new { htmlAttributes = new { Id = "City", @class = "form-control input-sm" } })
+                                        </div>
+
+                                        @* State selection dropdown *@
+                                        <div class="col-sm-2">
+                                            @Html.LabelFor(m => m.State)
+                                            @Html.DropDownListFor(m => m.State, // 1. Store selected value in Model.State;
+                                                                                // when page is rendered after postback,
+                                                                                // take selected value from Model.State.
+
+                                              // 2. Take list of values from Model.States
+                                              Model.States,
+
+                                         
+                                              //3. A class name to assign to <select> tag
+                                              new { @class = "form-control input-sm" })
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            @*=============================================================================*@
+
+                            <div class="row cadSectionTitle">
+                                <div class="col-sm-12">
+                                    Email de acesso
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-sm-12">
+
+                                    <div class="form-group">
+
+                                        @*EMAIL*@
+                                        <div class="col-sm-7">
+                                            <i class="asteriskCadastro">*</i>
+                                            @Html.LabelFor(m => m.Email, new { htmlAttributes = new { @class = "" } })
+                                            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <small>
+                                                <label class="checkbox-inline" style="margin-top:35px">
+                                                @Html.CheckBoxFor(m => m.NewsLetter) Aceito receber Newsletter da Coruja
+                                                </label>
+                                            </small>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <div class="col-sm-12 pull-left">
+                                            <small>
+                                                <i class="asteriskCadastro">*</i> <span id="preenchimento">Preenchimento Obrigatório</span>
+                                            </small>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row cadSection" style="margin-top:20px">
+
+                                <div class="col-sm-12">
+
+                                    
+                                    <div class="form-group">
+
+                                        <div class="col-sm-4 col-sm-offset-7">
+                                            <button id="btnEdit" type="submit" class="btn btn-primary">Atualizar Dados</button>
+                                        </div>
+
+                                    </div>
+
+                               
+
+                                </div>
+
+                            </div>
+
+
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+}
+
+
