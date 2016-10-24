@@ -139,35 +139,6 @@ namespace CorujaSystem.VM
     {
         public EditViewModel(){ }
 
-        public EditViewModel(ApplicationUser user)
-        {
-            this.IdUser = user.IdUser;
-            this.UserName = user.UserName;
-
-            this.FirstName = user.FirstName;
-            this.LastName = user.LastName;
-
-            this.Email = user.Email;
-            this.BirthDate = user.BirthDate;
-
-            this.Cpf = user.Cpf;
-            this.Rg = user.Rg;
-            this.Graduation = user.Graduation;
-
-            this.Cep = user.Cep;
-            this.Address = user.Address;
-            this.AddressNumber = user.AddressNumber;
-            this.AddressDetail = user.AddressDetail;
-            this.Nhood = user.Nhood;
-            this.City = user.City;
-            this.State = user.State;
-
-            this.NewsLetter = user.NewsLetter;
-            this.Email = user.Email;
-            this.PhoneNumber = user.PhoneNumber;
-            this.CellPhoneNumber = user.CellPhoneNumber;
-        }
-
         public int IdUser { get; set; }
 
         public string UserName { get; set; }

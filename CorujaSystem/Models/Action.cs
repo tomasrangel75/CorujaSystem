@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CorujaSystem.Models
 {
-    public class UserAction:Base
+    public class UserAction:Base, IUserAction
     {
         public int IdUser { get; set; }
         public string EvtType { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CorujaSystem.Models
 {
-	public class UserMapKey: Base
+	public class UserMapKey: Base, IUserMapKey
     {
 		public int IdUser { get; set; }
 		public int IdKey { get; set; }

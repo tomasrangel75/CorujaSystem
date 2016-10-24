@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace CorujaSystem
 {
-    public class UserFile: Base
+    public class UserFile: Base, IUserFile
     {
         public int IdUser { get; set; }
 
@@ -28,6 +28,6 @@ namespace CorujaSystem
         
         public IEnumerable<Report> Rpts { get; set; }
 
-
+       
     }
 }

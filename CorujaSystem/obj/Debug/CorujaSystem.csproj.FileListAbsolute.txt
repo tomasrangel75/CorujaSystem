@@ -209,3 +209,10 @@ C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\Coruj
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.csproj.GenerateResource.Cache
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.dll
 C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\obj\Debug\CorujaSystem.pdb
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Ninject.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Ninject.Web.Common.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Ninject.Web.Mvc.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\WebActivatorEx.dll
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Ninject.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Ninject.Web.Common.xml
+C:\Users\tomas_rangel\Documents\GitHub\CorujaSystem\CorujaSystem\bin\Ninject.Web.Mvc.xml

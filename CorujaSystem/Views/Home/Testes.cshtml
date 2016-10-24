@@ -1,41 +1,78 @@
 ﻿
+@model List<string>
+
 @{
     ViewBag.Title = "Testes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
+<h1>Upload</h1>
 
-@{
-    ViewBag.Title = "Mensagem";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
 <section id="Msg" class="section section-gray">
-
     <div class="container">
         <h2 class="section-heading text-center">Canal Coruja</h2>
         <div class="row">
             <div class="col-sm-12 col-md-12 alert-message">
 
 
-                <img src="~/Content/CorujaImages/avatar2.png" alt="Coruja">
+                @using (Html.BeginForm("Upload", "Home", FormMethod.Post,
+new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
 
-                <p>
-                    ViewBag.Msg
-                </p>
+                    <fieldset>
+                        <legend>Upload a file</legend>
+                
+                        <div class="editor-field">
+                            @Html.TextBox("file", "", new { type = "file" })
+                        </div>
+                        
+                        <div class="editor-field">
+                            <input type="submit" value="Upload" />
+                        </div>
+                    
+                    </fieldset>
+                }
+
 
             </div>
         </div>
     </div>
 
+   
+</section>
 
-    <div class="col-md-4">
-        <p>Entre em contato com a Coruja e reporte o erro ocoriido</p>
-        <ul class="footer-posts list-unstyled">
-            <li class="footer-sprite">
-                <a href="mailto:contato@corujaedu.com.br?subject=[Fale%20com%20a%20Coruja]&amp;cco=christian@corujaedu.com.br" class="footer">contato@corujaedu.com.br</a>
-            </li>
-        </ul>
+
+<h1>Download</h1>
+
+<section class="section section-gray">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-sm-12 col-md-12 alert-message">
+
+                <h2>Downloads</h2>
+                <table>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Link</th>
+                    </tr>
+                    @for (var i = 0; i <= Model.Count - 1; i++)
+                    {
+                        <tr>
+                            <td>
+                                @Model[i].ToString()
+                            </td>
+                            <td>
+                                @Html.ActionLink("Download", "Download", new { ImageName = @Model[i].ToString() })
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+            </div>
+        </div>
     </div>
 
 

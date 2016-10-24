@@ -117,11 +117,7 @@ namespace CorujaSystem.Areas.Especialista.Controllers
             var rlts = Uow.GetRepository<Report>().All().Select(f => f.RptFileResult.IdUser == IdCurUser);
             return 1;
         }
-
-
-
-
-
+        
 
     }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CorujaSystem.Models
 {
-    public class Test:Base
+    public class Test:Base, ITest
     {
         public string TestName { get; set; }
         public string Desc { get; set; }

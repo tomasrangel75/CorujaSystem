@@ -154,33 +154,10 @@ namespace CorujaSystem.Controllers
                 model.IdUser = newIdUser;
 
 
-                var user = new ApplicationUser
-                {
+                ApplicationUser user = new ApplicationUser();
+                IModelFactory mf = new ModelFactory();
+                user = mf.Create(model);
 
-                    UserName = model.Email,
-                    Email = model.Email,
-                    PhoneNumber = model.PhoneNumber,
-                    SecurityStamp = Guid.NewGuid().ToString(),
-
-                    //Additional Fields
-                    IdUser = model.IdUser,
-                    RegisterDate = DateTime.Now,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    BirthDate = (model.BirthDate.HasValue) ? Convert.ToDateTime(model.BirthDate) : model.BirthDate,
-                    Cpf = model.Cpf,
-                    Rg = model.Rg,
-                    Graduation = model.Graduation,
-                    Cep = model.Cep,
-                    Address = model.Address,
-                    AddressNumber = model.AddressNumber,
-                    AddressDetail = model.AddressDetail,
-                    Nhood = model.Nhood,
-                    City = model.City,
-                    State = model.State,
-                    NewsLetter = model.NewsLetter,
-                    CellPhoneNumber = model.CellPhoneNumber
-                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -226,7 +203,10 @@ namespace CorujaSystem.Controllers
                 return HttpNotFound();
             }
 
-            var model = new EditViewModel(user);
+            EditViewModel model = new EditViewModel();
+            IModelFactory mf = new ModelFactory();
+            model = mf.CreateEdt(user);
+
             var grads = GetLstGraduation();
             var sts = GetUfs();
             model.Grads = GetSelectListItems(grads);
