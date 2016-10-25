@@ -356,6 +356,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\coruja.js" />
     <Content Include="ClassDiagram.cd" />
+    <Content Include="Areas\Especialista\Views\Ambiente\Demo.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -431,7 +432,6 @@
     <Folder Include="Areas\CorujaCrianca\Views\Shared\" />
     <Folder Include="Areas\CursosPalestras\Views\Shared\" />
     <Folder Include="Areas\Escola\Views\Shared\" />
-    <Folder Include="Areas\Especialista\Views\Shared\" />
     <Folder Include="Content\Files\" />
   </ItemGroup>
   <ItemGroup>

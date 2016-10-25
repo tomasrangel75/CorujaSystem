@@ -26,6 +26,11 @@ namespace CorujaSystem.Areas.Especialista.Controllers
             return View();
         }
 
+        public ActionResult Demo()
+        {
+            return View();
+        }
+
         public ActionResult Avaliacoes()
         {
             return View();
@@ -45,6 +50,8 @@ namespace CorujaSystem.Areas.Especialista.Controllers
         {
             return View();
         }
+
+    
 
         #endregion
 
