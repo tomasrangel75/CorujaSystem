@@ -1,0 +1,47 @@
+﻿
+@{
+ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<section class="section section-dark">
+    <div class="container">
+        <h2 class="section-heading text-center">Canal Coruja</h2>
+        <div class="row">
+
+            <div class="col-sm-12 text-center">
+
+                <div>Download</div>
+                <div>
+                    
+                    @{
+
+                        ViewBag.Title = "Download de arquivos";
+                        var Files = (ViewBag.Files as string[]);
+
+                        if (Files != null && Files.Any())
+                        {
+                            foreach (var file in Files)
+                            {
+                                <br />
+                                @Html.ActionLink(file, "DownloadFile", new { fileName = file })
+                                <br />
+                            }
+                        }
+                        else
+                        {
+                            <label>Sem arquivos para download</label>
+                        }
+                    }
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

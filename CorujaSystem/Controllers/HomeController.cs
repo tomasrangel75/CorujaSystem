@@ -47,6 +47,9 @@ namespace CorujaSystem.Controllers
         }
         
 
+    
+        /// //////////////////////////////////////////////////////////////////////////////////////
+     
         public ActionResult Testes()
         {
             var dir = new System.IO.DirectoryInfo(Server.MapPath("~/Content/Files/"));
@@ -62,11 +65,8 @@ namespace CorujaSystem.Controllers
             
         }
 
-        public FileResult Download(string ImageName)
-        {
-            return File("< your path >" +ImageName, System.Net.Mime.MediaTypeNames.Application.Octet);
-        }
-
+        /*
+        
         [HttpPost]
         public ActionResult Upload(HttpPostedFileBase file)
         {
@@ -86,6 +86,115 @@ namespace CorujaSystem.Controllers
                 ViewBag.Message = "Upload failed";
                 return RedirectToAction("Uploads");
             }
+        }
+
+            
+
+        public List<UploadFileResult> ListaArquivos()
+        {
+            List<UploadFileResult> lstArquivos = new List<UploadFileResult>();
+            DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/Content/Uploads"));
+
+            int i = 0;
+            foreach (var item in dirInfo.GetFiles())
+            {
+                lstArquivos.Add(new UploadFileResult()
+                {
+                    IDArquivo = i + 1,
+                    Nome = item.Name,
+                    Caminho = dirInfo.FullName + @"\" + item.Name
+                });
+                i = i + 1;
+            }
+            return lstArquivos;
+        }
+
+        UploadFileResult oModelArquivos = new UploadFileResult();
+
+
+        public ActionResult Index()
+        {
+            var _arquivos = oModelArquivos.ListaArquivos();
+            return View(_arquivos);
+        }
+
+        public FileResult Download(string id)
+        {
+            int _arquivoId = Convert.ToInt32(id);
+            var arquivos = oModelArquivos.ListaArquivos();
+
+            string nomeArquivo = (from arquivo in arquivos
+                                  where arquivo.IDArquivo == _arquivoId
+                                  select arquivo.Caminho).First();
+
+            string contentType = "application/pdf";
+            return File(nomeArquivo, contentType, "Report.pdf");
+        }
+
+
+        public FileResult Download(string id)
+        {
+            int _arquivoId = Convert.ToInt32(id);
+            string contentType = "";
+            var arquivos = oModelArquivos.ListaArquivos(Server.MapPath("~/Content/Uploads"));
+            
+            string nomeArquivo = (from arquivo in arquivos
+                                  where arquivo.IDArquivo == _arquivoId
+                                  select arquivo.Caminho).First();
+
+            string extensao = Path.GetExtension(nomeArquivo);
+            
+            string nomeArquivoV = Path.GetFileNameWithoutExtension(nomeArquivo);
+            
+            if (extensao.Equals(".pdf"))
+                contentType = "application/pdf";
+            
+            if (extensao.Equals(".JPG") || extensao.Equals(".GIF") || extensao.Equals(".PNG"))
+                contentType = "application/image";
+            return File(nomeArquivo, contentType, nomeArquivoV + extensao);
+        }
+        */
+
+
+
+        public ActionResult Upload()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Upload(string baseData)
+        {
+            if (HttpContext.Request.Files.AllKeys.Any())
+            {
+                for (int i = 0; i <= HttpContext.Request.Files.Count; i++)
+                {
+                    var file = HttpContext.Request.Files["files" + i];
+                    if (file != null)
+                    {
+                        var fileSavePath = Path.Combine(Server.MapPath("/Content/Files"), file.FileName);
+                        file.SaveAs(fileSavePath);
+                    }
+                }
+            }
+            return View();
+        }
+
+        public ActionResult Download()
+        {
+            string[] files = Directory.GetFiles(Server.MapPath("/Content/Files"));
+            for (int i = 0; i < files.Length; i++)
+            {
+                files[i] = Path.GetFileName(files[i]);
+            }
+            ViewBag.Files = files;
+            return View();
+        }
+
+        public FileResult DownloadFile(string fileName)
+        {
+            var filepath = System.IO.Path.Combine(Server.MapPath("/Content/Files/"), fileName);
+            return File(filepath, MimeMapping.GetMimeMapping(filepath), fileName);
         }
 
 
