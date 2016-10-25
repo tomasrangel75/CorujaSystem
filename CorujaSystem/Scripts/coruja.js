@@ -65,3 +65,45 @@ $(document).ready(function () {
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Upload File
+
+$body = $("Upload");
+$(document).on({
+    ajaxStart: function () { $body.addClass("loading"); },
+    ajaxStop: function () { $body.removeClass("loading"); }
+});
+
+$(document).ready(function () {
+    $("#upload").click(function () {
+        var data = new FormData();
+
+        //Add the Multiple selected files into the data object
+        var files = $("#files").get(0).files;
+        for (i = 0; i < files.length; i++) {
+            data.append("files" + i, files[i]);
+        }
+
+        //Post the data (files) to the server
+        if (files.length > 0) {
+            $.ajax({
+                type: 'POST',
+                url: "/Home/Upload",
+                data: data, 
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                alert("Arquivo carregado com sucesso!");
+            },
+            error: function () {
+                alert("Erro ao carregar arquivo!");
+            },
+            });
+    }
+    });
+});
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
