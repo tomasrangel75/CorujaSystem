@@ -6,6 +6,7 @@
       <HashCode>AAAAAAAACAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>Models\UserMapKey.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CorujaSystem.Models.UserAction" Collapsed="true">
     <Position X="8.5" Y="2.75" Width="1.5" />
@@ -13,6 +14,7 @@
       <HashCode>AAAAAAAACAAAAAAAAAAAAAgAAACAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Models\Action.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CorujaSystem.Models.Base" Collapsed="true">
     <Position X="4.5" Y="0.5" Width="1.5" />
@@ -34,6 +36,7 @@
       <HashCode>AAAAAAAAAAABAAAEAAAABAAAAAAAAABAEAAAAAAAAAA=</HashCode>
       <FileName>Models\Report.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CorujaSystem.Models.ReportKey" Collapsed="true">
     <Position X="8.5" Y="6" Width="1.5" />
@@ -41,6 +44,7 @@
       <HashCode>AAAAACAAAAAAAAAAFAAAAAAAAAAQAAAAAAAAAAQACAA=</HashCode>
       <FileName>Models\ReportKey.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="CorujaSystem.Models.Especialist" Collapsed="true">
     <Position X="8.5" Y="8.5" Width="1.5" />
@@ -69,8 +73,9 @@
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Models\Test.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="CorujaSystem.UserFile" Collapsed="true">
+  <Class Name="CorujaSystem.UserFile">
     <Position X="8.5" Y="1.5" Width="1.5" />
     <InheritanceLine Type="CorujaSystem.Models.Base" FixedFromPoint="true" FixedToPoint="true">
       <Path>
@@ -86,6 +91,7 @@
       <HashCode>AAAAAgAACAAAgAAAAAAAAAQAAABAIQAAAAAAQAAACAA=</HashCode>
       <FileName>Models\UserFile.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

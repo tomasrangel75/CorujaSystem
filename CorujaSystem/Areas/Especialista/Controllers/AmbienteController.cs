@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.Security.Claims;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.IO;
 
 namespace CorujaSystem.Areas.Especialista.Controllers
 {
@@ -18,7 +19,7 @@ namespace CorujaSystem.Areas.Especialista.Controllers
         public AmbienteController() { }
 
         public AmbienteController(IUnitOfWork uow) : base(uow) { }   //should be injected
-    
+
         #region Load pages
 
         public ActionResult SobreEspecialista()
@@ -26,14 +27,16 @@ namespace CorujaSystem.Areas.Especialista.Controllers
             return View();
         }
 
-        public ActionResult Demo()
-        {
-            return View();
-        }
-
         public ActionResult Avaliacoes()
         {
-            return View();
+            var evals = Uow.GetRepository<CorujaSystem.Models.UserFile>().All();
+            var selectedEvals =
+                from ev in evals
+                where ev.FileType.Equals("avaliação")
+                orderby ev.Name
+                select ev;
+
+            return View(selectedEvals);
         }
 
         public ActionResult Relatorios()
@@ -51,7 +54,7 @@ namespace CorujaSystem.Areas.Especialista.Controllers
             return View();
         }
 
-    
+
 
         #endregion
 
@@ -65,19 +68,26 @@ namespace CorujaSystem.Areas.Especialista.Controllers
                           where x.KeyCode.Equals(Kcode)
                           select x).FirstOrDefault();
 
-            // se esta ativa
+            // se existe
             if (rptKey == null)
             {
                 ViewBag.KeyUsed = "Licença inválida";
                 return View("Relatorios");
             }
-            else // se esta ativa
-            {
+            else
+            {   // se esta ativa
                 if (rptKey.IsActive == true)
                 {
-                    // checkProfile => se não tem adiciona user
+                    // checkProfile => se não é especialista, adiciona user ao perfil
                     var user = User.Identity.GetUserId();
-                    Uow.SetUpProfile(1, user, "Especialista");
+                    AdminController ctl = new AdminController();
+                    ctl.SetUpProfile(1, user, "Especialista");
+
+                    // setup unique user folder
+                    if (!Directory.Exists(Server.MapPath("~/Content/Files/Users/" + user.ToString() + User.Identity.Name)))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/Content/Files/Users/" + user.ToString() + User.Identity.Name));
+                    }
 
                     //inativa
                     rptKey.IsActive = false;
@@ -106,7 +116,7 @@ namespace CorujaSystem.Areas.Especialista.Controllers
         {
             // retorna arquivos de resultados
             var fls = Uow.GetRepository<UserFile>().All().Select(f => f.IdUser == IdCurUser);
-            return View("Resultados",fls);
+            return View("Resultados", fls);
         }
 
         [HttpGet]
@@ -114,7 +124,7 @@ namespace CorujaSystem.Areas.Especialista.Controllers
         {
             // retorna lista de relatorios gerados
             var rlts = Uow.GetRepository<Report>().All().Select(f => f.RptFileResult.IdUser == IdCurUser);
-            return View("Relatorios",rlts);
+            return View("Relatorios", rlts);
         }
 
         [HttpGet]
@@ -124,11 +134,9 @@ namespace CorujaSystem.Areas.Especialista.Controllers
             var rlts = Uow.GetRepository<Report>().All().Select(f => f.RptFileResult.IdUser == IdCurUser);
             return 1;
         }
-        
+
 
     }
-
-
 
 
     //        [HttpGet]

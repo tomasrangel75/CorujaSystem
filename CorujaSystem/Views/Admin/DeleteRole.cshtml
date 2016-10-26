@@ -30,7 +30,9 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Excluir" class="btn btn-default" /> |
-            @Html.ActionLink("Lista de perfis", "ListOfRoles")
+            @Html.ActionLink("Lista de perfis", "ListOfRoles", new { area = "", controller = "Admin" })
+
+
         </div>
     }
 </div>

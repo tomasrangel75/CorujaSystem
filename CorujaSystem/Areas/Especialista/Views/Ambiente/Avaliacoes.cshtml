@@ -1,15 +1,73 @@
-﻿
+﻿@model IEnumerable<CorujaSystem.Models.UserFile>
 @{
     ViewBag.Title = "Avaliacoes";
     Layout = "~/Views/Shared/_LayoutEspecialista.cshtml";
 }
 
-
-
 <div class="row HeadRowEspec">
     <div class="col-md-9">
-        <h2>Baixe sua Avaliação <i class="fa fa-fw fa-download"></i></h2>
+        <h2>Avaliações</h2>
     </div>
+
 </div>
 
-  
+<div class="row">
+
+    <div class="col-sm-12">
+        <h4>Faça o download da avaliação demonstrativa da Coruja</h4>
+
+        <p>
+            <span class="glyphicon glyphicon-download-alt"></span><span class="glyphicon-class">
+                @Html.ActionLink("Demo", "DownloadFile", new { fileName = "Demo.txt" }, new { @class = "aEsp" })
+            </span>
+        </p>
+    </div>
+
+</div>
+
+
+@if (Request.IsAuthenticated && User.IsInRole("Especialista"))
+{
+
+<div class="row">
+
+    <div class="col-sm-12">
+        <h4>Selecione avaliação para download</h4>
+
+        <p>
+            <span class="glyphicon glyphicon-download-alt"></span><span class="glyphicon-class">
+                @Html.ActionLink("Demo", "DownloadFile", new { fileName = "Demo.txt" }, new { @class = "aEsp" })
+            </span>
+
+        </p>
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                       @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <span class="glyphicon glyphicon-download-alt"></span><span class="glyphicon-class">
+                            @Html.ActionLink("Demo", "DownloadFile", new { fileName = item.Name + item.Extension }, new { @class = "aEsp" })
+                        </span>
+                    </td>
+                </tr>
+            }
+        </table>
+
+
+
+    </div>
+
+</div>
+
+}

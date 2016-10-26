@@ -1544,6 +1544,21 @@ input:-webkit-autofill {
     }
 
 
+.aEsp {
+    -webkit-transition: all ease 0.25s;
+    transition: all ease 0.25s;
+    color: #0080ff;
+}
+
+   .aEsp:focus, a:hover {
+        text-decoration: none;
+        outline: 0;
+        color:#EC0B07;
+    }
+    
+ 
+
+
 /*#endregion */
 
 /*#region     5.2 ======== ESCOLA */

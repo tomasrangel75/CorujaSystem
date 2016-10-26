@@ -231,6 +231,7 @@
     <Compile Include="Areas\Escola\EscolaAreaRegistration.cs" />
     <Compile Include="Areas\Especialista\Controllers\AmbienteController.cs" />
     <Compile Include="Areas\Especialista\Controllers\EspecialistaApiController.cs" />
+    <Compile Include="Controllers\UserFilesController.cs" />
     <Compile Include="Areas\Especialista\EspecialistaAreaRegistration.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -322,6 +323,7 @@
     <Content Include="Content\CorujaImages\tumblr_inline_o81w5fbKiM1u2r1xm_540.jpg" />
     <Content Include="Content\CorujaImages\write12.svg" />
     <Content Include="Content\CorujaStyle.css" />
+    <Content Include="Content\Files\Evals\Demo.txt" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\simple-sidebar.css" />
@@ -356,7 +358,11 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\coruja.js" />
     <Content Include="ClassDiagram.cd" />
-    <Content Include="Areas\Especialista\Views\Ambiente\Demo.cshtml" />
+    <Content Include="Views\UserFiles\Create.cshtml" />
+    <Content Include="Views\UserFiles\Delete.cshtml" />
+    <Content Include="Views\UserFiles\Details.cshtml" />
+    <Content Include="Views\UserFiles\Edit.cshtml" />
+    <Content Include="Views\UserFiles\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -434,7 +440,7 @@
     <Folder Include="Areas\CorujaCrianca\Views\Shared\" />
     <Folder Include="Areas\CursosPalestras\Views\Shared\" />
     <Folder Include="Areas\Escola\Views\Shared\" />
-    <Folder Include="Content\Files\" />
+    <Folder Include="Content\Files\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

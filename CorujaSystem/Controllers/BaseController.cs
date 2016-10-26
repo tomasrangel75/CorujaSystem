@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
@@ -12,7 +13,14 @@ namespace CorujaSystem.Controllers
     [RequireHttpsAttribute]
     public class BaseController : Controller
     {
-  
+
+        public FileResult DownloadFile(string fileName)
+        {
+            var filepath = System.IO.Path.Combine(Server.MapPath("/Content/Files/Evals/"), fileName);
+            return File(filepath, MimeMapping.GetMimeMapping(filepath), fileName);
+        }
+
+
     }
 
   

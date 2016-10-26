@@ -191,13 +191,7 @@ namespace CorujaSystem.Controllers
             return View();
         }
 
-        public FileResult DownloadFile(string fileName)
-        {
-            var filepath = System.IO.Path.Combine(Server.MapPath("/Content/Files/"), fileName);
-            return File(filepath, MimeMapping.GetMimeMapping(filepath), fileName);
-        }
-
-
+        
     }
 
 }

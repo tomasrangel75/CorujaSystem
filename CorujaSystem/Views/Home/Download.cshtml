@@ -27,7 +27,7 @@
                             foreach (var file in Files)
                             {
                                 <br />
-                                @Html.ActionLink(file, "DownloadFile", new { fileName = file })
+                                @Html.ActionLink(file, "DownloadFile", new { fileName = file },new { @class = "a"})
                                 <br />
                             }
                         }

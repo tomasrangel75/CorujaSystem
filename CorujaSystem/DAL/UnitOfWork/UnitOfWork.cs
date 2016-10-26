@@ -37,46 +37,6 @@ namespace CorujaSystem.DAL
 		}
 
 
-        public int SetUpProfile(int action, string userId, string profile)
-        {
-            UserManager<ApplicationUser> _userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_ctx));
-            int result = 0;
-
-            try
-            {
-                switch (action)
-                {
-                    case 1: //ADD
-
-                        if (!_userManager.IsInRole(userId, profile))
-                        {
-                            _userManager.AddToRole(userId, profile);
-                            result = 1;
-                        }
-                        break;         
-                    case 2: //DEL
-                        _userManager.RemoveFromRole(userId, profile);
-                         result = 1;
-                        break;
-
-                    case 3: //CHECK
-                        if (_userManager.IsInRole(userId, profile)) result = 1;
-                        break;
-                        
-                            default:
-                        break;
-                }
-                return result;
-
-            }
-            catch (Exception)
-            {
-
-                return -1;
-            }
-
-        }
-       
 
         public void Save()
 		{

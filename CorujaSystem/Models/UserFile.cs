@@ -6,7 +6,7 @@ using System.ComponentModel;
 using CorujaSystem.Models;
 using System.Collections.Generic;
 
-namespace CorujaSystem
+namespace CorujaSystem.Models
 {
     public class UserFile: Base, IUserFile
     {

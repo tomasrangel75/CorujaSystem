@@ -40,7 +40,8 @@
 </table>
 <p>
     @Html.ActionLink("Editar", "EditUser", new { id = Model.Id }) |
-    @Html.ActionLink("Lista de usuários", "ListOfUsers")
+    @Html.ActionLink("Lista de usuários", "ListOfUsers", new { area = "", controller = "Admin" })
+
 </p>
 
 
